@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start Here | Treasure Valley Tech Tavern</title>
+  <meta name="description" content="Digital support for Treasure Valley bands, bars, venues, and local spots. Websites, socials, live content, and easy-to-find schedules so people can find you and show up.">
+  <link rel="icon" type="image/png" href="assets/favicon-tvtt.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Cute+Font&family=Jersey+15&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --tvtt-bg: #000;
+      --tvtt-panel: rgba(7, 7, 7, 0.82);
+      --tvtt-panel-strong: rgba(14, 14, 14, 0.92);
+      --tvtt-text: #f4f6f7;
+      --tvtt-muted: #dce6e8;
+      --tvtt-soft: #9aa7ab;
+      --tvtt-cyan: #63e0e5;
+      --tvtt-red: #ff1637;
+      --tvtt-border: rgba(99, 224, 229, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--tvtt-bg);
+      color: var(--tvtt-text);
+      font-family: "Cute Font", Arial, sans-serif;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background: #000 url("assets/black-brick-wall-1920.jpg") top center / cover no-repeat;
+    }
+
+    body::after {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.3), #000 96%),
+        radial-gradient(circle at 16% 12%, rgba(99, 224, 229, 0.14), transparent 28%),
+        radial-gradient(circle at 84% 34%, rgba(255, 22, 55, 0.1), transparent 26%),
+        rgba(0, 0, 0, 0.58);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .tvtt-start-page {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .tvtt-site-header {
+      padding: 18px 18px 0;
+    }
+
+    .tvtt-site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      width: min(100%, 1080px);
+      margin: 0 auto;
+    }
+
+    .tvtt-logo {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .tvtt-logo img {
+      display: block;
+      width: clamp(104px, 28vw, 148px);
+      height: auto;
+    }
+
+    .tvtt-local-note {
+      margin: 0;
+      color: var(--tvtt-soft);
+      font-size: clamp(1.25rem, 4.8vw, 1.7rem);
+      line-height: 1;
+      text-align: right;
+    }
+
+    .tvtt-hero {
+      min-height: 86svh;
+      display: grid;
+      align-items: center;
+      padding: 42px 18px 54px;
+    }
+
+    .tvtt-hero-inner,
+    .tvtt-section-inner {
+      width: min(100%, 1080px);
+      margin: 0 auto;
+    }
+
+    .tvtt-hero-copy {
+      max-width: 780px;
+    }
+
+    .tvtt-eyebrow,
+    .tvtt-section-kicker {
+      margin: 0 0 14px;
+      color: var(--tvtt-cyan);
+      font-family: "Chicle", Arial, sans-serif;
+      font-size: clamp(1.28rem, 4.7vw, 1.6rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .tvtt-hero h1,
+    .tvtt-section-title,
+    .tvtt-cta-title {
+      margin: 0;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .tvtt-hero h1 {
+      max-width: 820px;
+      font-size: clamp(4rem, 18vw, 8.2rem);
+      line-height: 0.86;
+      text-shadow: 0 0 28px rgba(99, 224, 229, 0.22);
+    }
+
+    .tvtt-hero-subtitle {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(2rem, 7vw, 3rem);
+      line-height: 1.12;
+    }
+
+    .tvtt-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      margin-top: 30px;
+      padding: 0 24px;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.2);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: clamp(1.75rem, 6vw, 2rem);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .tvtt-button:hover,
+    .tvtt-button:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.36);
+    }
+
+    .tvtt-button:focus-visible,
+    .tvtt-phone-link:focus-visible {
+      outline: 2px solid var(--tvtt-cyan);
+      outline-offset: 5px;
+    }
+
+    .tvtt-section {
+      padding: 58px 18px;
+    }
+
+    .tvtt-section-tight {
+      padding-top: 24px;
+    }
+
+    .tvtt-section-title {
+      color: #fff;
+      font-size: clamp(3rem, 10vw, 5rem);
+      line-height: 0.95;
+      text-align: center;
+    }
+
+    .tvtt-copy-block {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tvtt-copy-block p,
+    .tvtt-card p,
+    .tvtt-step p,
+    .tvtt-outcome p {
+      margin: 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(1.8rem, 6vw, 2.35rem);
+      line-height: 1.18;
+    }
+
+    .tvtt-copy-block p + p {
+      margin-top: 14px;
+    }
+
+    .tvtt-friction-list,
+    .tvtt-service-grid,
+    .tvtt-steps {
+      display: grid;
+      gap: 14px;
+      margin: 30px auto 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tvtt-friction-list {
+      max-width: 760px;
+    }
+
+    .tvtt-card,
+    .tvtt-step {
+      border: 1px solid var(--tvtt-border);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.08), transparent 140px),
+        var(--tvtt-panel);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    }
+
+    .tvtt-friction-list .tvtt-card {
+      padding: 18px 20px;
+    }
+
+    .tvtt-card p {
+      color: #f2fbfc;
+    }
+
+    .tvtt-service-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 1080px;
+      gap: 16px;
+    }
+
+    .tvtt-service-grid .tvtt-card {
+      padding: 24px 20px 26px;
+    }
+
+    .tvtt-card h3 {
+      margin: 0 0 12px;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.25rem, 7vw, 3rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-card-mark {
+      display: block;
+      width: 34px;
+      height: 4px;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      background: var(--tvtt-red);
+      box-shadow: 0 0 14px rgba(255, 22, 55, 0.5);
+    }
+
+    .tvtt-steps {
+      max-width: 820px;
+      counter-reset: tvtt-step;
+    }
+
+    .tvtt-step {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      padding: 18px;
+      counter-increment: tvtt-step;
+    }
+
+    .tvtt-step::before {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid rgba(99, 224, 229, 0.52);
+      border-radius: 50%;
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.5);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: 2rem;
+      line-height: 1;
+      content: counter(tvtt-step);
+    }
+
+    .tvtt-outcome {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 34px 22px;
+      border-top: 1px solid rgba(99, 224, 229, 0.34);
+      border-bottom: 1px solid rgba(99, 224, 229, 0.34);
+      text-align: center;
+    }
+
+    .tvtt-outcome p {
+      color: #fff;
+      font-size: clamp(2.1rem, 8vw, 3.2rem);
+      line-height: 1.05;
+    }
+
+    .tvtt-cta {
+      padding: 64px 18px 76px;
+      text-align: center;
+    }
+
+    .tvtt-cta-card {
+      width: min(100%, 780px);
+      margin: 0 auto;
+      padding: 38px 22px 36px;
+      border: 1px solid rgba(99, 224, 229, 0.42);
+      border-radius: 8px;
+      background: var(--tvtt-panel-strong);
+      box-shadow: 0 0 36px rgba(99, 224, 229, 0.09);
+    }
+
+    .tvtt-cta-title {
+      color: #fff;
+      font-size: clamp(3.2rem, 11vw, 5.4rem);
+      line-height: 0.92;
+    }
+
+    .tvtt-cta .tvtt-button {
+      margin-top: 24px;
+      min-width: min(100%, 230px);
+    }
+
+    .tvtt-quick-contact {
+      margin: 12px 0 0;
+      color: var(--tvtt-soft);
+      font-size: clamp(1.25rem, 4.6vw, 1.55rem);
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .tvtt-phone-link {
+      color: #dce6e8;
+      text-decoration-color: rgba(99, 224, 229, 0.45);
+      text-underline-offset: 4px;
+    }
+
+    .tvtt-site-footer {
+      padding: 28px 18px 34px;
+      border-top: 1px solid rgba(99, 224, 229, 0.22);
+      background: rgba(8, 8, 8, 0.94);
+      text-align: center;
+    }
+
+    .tvtt-footer-note,
+    .tvtt-site-footer-copy {
+      margin: 0;
+      color: var(--tvtt-soft);
+      font-size: 1.35rem;
+      line-height: 1.15;
+    }
+
+    .tvtt-site-footer-copy {
+      margin-top: 12px;
+    }
+
+    @media (max-width: 920px) {
+      .tvtt-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      body::before {
+        background-image: url("assets/black-brick-wall-960.jpg");
+      }
+
+      .tvtt-site-header-inner {
+        align-items: flex-start;
+      }
+
+      .tvtt-local-note {
+        max-width: 150px;
+      }
+
+      .tvtt-hero {
+        min-height: 82svh;
+        padding-top: 36px;
+      }
+
+      .tvtt-button {
+        width: 100%;
+      }
+
+      .tvtt-section {
+        padding: 46px 18px;
+      }
+
+      .tvtt-section-tight {
+        padding-top: 16px;
+      }
+
+      .tvtt-copy-block {
+        text-align: left;
+      }
+
+      .tvtt-section-title {
+        text-align: left;
+      }
+
+      .tvtt-service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tvtt-step {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 14px;
+      }
+
+      .tvtt-step::before {
+        width: 42px;
+        height: 42px;
+      }
+
+      .tvtt-cta-card {
+        padding-right: 18px;
+        padding-left: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="tvtt-start-page">
+    <header class="tvtt-site-header">
+      <div class="tvtt-site-header-inner">
+        <a class="tvtt-logo" href="https://treasurevalleytechtavern.com" aria-label="Treasure Valley Tech Tavern home">
+          <img src="assets/tvtt-phone-logo-264.png" alt="Treasure Valley Tech Tavern">
+        </a>
+        <p class="tvtt-local-note">Boise-based. Built for the local scene.</p>
+      </div>
+    </header>
+
+    <section class="tvtt-hero" aria-labelledby="hero-title">
+      <div class="tvtt-hero-inner">
+        <div class="tvtt-hero-copy">
+          <p class="tvtt-eyebrow">Start here</p>
+          <h1 id="hero-title">You make the noise.<br>We&apos;ll handle the internet.</h1>
+          <p class="tvtt-hero-subtitle">Helping bands and local spots get found online and show up like they do in real life.</p>
+          <a class="tvtt-button" href="#what-we-fix">Take a look at what we fix</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-section tvtt-section-tight" aria-labelledby="problem-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <p class="tvtt-section-kicker" id="problem-title">The usual problem</p>
+          <p>Most bands and local spots aren&apos;t lacking energy.</p>
+          <p>They&apos;re just hard to find when it matters.</p>
+          <p>Someone hears your name.</p>
+          <p>Someone&apos;s deciding where to go.</p>
+          <p>If they can&apos;t find you, they don&apos;t show up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-section" id="what-we-fix" aria-labelledby="friction-title">
+      <div class="tvtt-section-inner">
+        <h2 class="tvtt-section-title" id="friction-title">Stuff that gets in the way</h2>
+        <ul class="tvtt-friction-list">
+          <li class="tvtt-card"><p>Your schedule is buried in posts</p></li>
+          <li class="tvtt-card"><p>Your links don&apos;t all match</p></li>
+          <li class="tvtt-card"><p>Your website kind of works, but not really</p></li>
+          <li class="tvtt-card"><p>Your best moments disappear after 24 hours</p></li>
+          <li class="tvtt-card"><p>People try to find you and give up halfway through</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="tvtt-section" aria-labelledby="services-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <h2 class="tvtt-section-title" id="services-title">What TVTT does</h2>
+          <p>We don&apos;t try to change what you are.</p>
+          <p>We make it easier for people to find you, follow you, and actually see what&apos;s going on.</p>
+        </div>
+
+        <div class="tvtt-service-grid">
+          <article class="tvtt-card">
+            <span class="tvtt-card-mark" aria-hidden="true"></span>
+            <h3>Website cleanup and simple pages</h3>
+          </article>
+          <article class="tvtt-card">
+            <span class="tvtt-card-mark" aria-hidden="true"></span>
+            <h3>Social media setup and posting help</h3>
+          </article>
+          <article class="tvtt-card">
+            <span class="tvtt-card-mark" aria-hidden="true"></span>
+            <h3>Live show and venue content capture</h3>
+          </article>
+          <article class="tvtt-card">
+            <span class="tvtt-card-mark" aria-hidden="true"></span>
+            <h3>Easy-to-find schedules, links, and event info</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-section" aria-labelledby="plan-title">
+      <div class="tvtt-section-inner">
+        <h2 class="tvtt-section-title" id="plan-title">How it works</h2>
+        <ol class="tvtt-steps">
+          <li class="tvtt-step"><p>We look at what you already have</p></li>
+          <li class="tvtt-step"><p>We clean up what&apos;s confusing</p></li>
+          <li class="tvtt-step"><p>We make your shows, content, and schedule easy to find</p></li>
+          <li class="tvtt-step"><p>We help keep it consistent so people don&apos;t lose you</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="tvtt-section" aria-label="Outcome">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-outcome">
+          <p>So when people hear about you, they don&apos;t lose you.</p>
+          <p>They find you.</p>
+          <p>They follow you.</p>
+          <p>And they actually show up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-cta" aria-labelledby="cta-title">
+      <div class="tvtt-cta-card">
+        <h2 class="tvtt-cta-title" id="cta-title">Want us to take a look at your setup?</h2>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact">Start here</a>
+        <p class="tvtt-quick-contact">Prefer to just reach out quick? Call or text: <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
+      </div>
+    </section>
+
+    <footer class="tvtt-site-footer">
+      <p class="tvtt-footer-note">Boise-based. Built for the local scene.</p>
+      <p class="tvtt-site-footer-copy">Copyright &copy; 2026 Treasure Valley Tech Tavern. Boise, Idaho. All Rights Reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
