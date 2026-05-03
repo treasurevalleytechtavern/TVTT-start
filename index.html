@@ -19,7 +19,9 @@
       --tvtt-muted: #dce6e8;
       --tvtt-soft: #9aa7ab;
       --tvtt-cyan: #63e0e5;
-      --tvtt-red: #ff1637;
+      --tvtt-mint: #9ff7c1;
+      --tvtt-amber: #ffd166;
+      --tvtt-violet: #b98cff;
       --tvtt-border: rgba(99, 224, 229, 0.28);
     }
 
@@ -54,7 +56,8 @@
       background:
         linear-gradient(180deg, rgba(0, 0, 0, 0.3), #000 96%),
         radial-gradient(circle at 16% 12%, rgba(99, 224, 229, 0.14), transparent 28%),
-        radial-gradient(circle at 84% 34%, rgba(255, 22, 55, 0.1), transparent 26%),
+        radial-gradient(circle at 84% 34%, rgba(185, 140, 255, 0.12), transparent 26%),
+        radial-gradient(circle at 54% 76%, rgba(255, 209, 102, 0.08), transparent 28%),
         rgba(0, 0, 0, 0.58);
     }
 
@@ -101,10 +104,9 @@
     }
 
     .tvtt-hero {
-      min-height: 86svh;
       display: grid;
-      align-items: center;
-      padding: 42px 18px 54px;
+      align-items: start;
+      padding: clamp(58px, 9vw, 92px) 18px 46px;
     }
 
     .tvtt-hero-inner,
@@ -189,7 +191,7 @@
     }
 
     .tvtt-section-tight {
-      padding-top: 24px;
+      padding-top: 18px;
     }
 
     .tvtt-section-title {
@@ -277,8 +279,23 @@
       height: 4px;
       margin-bottom: 16px;
       border-radius: 999px;
-      background: var(--tvtt-red);
-      box-shadow: 0 0 14px rgba(255, 22, 55, 0.5);
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 14px rgba(99, 224, 229, 0.42);
+    }
+
+    .tvtt-service-grid .tvtt-card:nth-child(2) .tvtt-card-mark {
+      background: var(--tvtt-mint);
+      box-shadow: 0 0 14px rgba(159, 247, 193, 0.38);
+    }
+
+    .tvtt-service-grid .tvtt-card:nth-child(3) .tvtt-card-mark {
+      background: var(--tvtt-amber);
+      box-shadow: 0 0 14px rgba(255, 209, 102, 0.36);
+    }
+
+    .tvtt-service-grid .tvtt-card:nth-child(4) .tvtt-card-mark {
+      background: var(--tvtt-violet);
+      box-shadow: 0 0 14px rgba(185, 140, 255, 0.4);
     }
 
     .tvtt-steps {
@@ -352,6 +369,10 @@
     }
 
     .tvtt-quick-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px 6px;
       margin: 12px 0 0;
       color: var(--tvtt-soft);
       font-size: clamp(1.25rem, 4.6vw, 1.55rem);
@@ -359,10 +380,15 @@
       text-align: center;
     }
 
+    .tvtt-quick-contact-label {
+      min-width: 0;
+    }
+
     .tvtt-phone-link {
       color: #dce6e8;
       text-decoration-color: rgba(99, 224, 229, 0.45);
       text-underline-offset: 4px;
+      white-space: nowrap;
     }
 
     .tvtt-site-footer {
@@ -404,8 +430,8 @@
       }
 
       .tvtt-hero {
-        min-height: 82svh;
-        padding-top: 36px;
+        padding-top: 42px;
+        padding-bottom: 24px;
       }
 
       .tvtt-button {
@@ -417,7 +443,7 @@
       }
 
       .tvtt-section-tight {
-        padding-top: 16px;
+        padding-top: 18px;
       }
 
       .tvtt-copy-block {
@@ -500,7 +526,7 @@
     <section class="tvtt-section" aria-labelledby="services-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="services-title">What TVTT does</h2>
+          <h2 class="tvtt-section-title" id="services-title">What we do</h2>
           <p>We don&apos;t try to change what you are.</p>
           <p>We make it easier for people to find you, follow you, and actually see what&apos;s going on.</p>
         </div>
@@ -553,7 +579,7 @@
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">Want us to take a look at your setup?</h2>
         <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact">Start here</a>
-        <p class="tvtt-quick-contact">Prefer to just reach out quick? Call or text: <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
+        <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Prefer to just reach out quick? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
       </div>
     </section>
 
