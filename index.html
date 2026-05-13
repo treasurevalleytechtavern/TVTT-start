@@ -415,6 +415,72 @@
       content: counter(tvtt-step);
     }
 
+    .tvtt-receipts {
+      padding-top: 34px;
+    }
+
+    .tvtt-receipts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1060px;
+      margin: 28px auto 0;
+    }
+
+    .tvtt-receipt-card {
+      display: grid;
+      grid-template-rows: auto minmax(230px, auto);
+      gap: 16px;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .tvtt-receipt-visual {
+      position: relative;
+      display: flex;
+      min-height: 235px;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.26);
+      border-radius: 8px;
+      background: #030303;
+      box-shadow: 0 0 28px rgba(99, 224, 229, 0.08);
+    }
+
+    .tvtt-receipt-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 360px;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .tvtt-receipt-copy {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 2px 2px 0;
+    }
+
+    .tvtt-receipt-copy h3 {
+      margin-bottom: 10px;
+    }
+
+    .tvtt-receipt-copy p {
+      font-size: clamp(1.5rem, 3vw, 1.9rem);
+      line-height: 1.14;
+    }
+
+    .tvtt-receipt-copy p + p {
+      margin-top: 12px;
+    }
+
+    .tvtt-receipt-stat {
+      color: #fff;
+      font-weight: 800;
+    }
+
     .tvtt-outcome {
       max-width: 760px;
       margin: 0 auto;
@@ -562,6 +628,14 @@
 
       .tvtt-path-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tvtt-receipts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tvtt-receipt-visual {
+        min-height: 220px;
       }
 
       .tvtt-step {
@@ -857,6 +931,39 @@
       </div>
     </section>
 
+    <section class="tvtt-section tvtt-receipts" aria-labelledby="receipts-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <h2 class="tvtt-section-title" id="receipts-title">A couple receipts</h2>
+          <p>Not theory. Real local setups we&apos;ve helped make easier to find.</p>
+        </div>
+
+        <div class="tvtt-receipts-grid">
+          <article class="tvtt-card tvtt-receipt-card">
+            <div class="tvtt-receipt-copy">
+              <h3>Overland Bar</h3>
+              <p>Website support, searchable karaoke songbook, and ongoing short-form content that helps the bar look online like it feels in the room.</p>
+              <p class="tvtt-receipt-stat">0 to 1,100+ TikTok followers and 200K+ views in 60 days.</p>
+            </div>
+            <div class="tvtt-receipt-visual">
+              <img src="assets/overland-karaoke-songbook.jpg" alt="Overland Bar karaoke songbook page">
+            </div>
+          </article>
+
+          <article class="tvtt-card tvtt-receipt-card">
+            <div class="tvtt-receipt-copy">
+              <h3>Oathbound</h3>
+              <p>Tour pages, ticket links, and show details kept current so fans can find the right info before the doors open.</p>
+              <p class="tvtt-receipt-stat">A reliable online home base while the band is moving.</p>
+            </div>
+            <div class="tvtt-receipt-visual">
+              <img src="assets/oathbound-tour-page.jpg" alt="Oathbound tour page with upcoming shows">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="tvtt-section" aria-label="Outcome">
       <div class="tvtt-section-inner">
         <div class="tvtt-outcome">
@@ -870,7 +977,7 @@
 
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
-        <h2 class="tvtt-cta-title" id="cta-title">Want us to take a look at your setup?</h2>
+        <h2 class="tvtt-cta-title" id="cta-title">WANT ME TO TAKE A LOOK AT YOUR SETUP?</h2>
         <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Take a look at my setup</a>
         <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Prefer to just reach out quick? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
       </div>
