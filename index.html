@@ -75,13 +75,19 @@
     .tvtt-start-page {
       min-height: 100vh;
       overflow-x: hidden;
+      padding-top: var(--tvtt-header-height, 92px);
     }
 
     .tvtt-site-header {
-      position: sticky;
+      position: fixed;
       top: var(--tvtt-notice-height);
+      right: 0;
+      left: 0;
       z-index: 50;
-      padding: 18px 18px 0;
+      padding: 8px 18px 0;
+      background: rgba(0, 0, 0, 0.72);
+      border-bottom: 1px solid rgba(99, 224, 229, 0.18);
+      backdrop-filter: blur(10px);
     }
 
     .tvtt-site-header-inner {
@@ -308,7 +314,7 @@
     }
 
     .tvtt-friction-list .tvtt-card {
-      padding: 18px 20px;
+      padding: 10px 20px;
     }
 
     .tvtt-card p {
@@ -909,7 +915,11 @@
       }
       const root = document.documentElement;
       function syncNoticeHeight() {
+        const header = document.querySelector(".site-header, .tvtt-site-header");
         root.style.setProperty("--tvtt-notice-height", banner.getBoundingClientRect().height + "px");
+        if (header) {
+          root.style.setProperty("--tvtt-header-height", header.getBoundingClientRect().height + "px");
+        }
       }
       syncNoticeHeight();
       window.addEventListener("resize", syncNoticeHeight);
