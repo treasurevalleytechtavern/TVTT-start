@@ -4,7 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start Here | Treasure Valley Tech Tavern</title>
-  <meta name="description" content="Digital support for Treasure Valley bands, bars, venues, and local spots. Websites, socials, live content, and easy-to-find schedules so people can find you and show up.">
+  <meta name="description" content="Need a cleaner online setup? Start here for practical website, social, and content help for Boise bands, bars, venues, and local scenes.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://start.treasurevalleytechtavern.com/">
+  <meta property="og:title" content="Start Here | Treasure Valley Tech Tavern">
+  <meta property="og:description" content="Need a cleaner online setup? Start here for practical website, social, and content help for Boise bands, bars, venues, and local scenes.">
+  <meta property="og:url" content="https://start.treasurevalleytechtavern.com/">
+  <meta property="og:image" content="https://treasurevalleytechtavern.com/favicon-tvtt.png">
+  <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon-tvtt.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +110,31 @@
       text-align: right;
     }
 
+    .tvtt-start-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px 18px;
+      margin-left: auto;
+    }
+
+    .tvtt-start-nav a,
+    .tvtt-footer-links a {
+      color: var(--tvtt-text);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .tvtt-start-nav a:hover,
+    .tvtt-start-nav a:focus-visible,
+    .tvtt-footer-links a:hover,
+    .tvtt-footer-links a:focus-visible {
+      color: var(--tvtt-cyan);
+    }
+
     .tvtt-hero {
       display: grid;
       align-items: start;
@@ -136,12 +168,21 @@
       font-family: "Jersey 15", Arial, sans-serif;
       font-weight: 400;
       letter-spacing: 0;
+    }
+
+    .tvtt-section-title,
+    .tvtt-cta-title {
       text-transform: uppercase;
+    }
+
+    .tvtt-section-kicker {
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-weight: 400;
     }
 
     .tvtt-hero h1 {
       max-width: 820px;
-      font-size: clamp(4rem, 18vw, 8.2rem);
+      font-size: clamp(3.6rem, 14vw, 7.2rem);
       line-height: 0.86;
       text-shadow: 0 0 28px rgba(99, 224, 229, 0.22);
     }
@@ -180,6 +221,16 @@
       background: rgba(0, 0, 0, 0.36);
     }
 
+    .tvtt-section-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .tvtt-section-cta .tvtt-button {
+      margin-top: 0;
+    }
+
     .tvtt-button:focus-visible,
     .tvtt-phone-link:focus-visible {
       outline: 2px solid var(--tvtt-cyan);
@@ -196,7 +247,7 @@
 
     .tvtt-section-title {
       color: #fff;
-      font-size: clamp(3rem, 10vw, 5rem);
+      font-size: clamp(2.8rem, 8vw, 4.4rem);
       line-height: 0.95;
       text-align: center;
     }
@@ -217,13 +268,21 @@
       line-height: 1.18;
     }
 
+    .tvtt-copy-block p.tvtt-section-kicker {
+      margin-bottom: 18px;
+      color: var(--tvtt-cyan);
+      font-size: clamp(2.8rem, 8vw, 4.4rem);
+      line-height: 0.95;
+    }
+
     .tvtt-copy-block p + p {
       margin-top: 14px;
     }
 
     .tvtt-friction-list,
     .tvtt-service-grid,
-    .tvtt-steps {
+    .tvtt-steps,
+    .tvtt-path-grid {
       display: grid;
       gap: 14px;
       margin: 30px auto 0;
@@ -261,6 +320,26 @@
 
     .tvtt-service-grid .tvtt-card {
       padding: 24px 20px 26px;
+    }
+
+    .tvtt-path-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 1080px;
+    }
+
+    .tvtt-path-grid .tvtt-card {
+      display: flex;
+      min-height: 178px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px 20px;
+      text-decoration: none;
+    }
+
+    .tvtt-path-grid .tvtt-card:hover,
+    .tvtt-path-grid .tvtt-card:focus-visible {
+      border-color: rgba(99, 224, 229, 0.62);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.12);
     }
 
     .tvtt-card h3 {
@@ -359,7 +438,7 @@
 
     .tvtt-cta-title {
       color: #fff;
-      font-size: clamp(3.2rem, 11vw, 5.4rem);
+      font-size: clamp(2.8rem, 8vw, 4.4rem);
       line-height: 0.92;
     }
 
@@ -398,6 +477,14 @@
       text-align: center;
     }
 
+    .tvtt-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 22px;
+      margin: 0 auto 14px;
+    }
+
     .tvtt-footer-note,
     .tvtt-site-footer-copy {
       margin: 0;
@@ -423,10 +510,16 @@
 
       .tvtt-site-header-inner {
         align-items: flex-start;
+        flex-wrap: wrap;
       }
 
       .tvtt-local-note {
         max-width: 150px;
+      }
+
+      .tvtt-start-nav {
+        width: 100%;
+        justify-content: flex-start;
       }
 
       .tvtt-hero {
@@ -458,6 +551,10 @@
         grid-template-columns: 1fr;
       }
 
+      .tvtt-path-grid {
+        grid-template-columns: 1fr;
+      }
+
       .tvtt-step {
         grid-template-columns: 42px minmax(0, 1fr);
         gap: 14px;
@@ -473,15 +570,164 @@
         padding-left: 18px;
       }
     }
-  </style>
+  
+    :root {
+      --tvtt-notice-height: 76px;
+    }
+
+    body {
+      padding-top: var(--tvtt-notice-height);
+    }
+
+    .tvtt-notice-banner {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 60;
+      color: #020809;
+      background:
+        linear-gradient(90deg, rgba(99, 224, 229, 0.96), rgba(159, 247, 255, 0.98) 48%, rgba(99, 224, 229, 0.96));
+      border-bottom: 1px solid rgba(0, 0, 0, 0.34);
+      box-shadow: 0 0 30px rgba(99, 224, 229, 0.72), inset 0 -1px 0 rgba(255, 255, 255, 0.34);
+      font-family: "Cute Font", Arial, sans-serif;
+    }
+
+    .tvtt-notice-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      width: min(100%, 1180px);
+      min-height: 56px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+
+    .tvtt-notice-copy {
+      margin: 0;
+      font-size: clamp(1.55rem, 3.2vw, 2.1rem);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-weight: 400;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+
+    .tvtt-notice-copy span {
+      display: block;
+    }
+
+    .tvtt-notice-small {
+      margin-top: 2px;
+      font-size: 0.72em;
+    }
+    .tvtt-notice-button {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 18px;
+      border: 2px solid #020809;
+      border-radius: 8px;
+      color: #020809;
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.34);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .tvtt-notice-button:hover,
+    .tvtt-notice-button:focus-visible {
+      background: #020809;
+      color: var(--tvtt-cyan, var(--cyan, #63e0e5));
+    }
+
+    .tvtt-site-header {
+      top: var(--tvtt-notice-height) !important;
+    }
+
+    .tvtt-venue-help-media {
+      top: calc(var(--tvtt-notice-height) + var(--tvtt-header-height)) !important;
+      height: calc(100vh - var(--tvtt-notice-height) - var(--tvtt-header-height)) !important;
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --tvtt-notice-height: 112px;
+      }
+
+      .tvtt-notice-inner {
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 16px;
+      }
+
+      .tvtt-notice-copy {
+        font-size: 1.55rem;
+      }
+
+      .tvtt-notice-button {
+        width: min(100%, 260px);
+      }
+    }
+
+    /* Secondary line beneath the main navigation. */
+    .bar,
+    .tvtt-site-header-bar,
+    .tvtt-site-header-inner {
+      position: relative;
+    }
+
+    .tvtt-local-note {
+      position: absolute;
+      top: calc(50% + 14px);
+      right: 0;
+      margin: 0;
+      color: var(--tvtt-soft, var(--soft, #9aa7ab));
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: 1.1rem;
+      line-height: 1;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 780px) {
+      .tvtt-local-note {
+        position: static;
+        flex: 1 0 100%;
+        margin: -2px 0 0;
+        text-align: left;
+        white-space: normal;
+      }
+    }
+</style>
 </head>
 <body>
+  <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
+    <div class="tvtt-notice-inner">
+      <p class="tvtt-notice-copy"><span>If your online setup makes you hard to find, people can&rsquo;t show up.</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
+      <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact/">Yes, take a look &rarr;</a>
+    </div>
+  </aside>
   <main class="tvtt-start-page">
     <header class="tvtt-site-header">
       <div class="tvtt-site-header-inner">
         <a class="tvtt-logo" href="https://treasurevalleytechtavern.com" aria-label="Treasure Valley Tech Tavern home">
           <img src="assets/tvtt-phone-logo-264.png" alt="Treasure Valley Tech Tavern">
         </a>
+        <nav class="tvtt-start-nav" aria-label="Main navigation">
+        <a href="https://start.treasurevalleytechtavern.com/">Start</a>
+        <a href="https://help.treasurevalleytechtavern.com/for-bands/">For Bands</a>
+        <a href="https://help.treasurevalleytechtavern.com/for-places/">For Bars &amp; Venues</a>
+        <a href="https://treasurevalleytechtavern.com/about/">About</a>
+      </nav>
         <p class="tvtt-local-note">Boise-based. Built for the local scene.</p>
       </div>
     </header>
@@ -489,8 +735,7 @@
     <section class="tvtt-hero" aria-labelledby="hero-title">
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
-          <p class="tvtt-eyebrow">Start here</p>
-          <h1 id="hero-title">You make the noise.<br>We&apos;ll handle the internet.</h1>
+          <h1 id="hero-title">YOU MAKE THE NOISE.<br>WE&apos;LL HANDLE THE INTERNET.</h1>
           <p class="tvtt-hero-subtitle">Helping bands and local spots get found online and show up like they do in real life.</p>
           <a class="tvtt-button" href="#what-we-fix">Take a look at what we fix</a>
         </div>
@@ -500,12 +745,15 @@
     <section class="tvtt-section tvtt-section-tight" aria-labelledby="problem-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <p class="tvtt-section-kicker" id="problem-title">The usual problem</p>
+          <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
           <p>Most bands and local spots aren&apos;t lacking energy.</p>
           <p>They&apos;re just hard to find when it matters.</p>
           <p>Someone hears your name.</p>
           <p>Someone&apos;s deciding where to go.</p>
           <p>If they can&apos;t find you, they don&apos;t show up.</p>
+        </div>
+        <div class="tvtt-section-cta">
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Want me to take a look?</a>
         </div>
       </div>
     </section>
@@ -520,6 +768,9 @@
           <li class="tvtt-card"><p>Your best moments disappear after 24 hours</p></li>
           <li class="tvtt-card"><p>People try to find you and give up halfway through</p></li>
         </ul>
+        <div class="tvtt-section-cta">
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Want me to take a look?</a>
+        </div>
       </div>
     </section>
 
@@ -549,6 +800,36 @@
             <h3>Easy-to-find schedules, links, and event info</h3>
           </article>
         </div>
+        <div class="tvtt-section-cta">
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Want me to take a look?</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-section" aria-labelledby="path-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <h2 class="tvtt-section-title" id="path-title">Where should we start?</h2>
+          <p>Pick the closest fit. It does not have to be perfect.</p>
+        </div>
+        <div class="tvtt-path-grid">
+          <a class="tvtt-card" href="https://help.treasurevalleytechtavern.com/for-bands/">
+            <h3>I&apos;m in a band</h3>
+            <p>Websites, show pages, socials, release links, and clips.</p>
+          </a>
+          <a class="tvtt-card" href="https://help.treasurevalleytechtavern.com/for-places/">
+            <h3>I run a bar or venue</h3>
+            <p>Schedules, event updates, social content, and cleanup.</p>
+          </a>
+          <a class="tvtt-card" href="https://treasurevalleytechtavern.com/contact/">
+            <h3>Look at my setup</h3>
+            <p>A practical first pass on what is confusing online.</p>
+          </a>
+          <a class="tvtt-card" href="https://treasurevalleytechtavern.com/contact/">
+            <h3>I just want to contact you</h3>
+            <p>Send a note and we will figure out the next step.</p>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -561,6 +842,9 @@
           <li class="tvtt-step"><p>We make your shows, content, and schedule easy to find</p></li>
           <li class="tvtt-step"><p>We help keep it consistent so people don&apos;t lose you</p></li>
         </ol>
+        <div class="tvtt-section-cta">
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Want me to take a look?</a>
+        </div>
       </div>
     </section>
 
@@ -578,15 +862,58 @@
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">Want us to take a look at your setup?</h2>
-        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact">Start here</a>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact/">Take a look at my setup</a>
         <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Prefer to just reach out quick? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
       </div>
     </section>
 
     <footer class="tvtt-site-footer">
+      <nav class="tvtt-footer-links" aria-label="Footer">
+        <a href="https://treasurevalleytechtavern.com">Home</a>
+        <a href="https://clips.treasurevalleytechtavern.com">Clips</a>
+        <a href="https://places.treasurevalleytechtavern.com">Places</a>
+        <a href="https://treasurevalleytechtavern.com/about/">About Us</a>
+      </nav>
       <p class="tvtt-footer-note">Boise-based. Built for the local scene.</p>
       <p class="tvtt-site-footer-copy">Copyright &copy; 2026 Treasure Valley Tech Tavern. Boise, Idaho. All Rights Reserved.</p>
     </footer>
   </main>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://treasurevalleytechtavern.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Start",
+          "item": "https://start.treasurevalleytechtavern.com/"
+        }
+      ]
+    }
+  </script>
+  <script>
+    (function () {
+      const banner = document.querySelector(".tvtt-notice-banner");
+      if (!banner) {
+        return;
+      }
+      const root = document.documentElement;
+      function syncNoticeHeight() {
+        root.style.setProperty("--tvtt-notice-height", banner.getBoundingClientRect().height + "px");
+      }
+      syncNoticeHeight();
+      window.addEventListener("resize", syncNoticeHeight);
+      if (typeof ResizeObserver !== "undefined") {
+        new ResizeObserver(syncNoticeHeight).observe(banner);
+      }
+    }());
+  </script>
 </body>
 </html>
