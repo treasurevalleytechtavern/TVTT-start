@@ -152,7 +152,8 @@
 
     .tvtt-hero-inner,
     .tvtt-section-inner {
-      width: min(100%, 1080px);
+      width: 100%;
+      max-width: 1080px;
       margin: 0 auto;
     }
 
@@ -790,6 +791,254 @@
         white-space: normal;
       }
     }
+
+    @media (max-width: 780px) {
+      body {
+        padding-top: 0;
+        overflow-x: hidden;
+      }
+
+      .tvtt-notice-banner {
+        display: none;
+      }
+
+      .tvtt-start-page {
+        padding-top: 0;
+      }
+
+      .tvtt-site-header {
+        position: sticky;
+        top: 0 !important;
+        padding: 10px 16px 12px;
+        background: rgba(0, 0, 0, 0.88);
+      }
+
+      .tvtt-site-header-inner {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: 10px 14px;
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+      }
+
+      .tvtt-logo img {
+        width: 92px;
+      }
+
+      .tvtt-start-nav {
+        display: none;
+      }
+
+      .tvtt-local-note {
+        min-width: 0;
+        max-width: 220px;
+        margin: 0;
+        color: #d1dcdf;
+        font-size: 1rem;
+        line-height: 1.05;
+        text-align: right;
+        overflow-wrap: anywhere;
+      }
+
+      .tvtt-local-note span {
+        display: block;
+      }
+
+      .tvtt-hero {
+        padding: 34px 16px 30px;
+      }
+
+      .tvtt-hero-inner,
+      .tvtt-section-inner,
+      .tvtt-hero-copy,
+      .tvtt-copy-block {
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+        min-width: 0;
+      }
+
+      .tvtt-hero h1 {
+        max-width: calc(100vw - 32px);
+        font-size: clamp(2.75rem, 13vw, 3.75rem);
+        line-height: 0.92;
+        overflow-wrap: break-word;
+      }
+
+      .tvtt-hero-subtitle {
+        max-width: calc(100vw - 56px);
+        margin-top: 18px;
+        font-size: 1.35rem;
+        line-height: 1.18;
+        overflow-wrap: break-word;
+      }
+
+      .tvtt-button {
+        width: min(100%, calc(100vw - 32px));
+        max-width: calc(100vw - 32px);
+        min-height: 46px;
+        margin-top: 22px;
+        padding: 8px 16px;
+        font-size: 1.55rem;
+        line-height: 1.05;
+      }
+
+      .tvtt-section {
+        padding: 34px 16px;
+      }
+
+      .tvtt-section-tight {
+        padding-top: 16px;
+      }
+
+      .tvtt-section-title,
+      .tvtt-copy-block p.tvtt-section-kicker,
+      .tvtt-cta-title {
+        max-width: calc(100vw - 32px);
+        font-size: 2.25rem;
+        line-height: 0.98;
+        text-align: left;
+        overflow-wrap: break-word;
+      }
+
+      .tvtt-copy-block {
+        text-align: left;
+      }
+
+      .tvtt-copy-block p,
+      .tvtt-card p,
+      .tvtt-step p,
+      .tvtt-outcome p {
+        max-width: calc(100vw - 56px);
+        font-size: 1.32rem;
+        line-height: 1.22;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+
+      .tvtt-copy-block p + p {
+        margin-top: 10px;
+      }
+
+      .tvtt-friction-list,
+      .tvtt-service-grid,
+      .tvtt-steps,
+      .tvtt-path-grid,
+      .tvtt-receipts-grid {
+        display: block;
+        width: calc(100vw - 32px);
+        max-width: calc(100vw - 32px);
+        margin-top: 22px;
+      }
+
+      .tvtt-friction-list > *,
+      .tvtt-service-grid > *,
+      .tvtt-steps > *,
+      .tvtt-path-grid > *,
+      .tvtt-receipts-grid > * {
+        margin-top: 12px;
+      }
+
+      .tvtt-friction-list > *:first-child,
+      .tvtt-service-grid > *:first-child,
+      .tvtt-steps > *:first-child,
+      .tvtt-path-grid > *:first-child,
+      .tvtt-receipts-grid > *:first-child {
+        margin-top: 0;
+      }
+
+      .tvtt-friction-list .tvtt-card,
+      .tvtt-service-grid .tvtt-card,
+      .tvtt-path-grid .tvtt-card,
+      .tvtt-receipt-card {
+        width: 100%;
+        max-width: calc(100vw - 32px);
+        padding: 16px;
+      }
+
+      .tvtt-card h3 {
+        max-width: calc(100vw - 72px);
+        font-size: 1.82rem;
+        line-height: 1;
+        overflow-wrap: anywhere;
+        word-break: normal;
+      }
+
+      .tvtt-card p,
+      .tvtt-receipt-copy p,
+      .tvtt-step p {
+        max-width: calc(100vw - 72px);
+      }
+
+      .tvtt-path-grid .tvtt-card {
+        min-height: 0;
+        gap: 12px;
+      }
+
+      .tvtt-step {
+        display: grid;
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        padding: 14px;
+      }
+
+      .tvtt-step::before {
+        width: 36px;
+        height: 36px;
+        font-size: 1.55rem;
+      }
+
+      .tvtt-receipts {
+        padding-top: 24px;
+      }
+
+      .tvtt-receipt-card {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 14px;
+      }
+
+      .tvtt-receipt-visual {
+        min-height: 0;
+      }
+
+      .tvtt-receipt-visual img {
+        max-height: 260px;
+      }
+
+      .tvtt-receipt-copy p {
+        font-size: 1.3rem;
+      }
+
+      .tvtt-outcome {
+        padding: 24px 0;
+      }
+
+      .tvtt-outcome p {
+        font-size: 1.95rem;
+      }
+
+      .tvtt-cta {
+        padding: 38px 16px 50px;
+      }
+
+      .tvtt-cta-card {
+        padding: 24px 16px;
+      }
+
+      .tvtt-quick-contact {
+        gap: 2px 5px;
+        font-size: 1.22rem;
+      }
+
+      .tvtt-site-footer {
+        padding: 24px 16px 30px;
+      }
+
+      .tvtt-footer-links a {
+        font-size: 1.35rem;
+      }
+    }
 </style>
 </head>
 <body>
@@ -811,14 +1060,14 @@
         <a href="https://help.treasurevalleytechtavern.com/for-places/">For Bars &amp; Venues</a>
         <a href="https://treasurevalleytechtavern.com/about/">About</a>
       </nav>
-        <p class="tvtt-local-note">Boise-based. Built for the local scene.</p>
+        <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
       </div>
     </header>
 
     <section class="tvtt-hero" aria-labelledby="hero-title">
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
-          <h1 id="hero-title">YOU MAKE THE NOISE.<br>WE&apos;LL HANDLE THE INTERNET.</h1>
+          <h1 id="hero-title">YOU MAKE THE<br>NOISE.<br>WE&apos;LL HANDLE<br>THE INTERNET.</h1>
           <p class="tvtt-hero-subtitle">Helping bands and local spots get found online and show up like they do in real life.</p>
           <a class="tvtt-button" href="#what-we-fix">Take a look at what we fix</a>
         </div>
