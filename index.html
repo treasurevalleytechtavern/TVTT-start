@@ -197,6 +197,14 @@
       text-shadow: 0 0 28px rgba(99, 224, 229, 0.22);
     }
 
+    .tvtt-hero h1 > span {
+      display: block;
+    }
+
+    .tvtt-mobile-line {
+      display: inline;
+    }
+
     .tvtt-hero-subtitle {
       max-width: 680px;
       margin: 24px 0 0;
@@ -454,6 +462,26 @@
       max-height: 360px;
       object-fit: contain;
       object-position: center bottom;
+    }
+
+    @media (min-width: 921px) {
+      .tvtt-hero-copy {
+        max-width: 880px;
+      }
+
+      .tvtt-hero h1 {
+        max-width: 880px;
+        font-size: clamp(5.2rem, 8vw, 7.2rem);
+      }
+
+      .tvtt-service-grid,
+      .tvtt-path-grid {
+        gap: 18px;
+      }
+
+      .tvtt-receipt-card {
+        min-height: 100%;
+      }
     }
 
     .tvtt-receipt-copy {
@@ -783,16 +811,6 @@
     }
 
     @media (max-width: 780px) {
-      .tvtt-local-note {
-        position: static;
-        flex: 1 0 100%;
-        margin: -2px 0 0;
-        text-align: left;
-        white-space: normal;
-      }
-    }
-
-    @media (max-width: 780px) {
       body {
         padding-top: 0;
         overflow-x: hidden;
@@ -815,8 +833,9 @@
 
       .tvtt-site-header-inner {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: auto max-content;
         align-items: center;
+        justify-content: space-between;
         gap: 10px 14px;
         width: calc(100vw - 32px);
         max-width: calc(100vw - 32px);
@@ -831,6 +850,7 @@
       }
 
       .tvtt-local-note {
+        justify-self: end;
         min-width: 0;
         max-width: 220px;
         margin: 0;
@@ -838,7 +858,7 @@
         font-size: 1rem;
         line-height: 1.05;
         text-align: right;
-        overflow-wrap: anywhere;
+        white-space: normal;
       }
 
       .tvtt-local-note span {
@@ -863,6 +883,14 @@
         font-size: clamp(2.75rem, 13vw, 3.75rem);
         line-height: 0.92;
         overflow-wrap: break-word;
+      }
+
+      .tvtt-hero h1 > span {
+        display: inline;
+      }
+
+      .tvtt-hero h1 .tvtt-mobile-line {
+        display: block;
       }
 
       .tvtt-hero-subtitle {
@@ -1067,7 +1095,7 @@
     <section class="tvtt-hero" aria-labelledby="hero-title">
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
-          <h1 id="hero-title">YOU MAKE THE<br>NOISE.<br>WE&apos;LL HANDLE<br>THE INTERNET.</h1>
+          <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE&apos;LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
           <p class="tvtt-hero-subtitle">Helping bands and local spots get found online and show up like they do in real life.</p>
           <a class="tvtt-button" href="#what-we-fix">Take a look at what we fix</a>
         </div>
