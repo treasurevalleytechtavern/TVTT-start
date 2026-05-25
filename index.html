@@ -104,6 +104,7 @@
 
     .tvtt-logo {
       display: inline-flex;
+      grid-row: 1 / 3;
       align-items: center;
       min-width: 0;
     }
@@ -114,8 +115,16 @@
       height: auto;
     }
 
+    .tvtt-header-actions {
+      display: grid;
+      justify-items: end;
+      gap: 0;
+      margin-left: auto;
+    }
+
     .tvtt-local-note {
-      margin: 0;
+      width: auto;
+      margin: -2px 0 0;
       color: var(--tvtt-soft);
       font-size: clamp(0.82rem, 1.8vw, 1rem);
       font-weight: 700;
@@ -127,8 +136,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 12px 18px;
-      margin-left: auto;
+      gap: 6px 18px;
+      margin: 0;
     }
 
     .tvtt-start-nav a,
@@ -952,13 +961,20 @@
         width: 92px;
       }
 
+      .tvtt-logo {
+        grid-row: auto;
+      }
+
       .tvtt-start-nav {
         display: none;
       }
 
       .tvtt-local-note {
         position: static;
+        grid-column: auto;
+        grid-row: auto;
         justify-self: end;
+        width: auto;
         min-width: 0;
         max-width: 160px;
         margin: 0;
@@ -1240,11 +1256,13 @@
         <a class="tvtt-logo" href="https://treasurevalleytechtavern.com" aria-label="Treasure Valley Tech Tavern home">
           <img src="assets/tvtt-phone-logo-264.png" alt="Treasure Valley Tech Tavern">
         </a>
-        <nav class="tvtt-start-nav" aria-label="Main navigation">
-        <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
-        <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
-      </nav>
-        <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
+        <div class="tvtt-header-actions">
+          <nav class="tvtt-start-nav" aria-label="Main navigation">
+            <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
+            <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
+          </nav>
+          <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
+        </div>
       </div>
     </header>
 
@@ -1361,10 +1379,6 @@
           <a class="tvtt-card" href="https://start.treasurevalleytechtavern.com/for-places/">
             <h3>I run a bar or venue</h3>
             <p>Schedules, event updates, social content, and cleanup.</p>
-          </a>
-          <a class="tvtt-card" href="https://treasurevalleytechtavern.com/contact/">
-            <h3>Look at my setup</h3>
-            <p>A practical first pass on what is confusing online.</p>
           </a>
           <a class="tvtt-card" href="https://treasurevalleytechtavern.com/contact/">
             <h3>I just want to contact you</h3>

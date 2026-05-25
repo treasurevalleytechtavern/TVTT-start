@@ -114,8 +114,16 @@
       height: auto;
     }
 
+    .tvtt-header-actions {
+      display: grid;
+      justify-items: end;
+      gap: 0;
+      margin-left: auto;
+    }
+
     .tvtt-local-note {
-      margin: 0;
+      width: auto;
+      margin: -2px 0 0;
       color: var(--tvtt-soft);
       font-size: clamp(0.82rem, 1.8vw, 1rem);
       font-weight: 700;
@@ -127,8 +135,8 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 12px 18px;
-      margin-left: auto;
+      gap: 6px 18px;
+      margin: 0;
     }
 
     .tvtt-start-nav a,
@@ -1017,10 +1025,15 @@
 
     .tvtt-tour-visual {
       display: block;
+      width: 100%;
+      padding: 0;
       overflow: hidden;
       border: 1px solid rgba(99, 224, 229, 0.26);
       border-radius: 8px;
+      color: inherit;
       background: #030303;
+      cursor: pointer;
+      font: inherit;
       aspect-ratio: 1 / 1;
     }
 
@@ -1077,6 +1090,78 @@
       margin: 30px auto 0;
       padding: 24px;
       text-align: center;
+    }
+
+    .tvtt-image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    .tvtt-image-modal.is-open {
+      display: flex;
+    }
+
+    .tvtt-image-modal-frame {
+      position: relative;
+      width: min(100%, 1080px);
+      max-height: min(86vh, 900px);
+      padding: 12px;
+      border: 1px solid rgba(99, 224, 229, 0.42);
+      border-radius: 8px;
+      background: rgba(7, 7, 7, 0.96);
+      box-shadow: 0 0 40px rgba(99, 224, 229, 0.16);
+    }
+
+    .tvtt-image-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .tvtt-image-modal-close:hover,
+    .tvtt-image-modal-close:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.72);
+    }
+
+    .tvtt-image-modal-title {
+      margin: 0 52px 10px 4px;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-image-modal-img {
+      display: block;
+      width: 100%;
+      max-height: calc(min(86vh, 900px) - 88px);
+      border: 1px solid rgba(99, 224, 229, 0.22);
+      border-radius: 6px;
+      background: #000;
+      object-fit: contain;
     }
 
     .tvtt-tour-control {
@@ -1480,10 +1565,11 @@
 
       .tvtt-site-header-inner {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         align-items: center;
-        justify-content: space-between;
-        gap: 10px 14px;
+        justify-content: center;
+        gap: 8px;
         width: min(100%, 330px) !important;
         max-width: 330px !important;
         margin: 0 auto !important;
@@ -1493,20 +1579,62 @@
         width: 92px;
       }
 
+      .tvtt-logo {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+      }
+
+      .tvtt-header-actions {
+        display: grid;
+        grid-column: 1;
+        grid-row: 2;
+        justify-items: center;
+        gap: 6px;
+        margin: 0;
+        width: 100%;
+      }
+
       .tvtt-start-nav {
-        display: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 8px 10px;
+        margin: 0;
+      }
+
+      .tvtt-start-nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 6px 10px;
+        border: 1px solid rgba(99, 224, 229, 0.72);
+        border-radius: 8px;
+        color: #001214;
+        background: var(--tvtt-cyan);
+        font-size: 1.1rem;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .tvtt-start-nav a:hover,
+      .tvtt-start-nav a:focus-visible {
+        color: var(--tvtt-cyan);
+        background: rgba(0, 0, 0, 0.42);
       }
 
       .tvtt-local-note {
         position: static;
-        justify-self: end;
+        justify-self: center;
+        width: auto;
         min-width: 0;
-        max-width: 160px;
-        margin: 0;
+        max-width: 260px;
+        margin: -2px 0 0;
         color: #d1dcdf;
         font-size: 0.72rem;
         line-height: 1.3;
-        text-align: right;
+        text-align: center;
         white-space: normal;
       }
 
@@ -1855,11 +1983,13 @@
         <a class="tvtt-logo" href="https://treasurevalleytechtavern.com" aria-label="Treasure Valley Tech Tavern home">
           <img src="../assets/tvtt-phone-logo-264.png" alt="Treasure Valley Tech Tavern">
         </a>
-        <nav class="tvtt-start-nav" aria-label="Main navigation">
-        <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
-        <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
-      </nav>
-        <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
+        <div class="tvtt-header-actions">
+          <nav class="tvtt-start-nav" aria-label="Main navigation">
+            <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
+            <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
+          </nav>
+          <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
+        </div>
       </div>
     </header>
 
@@ -2264,9 +2394,9 @@
           <button class="tvtt-tour-control tvtt-tour-prev" type="button" aria-label="Previous tour page example">‹</button>
           <div class="tvtt-tour-grid" aria-label="Tour page examples">
             <article class="tvtt-card tvtt-tour-card">
-              <a class="tvtt-tour-visual" href="assets/Widget Tour Info.png" target="_blank" rel="noopener" aria-label="Open full-size Home page show widget screenshot">
+              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Widget Tour Info.png" data-image-modal-title="Home Page Show Widget" data-image-modal-alt="Home page show widget screenshot" aria-label="Open full-size Home page show widget screenshot">
                 <img loading="lazy" src="assets/Widget Tour Info.png" alt="Home page show widget screenshot">
-              </a>
+              </button>
               <div class="tvtt-tour-copy">
                 <div>
                   <h3>Home page show widget</h3>
@@ -2280,9 +2410,9 @@
               </div>
             </article>
             <article class="tvtt-card tvtt-tour-card">
-              <a class="tvtt-tour-visual" href="assets/Standard Tour Page.png" target="_blank" rel="noopener" aria-label="Open full-size Standard tour page screenshot">
+              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Standard Tour Page.png" data-image-modal-title="Standard Tour Page" data-image-modal-alt="Standard tour page screenshot" aria-label="Open full-size Standard tour page screenshot">
                 <img loading="lazy" src="assets/Standard Tour Page.png" alt="Standard tour page screenshot">
-              </a>
+              </button>
               <div class="tvtt-tour-copy">
                 <div>
                   <h3>Standard tour page</h3>
@@ -2311,9 +2441,9 @@
               </div>
             </article>
             <article class="tvtt-card tvtt-tour-card">
-              <a class="tvtt-tour-visual" href="assets/Custom Tour Page.png" target="_blank" rel="noopener" aria-label="Open full-size Custom MySpace-style Oathbound tour page screenshot">
+              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Custom Tour Page.png" data-image-modal-title="Custom Tour Page" data-image-modal-alt="Custom MySpace-style Oathbound tour page screenshot" aria-label="Open full-size Custom MySpace-style Oathbound tour page screenshot">
                 <img loading="lazy" src="assets/Custom Tour Page.png" alt="Custom MySpace-style Oathbound tour page screenshot">
-              </a>
+              </button>
               <div class="tvtt-tour-copy">
                 <div>
                   <h3>Custom tour page</h3>
@@ -2389,6 +2519,13 @@
       <p class="tvtt-site-footer-copy">Copyright &copy; 2026 Treasure Valley Tech Tavern. Boise, Idaho. All Rights Reserved.</p>
     </footer>
   </main>
+  <div class="tvtt-image-modal" data-image-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
+    <div class="tvtt-image-modal-frame">
+      <button class="tvtt-image-modal-close" type="button" data-image-modal-close aria-label="Close image preview">&times;</button>
+      <h2 class="tvtt-image-modal-title" id="image-modal-title" data-image-modal-title></h2>
+      <img class="tvtt-image-modal-img" src="" alt="" data-image-modal-img>
+    </div>
+  </div>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2428,6 +2565,56 @@
   </script>
   <script>
     (function () {
+      const modal = document.querySelector("[data-image-modal]");
+      const modalImage = modal ? modal.querySelector("[data-image-modal-img]") : null;
+      const modalTitle = modal ? modal.querySelector("[data-image-modal-title]") : null;
+      const modalClose = modal ? modal.querySelector("[data-image-modal-close]") : null;
+      let lastModalTrigger = null;
+
+      function closeImageModal() {
+        if (!modal || !modalImage || !modalTitle) {
+          return;
+        }
+
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        modalImage.removeAttribute("src");
+        modalImage.alt = "";
+        modalTitle.textContent = "";
+
+        if (lastModalTrigger) {
+          lastModalTrigger.focus();
+          lastModalTrigger = null;
+        }
+      }
+
+      document.addEventListener("click", (event) => {
+        const imageTrigger = event.target.closest("[data-image-modal-src]");
+
+        if (imageTrigger && modal && modalImage && modalTitle) {
+          lastModalTrigger = imageTrigger;
+          modalImage.src = imageTrigger.dataset.imageModalSrc;
+          modalImage.alt = imageTrigger.dataset.imageModalAlt || "";
+          modalTitle.textContent = imageTrigger.dataset.imageModalTitle || "Tour page preview";
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+          if (modalClose) {
+            modalClose.focus();
+          }
+          return;
+        }
+
+        if (event.target.closest("[data-image-modal-close]") || event.target === modal) {
+          closeImageModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
+          closeImageModal();
+        }
+      });
+
       document.querySelectorAll(".tvtt-video-frame img").forEach((image) => {
         image.addEventListener("error", () => {
           const fallback = image.src.replace("/maxresdefault.jpg", "/sddefault.jpg");
