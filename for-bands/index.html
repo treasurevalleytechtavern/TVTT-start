@@ -756,6 +756,388 @@
       font-weight: 800;
     }
 
+    .tvtt-clips-block,
+    .tvtt-tour-pages {
+      margin-top: 44px;
+    }
+
+    .tvtt-subsection-title {
+      margin: 0;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.45rem, 6vw, 3.5rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .tvtt-clips-shell {
+      position: relative;
+      margin-top: 24px;
+    }
+
+    .tvtt-video-gallery {
+      display: flex;
+      gap: 16px;
+      margin: 0;
+      padding: 0 58px 8px 0;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      list-style: none;
+    }
+
+    .tvtt-video-gallery::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .tvtt-video-gallery::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+    }
+
+    .tvtt-video-gallery::-webkit-scrollbar-thumb {
+      background: var(--tvtt-cyan);
+      border-radius: 999px;
+    }
+
+    .tvtt-video-item {
+      flex: 0 0 min(68vw, 245px);
+      scroll-snap-align: start;
+    }
+
+    .tvtt-video-card {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 12px;
+      appearance: none;
+      cursor: pointer;
+      color: inherit;
+      background: #0f0f0f;
+      font: inherit;
+      text-align: left;
+      text-decoration: none;
+      box-shadow: none;
+    }
+
+    .tvtt-video-card:hover,
+    .tvtt-video-card:focus-visible {
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.82);
+    }
+
+    .tvtt-video-card.is-playing {
+      cursor: default;
+    }
+
+    .tvtt-video-frame {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      background: #0f0f0f;
+      aspect-ratio: 9 / 16;
+    }
+
+    .tvtt-video-frame img,
+    .tvtt-video-frame iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+    }
+
+    .tvtt-video-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      display: grid;
+      width: 60px;
+      height: 42px;
+      place-items: center;
+      border: 0;
+      border-radius: 13px;
+      color: #fff;
+      background: #ff0033;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -50%);
+    }
+
+    .tvtt-video-play::before {
+      width: 0;
+      height: 0;
+      margin-left: 5px;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid currentColor;
+      content: "";
+    }
+
+    .tvtt-video-title {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      margin: 0;
+      padding: 54px 12px 12px;
+      color: #fff;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0));
+      font-size: clamp(1rem, 1.8vw, 1.14rem);
+      font-weight: 800;
+      line-height: 1.35;
+      text-shadow: 0 1px 7px rgba(0, 0, 0, 0.92);
+      white-space: nowrap;
+    }
+
+    .tvtt-video-title span {
+      display: inline-block;
+      min-width: 100%;
+      white-space: nowrap;
+      transform: translateX(0);
+    }
+
+    .tvtt-video-card:hover .tvtt-video-title span,
+    .tvtt-video-card:focus-visible .tvtt-video-title span {
+      animation: tvtt-title-marquee 9s linear infinite;
+    }
+
+    @keyframes tvtt-title-marquee {
+      0%,
+      14% {
+        transform: translateX(0);
+      }
+
+      86%,
+      100% {
+        transform: translateX(-68%);
+      }
+    }
+
+    .tvtt-youtube-mark {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 2;
+      padding: 4px 7px;
+      border-radius: 4px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.74);
+      font-size: 0.72rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .tvtt-video-fallback {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      z-index: 3;
+      padding: 6px 8px;
+      border-radius: 4px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      font-size: 0.78rem;
+      font-weight: 800;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .tvtt-video-fallback:hover,
+    .tvtt-video-fallback:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.86);
+    }
+
+    .tvtt-gallery-arrow {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      z-index: 2;
+      display: grid;
+      width: 48px;
+      height: 64px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.26);
+      cursor: pointer;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .tvtt-gallery-arrow:hover,
+    .tvtt-gallery-arrow:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.82);
+    }
+
+    .tvtt-tour-shell {
+      position: relative;
+      margin-top: 30px;
+      padding: 0 62px;
+    }
+
+    .tvtt-tour-grid {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .tvtt-tour-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tvtt-tour-card {
+      display: grid;
+      flex: 0 0 100%;
+      grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+      gap: 20px;
+      align-items: start;
+      padding: 20px;
+      scroll-snap-align: start;
+    }
+
+    .tvtt-tour-visual {
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.26);
+      border-radius: 8px;
+      background: #030303;
+      aspect-ratio: 1 / 1;
+    }
+
+    .tvtt-tour-copy {
+      display: grid;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .tvtt-tour-visual:hover,
+    .tvtt-tour-visual:focus-visible {
+      border-color: rgba(99, 224, 229, 0.68);
+      box-shadow: 0 0 24px rgba(99, 224, 229, 0.14);
+    }
+
+    .tvtt-tour-visual img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .tvtt-tour-card h3 {
+      font-size: clamp(1.9rem, 3.3vw, 2.55rem);
+    }
+
+    .tvtt-tour-card h4 {
+      margin: 0 0 8px;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-tour-card ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+      color: var(--tvtt-muted);
+    }
+
+    .tvtt-tour-card li {
+      color: var(--tvtt-muted);
+      font-size: clamp(0.98rem, 1.6vw, 1.08rem);
+      line-height: 1.45;
+    }
+
+    .tvtt-tour-cta {
+      max-width: 780px;
+      margin: 30px auto 0;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .tvtt-tour-control {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: grid;
+      width: 48px;
+      height: 72px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.26);
+      cursor: pointer;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    .tvtt-tour-control:hover,
+    .tvtt-tour-control:focus-visible,
+    .tvtt-tour-pause:hover,
+    .tvtt-tour-pause:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.82);
+    }
+
+    .tvtt-tour-prev {
+      left: 0;
+    }
+
+    .tvtt-tour-next {
+      right: 0;
+    }
+
+    .tvtt-tour-pause {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      margin: 16px auto 0;
+      padding: 0 18px;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      cursor: pointer;
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .tvtt-tour-controls-row {
+      display: flex;
+      justify-content: center;
+    }
+
     .tvtt-outcome {
       max-width: 760px;
       margin: 0 auto;
@@ -923,6 +1305,10 @@
       }
 
       .tvtt-receipts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tvtt-tour-card {
         grid-template-columns: 1fr;
       }
 
@@ -1314,7 +1700,8 @@
       }
 
       .tvtt-package-card h4,
-      .tvtt-optional-card h4 {
+      .tvtt-optional-card h4,
+      .tvtt-tour-card h4 {
         font-size: 1.35rem;
       }
 
@@ -1327,9 +1714,43 @@
       .tvtt-package-card p,
       .tvtt-optional-card p,
       .tvtt-package-card li,
-      .tvtt-optional-card li {
+      .tvtt-optional-card li,
+      .tvtt-tour-card p,
+      .tvtt-tour-card li {
         font-size: 0.98rem;
         line-height: 1.5;
+      }
+
+      .tvtt-tour-shell {
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        margin: 22px auto 0;
+        padding: 0;
+      }
+
+      .tvtt-tour-grid {
+        gap: 12px;
+      }
+
+      .tvtt-tour-card {
+        flex-basis: min(100%, 330px);
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        padding: 16px;
+      }
+
+      .tvtt-tour-control {
+        width: 34px;
+        height: 54px;
+        font-size: 2.2rem;
+      }
+
+      .tvtt-tour-prev {
+        left: -10px;
+      }
+
+      .tvtt-tour-next {
+        right: -10px;
       }
 
       .tvtt-count-grid .tvtt-card p {
@@ -1435,10 +1856,8 @@
           <img src="../assets/tvtt-phone-logo-264.png" alt="Treasure Valley Tech Tavern">
         </a>
         <nav class="tvtt-start-nav" aria-label="Main navigation">
-        <a href="https://start.treasurevalleytechtavern.com/">Start</a>
         <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
-        <a href="https://help.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
-        <a href="https://treasurevalleytechtavern.com/about/">About</a>
+        <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
       </nav>
         <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
       </div>
@@ -1749,8 +2168,8 @@
     <section class="tvtt-section tvtt-receipts" id="receipts" aria-labelledby="receipts-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="receipts-title">A Receipt from the Road</h2>
-          <p>Real band support, not theory. Here's one setup we helped make easier to find, update, and follow.</p>
+          <h2 class="tvtt-section-title" id="receipts-title">A couple receipts</h2>
+          <p>Real band support, not theory. Here are a few setups we helped make easier to find, update, and follow.</p>
         </div>
 
         <div class="tvtt-receipts-grid">
@@ -1766,6 +2185,167 @@
               <img src="../assets/oathbound-tour-page.jpg" alt="Oathbound tour page with upcoming shows">
             </div>
           </article>
+        </div>
+
+        <section class="tvtt-clips-block" id="clips" aria-labelledby="clips-title">
+          <h3 class="tvtt-subsection-title" id="clips-title">Camera Op</h3>
+          <div class="tvtt-clips-shell">
+            <ul class="tvtt-video-gallery" aria-label="Camera Op video clips">
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=CrTCr2QE2u4" target="_blank" rel="noopener" data-youtube-id="CrTCr2QE2u4" aria-label="Play Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/CrTCr2QE2u4/maxresdefault.jpg" alt="Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=KbMBevNAxec" target="_blank" rel="noopener" data-youtube-id="KbMBevNAxec" aria-label="Play One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/KbMBevNAxec/maxresdefault.jpg" alt="One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=5qeMLgqMaLQ" target="_blank" rel="noopener" data-youtube-id="5qeMLgqMaLQ" aria-label="Play “Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/5qeMLgqMaLQ/maxresdefault.jpg" alt="“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=wEAjrPx8U-k" target="_blank" rel="noopener" data-youtube-id="wEAjrPx8U-k" aria-label="Play “Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/wEAjrPx8U-k/maxresdefault.jpg" alt="“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=9bJIL57bduU" target="_blank" rel="noopener" data-youtube-id="9bJIL57bduU" aria-label="Play Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/9bJIL57bduU/maxresdefault.jpg" alt="Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=H7QmzBza1NQ" target="_blank" rel="noopener" data-youtube-id="H7QmzBza1NQ" aria-label="Play 10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/H7QmzBza1NQ/maxresdefault.jpg" alt="10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=X-3owifbOP4" target="_blank" rel="noopener" data-youtube-id="X-3owifbOP4" aria-label="Play “Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/X-3owifbOP4/maxresdefault.jpg" alt="“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=3syF1p0jd80" target="_blank" rel="noopener" data-youtube-id="3syF1p0jd80" aria-label="Play “You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/3syF1p0jd80/maxresdefault.jpg" alt="“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=4SYP8FiMGps" target="_blank" rel="noopener" data-youtube-id="4SYP8FiMGps" aria-label="Play AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/4SYP8FiMGps/maxresdefault.jpg" alt="AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023</span></span>
+                </a>
+              </li>
+            </ul>
+            <button class="tvtt-gallery-arrow" type="button" aria-label="Scroll camera op videos">›</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="tvtt-section tvtt-tour-pages" id="tour-pages" aria-labelledby="tour-pages-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages</h2>
+          <p>Make your shows easier to find, easier to share, and easier to keep current.</p>
+          <p>Tour pages give your band one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history. They can be simple and practical, or built around the vibe of a specific tour, release, or era of the band.</p>
+          <p>The point is not to make every band look the same. The point is to make sure people can find the next show and feel like they are still inside your band's world.</p>
+        </div>
+        <div class="tvtt-tour-shell">
+          <button class="tvtt-tour-control tvtt-tour-prev" type="button" aria-label="Previous tour page example">‹</button>
+          <div class="tvtt-tour-grid" aria-label="Tour page examples">
+            <article class="tvtt-card tvtt-tour-card">
+              <a class="tvtt-tour-visual" href="assets/Widget Tour Info.png" target="_blank" rel="noopener" aria-label="Open full-size Home page show widget screenshot">
+                <img loading="lazy" src="assets/Widget Tour Info.png" alt="Home page show widget screenshot">
+              </a>
+              <div class="tvtt-tour-copy">
+                <div>
+                  <h3>Home page show widget</h3>
+                  <p>A small show widget can live on your main band website or landing page and show the next few upcoming dates without taking over the whole page.</p>
+                  <p>It can show the next 3 shows, including date, city, venue, age restriction, and ticket or info links. A "View all shows" button takes fans to the full tour page.</p>
+                </div>
+                <div>
+                  <h4>Best for</h4>
+                  <p>Bands that already have a website but need their upcoming shows to be easier to find right away.</p>
+                </div>
+              </div>
+            </article>
+            <article class="tvtt-card tvtt-tour-card">
+              <a class="tvtt-tour-visual" href="assets/Standard Tour Page.png" target="_blank" rel="noopener" aria-label="Open full-size Standard tour page screenshot">
+                <img loading="lazy" src="assets/Standard Tour Page.png" alt="Standard tour page screenshot">
+              </a>
+              <div class="tvtt-tour-copy">
+                <div>
+                  <h3>Standard tour page</h3>
+                  <p>A full tour page gives your band one reliable place for show dates, ticket links, venue details, lineups, and past show history.</p>
+                  <p>The design can still match your band's vibe. It might use live video footage in the background, band photos, release artwork, or colors and textures that fit the current era.</p>
+                </div>
+                <div>
+                  <h4>Tabs</h4>
+                  <p><strong>Active Tour:</strong> Shows only upcoming shows.</p>
+                  <p><strong>Past Shows:</strong> Shows past dates automatically after they have passed. Past shows should be organized by year so the page becomes a living archive instead of a dead list.</p>
+                </div>
+                <div>
+                  <h4>Best for</h4>
+                  <p>Bands with multiple shows, regional runs, tour dates, or recurring bookings that need one clean place for fans, venues, and bookers to check.</p>
+                </div>
+                <div>
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Upcoming shows only on the active tab</li>
+                    <li>Past shows archive automatically</li>
+                    <li>Past shows grouped by year</li>
+                    <li>Ticket and info links included</li>
+                    <li>Built around the band's visuals and tone</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+            <article class="tvtt-card tvtt-tour-card">
+              <a class="tvtt-tour-visual" href="assets/Custom Tour Page.png" target="_blank" rel="noopener" aria-label="Open full-size Custom MySpace-style Oathbound tour page screenshot">
+                <img loading="lazy" src="assets/Custom Tour Page.png" alt="Custom MySpace-style Oathbound tour page screenshot">
+              </a>
+              <div class="tvtt-tour-copy">
+                <div>
+                  <h3>Custom tour page</h3>
+                  <p>Some tours deserve their own little world.</p>
+                  <p>A custom tour page can be built around a specific theme, joke, release, or visual era. For example, Oathbound's MySpace-themed tour page was designed to match the concept of the MySpace tour while still doing the practical work: showing upcoming shows, linking tickets, and moving past dates into the archive automatically.</p>
+                </div>
+                <div>
+                  <h4>Best for</h4>
+                  <p>Bands doing a themed run, release tour, special event series, anniversary show, or anything that deserves more personality than a standard show list.</p>
+                </div>
+                <div>
+                  <h4>Features</h4>
+                  <ul>
+                    <li>Custom visual concept</li>
+                    <li>Tour-specific design</li>
+                    <li>Upcoming and past show logic</li>
+                    <li>Ticket links and venue info</li>
+                    <li>Built to feel like the tour, not a generic template</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+          <button class="tvtt-tour-control tvtt-tour-next" type="button" aria-label="Next tour page example">›</button>
+          <div class="tvtt-tour-controls-row">
+            <button class="tvtt-tour-pause" type="button" aria-pressed="false">Pause carousel</button>
+          </div>
+        </div>
+        <div class="tvtt-card tvtt-tour-cta">
+          <h3>Need a tour page that fits your band?</h3>
+          <p>Whether you need a simple show list, a homepage widget, or a themed tour page with its own weird little world, we can help build something that keeps your dates clear and your band's personality intact.</p>
+          <a class="tvtt-button" href="#start-here">Look at my band's setup</a>
         </div>
       </div>
     </section>
@@ -1844,6 +2424,114 @@
           card.setAttribute("aria-expanded", String(isOpen));
         });
       });
+    }());
+  </script>
+  <script>
+    (function () {
+      document.querySelectorAll(".tvtt-video-frame img").forEach((image) => {
+        image.addEventListener("error", () => {
+          const fallback = image.src.replace("/maxresdefault.jpg", "/sddefault.jpg");
+          if (image.src !== fallback) {
+            image.src = fallback;
+          }
+        }, { once: true });
+      });
+
+      const videoButtons = document.querySelectorAll(".tvtt-video-card[data-youtube-id]");
+      videoButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+            return;
+          }
+          event.preventDefault();
+          const videoId = button.getAttribute("data-youtube-id");
+          const title = button.querySelector(".tvtt-video-title")?.textContent.trim() || "YouTube video";
+          const fallbackUrl = button.getAttribute("href") || "https://www.youtube.com/watch?v=" + videoId;
+          if (!videoId) {
+            return;
+          }
+          const embed = document.createElement("div");
+          embed.className = "tvtt-card tvtt-video-card is-playing";
+          embed.innerHTML = '<span class="tvtt-video-frame"><iframe src="https://www.youtube.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0" title="' + title.replace(/"/g, "&quot;") + '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></span><a class="tvtt-video-fallback" href="' + fallbackUrl + '" target="_blank" rel="noopener">Watch on YouTube</a><p class="tvtt-video-title">' + title + "</p>";
+          button.replaceWith(embed);
+        });
+      });
+
+      function setupGallery(gallerySelector, arrowSelector) {
+        const gallery = document.querySelector(gallerySelector);
+        const arrow = document.querySelector(arrowSelector);
+        if (!gallery || !arrow) {
+          return;
+        }
+        arrow.addEventListener("click", () => {
+          const amount = Math.max(280, Math.round(gallery.clientWidth * 0.78));
+          const nearEnd = gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth - 12;
+          gallery.scrollBy({ left: nearEnd ? -gallery.scrollWidth : amount, behavior: "smooth" });
+        });
+      }
+
+      setupGallery(".tvtt-video-gallery", ".tvtt-clips-shell .tvtt-gallery-arrow");
+
+      const tourGallery = document.querySelector(".tvtt-tour-grid");
+      const tourSlides = tourGallery ? Array.from(tourGallery.querySelectorAll(".tvtt-tour-card")) : [];
+      const tourPrev = document.querySelector(".tvtt-tour-prev");
+      const tourNext = document.querySelector(".tvtt-tour-next");
+      const tourPause = document.querySelector(".tvtt-tour-pause");
+      let tourIndex = 0;
+      let tourPaused = false;
+      let tourTimer = null;
+
+      function syncTourHeight() {
+        if (!tourGallery || tourSlides.length === 0) {
+          return;
+        }
+        tourGallery.style.height = "auto";
+        const tallest = tourSlides.reduce((height, slide) => Math.max(height, slide.offsetHeight), 0);
+        if (tallest) {
+          tourGallery.style.height = tallest + "px";
+        }
+      }
+
+      function goToTourSlide(index, userInitiated) {
+        if (!tourGallery || tourSlides.length === 0) {
+          return;
+        }
+        tourIndex = (index + tourSlides.length) % tourSlides.length;
+        tourGallery.scrollTo({ left: tourSlides[tourIndex].offsetLeft, behavior: userInitiated ? "smooth" : "smooth" });
+      }
+
+      function startTourTimer() {
+        window.clearInterval(tourTimer);
+        if (tourPaused || tourSlides.length < 2) {
+          return;
+        }
+        tourTimer = window.setInterval(() => {
+          goToTourSlide(tourIndex + 1, false);
+        }, 15000);
+      }
+
+      if (tourGallery && tourSlides.length) {
+        syncTourHeight();
+        window.addEventListener("resize", syncTourHeight);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(syncTourHeight);
+        }
+        tourPrev?.addEventListener("click", () => {
+          goToTourSlide(tourIndex - 1, true);
+          startTourTimer();
+        });
+        tourNext?.addEventListener("click", () => {
+          goToTourSlide(tourIndex + 1, true);
+          startTourTimer();
+        });
+        tourPause?.addEventListener("click", () => {
+          tourPaused = !tourPaused;
+          tourPause.setAttribute("aria-pressed", String(tourPaused));
+          tourPause.textContent = tourPaused ? "Resume carousel" : "Pause carousel";
+          startTourTimer();
+        });
+        startTourTimer();
+      }
     }());
   </script>
   <script>
