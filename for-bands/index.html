@@ -361,6 +361,109 @@
       margin-top: 14px;
     }
 
+.tvtt-scene-strip-section {
+  padding-top: 16px;
+  padding-bottom: 44px;
+}
+
+.tvtt-scene-strip-copy {
+  margin-bottom: 24px;
+}
+
+.tvtt-scene-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: min(100%, 1080px);
+  margin: 28px auto 0;
+}
+
+.tvtt-scene-tile {
+  position: relative;
+  min-width: 0;
+  height: 250px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(99, 224, 229, 0.28);
+  border-radius: 10px;
+  background: #030303;
+  box-shadow: 0 0 28px rgba(99, 224, 229, 0.08);
+}
+
+.tvtt-scene-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 260ms ease, filter 260ms ease;
+}
+
+.tvtt-scene-tile-room img {
+  object-position: center 52%;
+}
+
+.tvtt-scene-tile:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.08);
+}
+
+.tvtt-scene-tile figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 48px 14px 14px;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0));
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 920px) {
+  .tvtt-scene-strip {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .tvtt-scene-tile {
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 780px) {
+  .tvtt-scene-strip-section {
+    padding: 28px 32px 34px 16px;
+  }
+
+  .tvtt-scene-strip {
+    display: flex;
+    width: min(100%, 330px) !important;
+    max-width: 330px !important;
+    gap: 12px;
+    margin: 22px auto 0;
+    padding: 0 0 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .tvtt-scene-tile {
+    flex: 0 0 260px;
+    width: 260px;
+    height: 320px;
+    scroll-snap-align: start;
+  }
+
+  .tvtt-scene-tile figcaption {
+    font-size: 0.9rem;
+  }
+}
+
     .tvtt-friction-list,
     .tvtt-service-grid,
     .tvtt-steps,
@@ -700,7 +803,7 @@
 
     .tvtt-receipt-card {
       display: grid;
-      grid-template-rows: auto minmax(230px, auto);
+      grid-template-rows: auto auto;
       gap: 16px;
       padding: 20px;
       overflow: hidden;
@@ -2006,6 +2109,28 @@
       </div>
     </section>
 
+
+    <section class="tvtt-section tvtt-scene-strip-section" aria-label="Live music content examples">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-scene-strip" aria-label="Live music content examples">
+          <figure class="tvtt-scene-tile tvtt-scene-tile-tall">
+            <img loading="lazy" src="assets/gallery/testament-crowd-room-view-2026-03-15.webp" alt="Wide crowd view at a live Testament show with green stage lights">
+            <figcaption>Testament - Treefort Music Hall</figcaption>
+          </figure>
+
+          <figure class="tvtt-scene-tile">
+            <img loading="lazy" src="assets/gallery/black-tooth-grin-front-row-lights-2025-03-22.webp" alt="Crowd-level view of Black Tooth Grin performing under bright stage lights">
+            <figcaption>Black Tooth Grin - The Shredder</figcaption>
+          </figure>
+
+          <figure class="tvtt-scene-tile">
+            <img loading="lazy" src="assets/gallery/bbno$-crowd-phones-lights-2025-03-15.webp" alt="Concert crowd holding phones up under pink and green stage lights">
+            <figcaption>bbno$ - Revolution Concert House</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    
     <section class="tvtt-section tvtt-section-tight" aria-labelledby="problem-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
@@ -2092,6 +2217,72 @@
         </div>
       </div>
     </section>
+
+    <section class="tvtt-section tvtt-clips-block" id="clips" aria-labelledby="clips-title">
+      <div class="tvtt-section-inner">
+        <h3 class="tvtt-subsection-title" id="clips-title">Camera Op</h3>
+        <div class="tvtt-clips-shell">
+            <ul class="tvtt-video-gallery" aria-label="Camera Op video clips">
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=CrTCr2QE2u4" target="_blank" rel="noopener" data-youtube-id="CrTCr2QE2u4" aria-label="Play Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/CrTCr2QE2u4/maxresdefault.jpg" alt="Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=KbMBevNAxec" target="_blank" rel="noopener" data-youtube-id="KbMBevNAxec" aria-label="Play One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/KbMBevNAxec/maxresdefault.jpg" alt="One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=5qeMLgqMaLQ" target="_blank" rel="noopener" data-youtube-id="5qeMLgqMaLQ" aria-label="Play “Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/5qeMLgqMaLQ/maxresdefault.jpg" alt="“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=wEAjrPx8U-k" target="_blank" rel="noopener" data-youtube-id="wEAjrPx8U-k" aria-label="Play “Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/wEAjrPx8U-k/maxresdefault.jpg" alt="“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=9bJIL57bduU" target="_blank" rel="noopener" data-youtube-id="9bJIL57bduU" aria-label="Play Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/9bJIL57bduU/maxresdefault.jpg" alt="Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=H7QmzBza1NQ" target="_blank" rel="noopener" data-youtube-id="H7QmzBza1NQ" aria-label="Play 10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/H7QmzBza1NQ/maxresdefault.jpg" alt="10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=X-3owifbOP4" target="_blank" rel="noopener" data-youtube-id="X-3owifbOP4" aria-label="Play “Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/X-3owifbOP4/maxresdefault.jpg" alt="“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=3syF1p0jd80" target="_blank" rel="noopener" data-youtube-id="3syF1p0jd80" aria-label="Play “You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/3syF1p0jd80/maxresdefault.jpg" alt="“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023</span></span>
+                </a>
+              </li>
+              <li class="tvtt-video-item">
+                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=4SYP8FiMGps" target="_blank" rel="noopener" data-youtube-id="4SYP8FiMGps" aria-label="Play AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023">
+                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/4SYP8FiMGps/maxresdefault.jpg" alt="AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
+                  <span class="tvtt-video-title"><span>AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023</span></span>
+                </a>
+              </li>
+            </ul>
+            <button class="tvtt-gallery-arrow" type="button" aria-label="Scroll camera op videos" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Scroll camera op videos">›</button>
+        </div>
+      </div>
+    </section>
+
 
     <section class="tvtt-section" id="start-here" aria-labelledby="path-title">
       <div class="tvtt-section-inner">
@@ -2207,49 +2398,52 @@
       </div>
     </section>
 
-    <section class="tvtt-section" aria-labelledby="optional-title">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="optional-title">Add-Ons</h2>
-        </div>
-        <div class="tvtt-optional-grid">
-          <article class="tvtt-card tvtt-optional-card">
-            <h3>Optional: Digital setup and distribution</h3>
-            <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
-            <p>This is the stuff most bands don't think about until something breaks.</p>
-            <h4>We can help with</h4>
-            <ul>
-              <li>Bandsintown setup and show syncing</li>
-              <li>Music release support through TuneCore, DistroKid, and more</li>
-              <li>Musixmatch lyric setup</li>
-              <li>Linktree or Carrd organization</li>
-              <li>Platform alignment across Spotify, YouTube, and more</li>
-            </ul>
-            <p>Available with any package. Often bundled into Road Crew when needed.</p>
-          </article>
-          <article class="tvtt-card tvtt-optional-card">
-            <h3>Optional: Print + QR coordination</h3>
-            <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
-            <p>For bands on a monthly maintenance plan, we can help with simple physical promo pieces that connect the room back to the right online place.</p>
-            <p>This might mean QR flyers, merch table cards, show handouts, release-night pieces, or printed signs that point people to your music, socials, mailing list, merch, tip jar, or next show.</p>
-            <p>We can help design the piece, check the QR codes, make sure the links go where they should, and coordinate printing when a bigger or cleaner print run makes more sense.</p>
-            <h4>We can help with</h4>
-            <ul>
-              <li>QR flyers for shows, releases, merch, tip jars, or mailing lists</li>
-              <li>Merch table cards that point people to music, socials, videos, and upcoming dates</li>
-              <li>Small handouts for shows, tours, release nights, or special events</li>
-              <li>Simple printed signs for merch tables, venues, or promo moments</li>
-              <li>Basic design cleanup so the print piece matches the online page it sends people to</li>
-              <li>QR code checks so fans land where they are supposed to land</li>
-              <li>Print-ready files for larger posters, banners, stickers, or bulk orders</li>
-              <li>Coordinating with a print shop when the project needs more than small-run support</li>
-            </ul>
-            <p>Available for bands on a monthly maintenance plan. Often bundled into Backline or Road Crew when it helps the whole setup make more sense.</p>
-            <p>Small in-house pieces may be available when the size and quantity make sense. For larger posters, banners, stickers, merch, or bulk printing, we can help prep the files and coordinate with a proper print shop.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+<section class="tvtt-section" aria-labelledby="optional-title">
+  <div class="tvtt-section-inner">
+    <div class="tvtt-copy-block">
+      <h2 class="tvtt-section-title" id="optional-title">Add-Ons</h2>
+    </div>
+
+    <div class="tvtt-optional-grid">
+      <article class="tvtt-card tvtt-optional-card">
+        <h3>Optional: Digital setup and distribution</h3>
+        <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
+        <p>This is the stuff most bands don't think about until something breaks.</p>
+
+        <h4>We can help with</h4>
+        <ul>
+          <li>Bandsintown setup and show syncing</li>
+          <li>Music release support through TuneCore, DistroKid, and more</li>
+          <li>Musixmatch lyric setup</li>
+          <li>Linktree or Carrd organization</li>
+          <li>Platform alignment across Spotify, YouTube, and more</li>
+        </ul>
+
+        <p>Available with any package. Often bundled into Road Crew when needed.</p>
+      </article>
+
+      <article class="tvtt-card tvtt-optional-card">
+        <h3>Optional: Print + QR coordination</h3>
+        <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
+        <p>This is the offline stuff that helps fans get to the right online place.</p>
+
+        <h4>We can help with</h4>
+        <ul>
+          <li>QR flyers for shows, releases, merch, tip jars, or mailing lists</li>
+          <li>Merch table cards that point people to music, socials, videos, and upcoming dates</li>
+          <li>Small handouts for shows, tours, release nights, or special events</li>
+          <li>Simple printed signs for merch tables, venues, or promo moments</li>
+          <li>Basic design cleanup so the print piece matches the page it sends people to</li>
+          <li>QR code checks so fans land where they are supposed to land</li>
+          <li>Print-ready files for posters, banners, stickers, or bulk orders</li>
+          <li>Coordination with a print shop when the project needs more than small-run support</li>
+        </ul>
+
+
+      </article>
+    </div>
+  </div>
+</section>
 
     <section class="tvtt-section" aria-labelledby="count-title">
       <div class="tvtt-section-inner">
@@ -2291,7 +2485,7 @@
     <section class="tvtt-section tvtt-receipts" id="receipts" aria-labelledby="receipts-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="receipts-title">A couple receipts</h2>
+          <h2 class="tvtt-section-title" id="receipts-title">Receipts from the road</h2>
           <p>Real band support, not theory. Here are a few setups we helped make easier to find, update, and follow.</p>
         </div>
 
@@ -2304,85 +2498,9 @@
               <p>The page includes upcoming show details, ticket links, venue info, and built-in logic so shows automatically move into past shows once the date has passed.</p>
               <p class="tvtt-receipt-stat">A reliable online home base while the band is moving.</p>
             </div>
-            <div class="tvtt-receipt-visual">
-              <img src="../assets/oathbound-tour-page.jpg" alt="Oathbound tour page with upcoming shows">
-            </div>
           </article>
         </div>
 
-        <section class="tvtt-clips-block" id="clips" aria-labelledby="clips-title">
-          <h3 class="tvtt-subsection-title" id="clips-title">Camera Op</h3>
-          <div class="tvtt-clips-shell">
-            <ul class="tvtt-video-gallery" aria-label="Camera Op video clips">
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=CrTCr2QE2u4" target="_blank" rel="noopener" data-youtube-id="CrTCr2QE2u4" aria-label="Play Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/CrTCr2QE2u4/maxresdefault.jpg" alt="Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>Testament – Crowd Energy (Live at Treefort Music Hall) | Boise, ID – 03.15.2026</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=KbMBevNAxec" target="_blank" rel="noopener" data-youtube-id="KbMBevNAxec" aria-label="Play One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/KbMBevNAxec/maxresdefault.jpg" alt="One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>One Woman Show (Live at Shrine Social Club) | Boise, ID – 04.05.2026 - Lindsay Ell</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=5qeMLgqMaLQ" target="_blank" rel="noopener" data-youtube-id="5qeMLgqMaLQ" aria-label="Play “Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/5qeMLgqMaLQ/maxresdefault.jpg" alt="“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>“Someone Like You” (Live at Shrine Ballroom) | Boise, ID – 04.05.2026 – Good Boy Daisy</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=wEAjrPx8U-k" target="_blank" rel="noopener" data-youtube-id="wEAjrPx8U-k" aria-label="Play “Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/wEAjrPx8U-k/maxresdefault.jpg" alt="“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>“Opalite” Crowd Vibes (DJ Set at Knitting Factory) | Boise, ID – 01.23.2026 - The Taylor Party</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=9bJIL57bduU" target="_blank" rel="noopener" data-youtube-id="9bJIL57bduU" aria-label="Play Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/9bJIL57bduU/maxresdefault.jpg" alt="Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>Dave Matthews Band – “#41” (Live at Ford Idaho Center) | Nampa, ID – 11.08.2022</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=H7QmzBza1NQ" target="_blank" rel="noopener" data-youtube-id="H7QmzBza1NQ" aria-label="Play 10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/H7QmzBza1NQ/maxresdefault.jpg" alt="10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>10 Things I Hate About U (Live at Neurolux, Boise ID – Oct 15, 2023) - Leah Kate</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=X-3owifbOP4" target="_blank" rel="noopener" data-youtube-id="X-3owifbOP4" aria-label="Play “Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/X-3owifbOP4/maxresdefault.jpg" alt="“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>“Downtown” (Crowd Energy) – Macklemore (Live at ExtraMile Arena) | Boise, ID – 10.12.2023</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=3syF1p0jd80" target="_blank" rel="noopener" data-youtube-id="3syF1p0jd80" aria-label="Play “You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/3syF1p0jd80/maxresdefault.jpg" alt="“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>“You Might Not Like Her” – Maddie Zahm (Live at Knitting Factory) | Boise, ID – 03.04.2023</span></span>
-                </a>
-              </li>
-              <li class="tvtt-video-item">
-                <a class="tvtt-card tvtt-video-card" href="https://www.youtube.com/watch?v=4SYP8FiMGps" target="_blank" rel="noopener" data-youtube-id="4SYP8FiMGps" aria-label="Play AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023">
-                  <span class="tvtt-video-frame"><img loading="lazy" src="https://i.ytimg.com/vi/4SYP8FiMGps/maxresdefault.jpg" alt="AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023 video thumbnail"><span class="tvtt-video-play" aria-hidden="true"></span><span class="tvtt-youtube-mark" aria-hidden="true">YouTube</span></span>
-                  <span class="tvtt-video-title"><span>AJA – End of Set (Live at Neurolux) | Boise, ID – 10.15.2023</span></span>
-                </a>
-              </li>
-            </ul>
-            <button class="tvtt-gallery-arrow" type="button" aria-label="Scroll camera op videos" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Scroll camera op videos">›</button>
-          </div>
-        </section>
-      </div>
-    </section>
-
-    <section class="tvtt-section tvtt-tour-pages" id="tour-pages" aria-labelledby="tour-pages-title">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages</h2>
-          <p>Make your shows easier to find, easier to share, and easier to keep current.</p>
-          <p>Tour pages give your band one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history. They can be simple and practical, or built around the vibe of a specific tour, release, or era of the band.</p>
-          <p>The point is not to make every band look the same. The point is to make sure people can find the next show and feel like they are still inside your band's world.</p>
-        </div>
         <div class="tvtt-tour-shell">
           <button class="tvtt-tour-control tvtt-tour-prev" type="button" aria-label="Previous tour page example" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Previous tour page example">‹</button>
           <div class="tvtt-tour-grid" aria-label="Tour page examples">
@@ -2465,10 +2583,22 @@
             <button class="tvtt-tour-pause" type="button" aria-pressed="false" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Interactive detail">Pause carousel</button>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <section class="tvtt-section tvtt-tour-pages" id="tour-pages" aria-labelledby="tour-pages-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-copy-block">
+          <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages</h2>
+          <p>Make your shows easier to find, easier to share, and easier to keep current.</p>
+          <p>Tour pages give your band one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history. They can be simple and practical, or built around the vibe of a specific tour, release, or era of the band.</p>
+          <p>The point is not to make every band look the same. The point is to make sure people can find the next show and feel like they are still inside your band's world.</p>
+        </div>
         <div class="tvtt-card tvtt-tour-cta">
           <h3>Need a tour page that fits your band?</h3>
           <p>Whether you need a simple show list, a homepage widget, or a themed tour page with its own weird little world, we can help build something that keeps your dates clear and your band's personality intact.</p>
-          <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Look at my band's setup">Look at my band's setup</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/tour-page-request" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Tour Page">Request a tour page estimate</a>
         </div>
       </div>
     </section>
@@ -2488,7 +2618,7 @@
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">WANT ME TO TAKE A LOOK AT YOUR BAND'S SETUP?</h2>
-        <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Take a look at my band's setup">Take a look at my band's setup</a>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Take a look at my band's setup">Take a look at my band's setup</a>
         <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Not sure what kind of help fits yet? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557" data-analytics-event="phone_click" data-analytics-category="lead" data-analytics-label="Phone link - For Bands page">208-247-2557</a></p>
       </div>
     </section>
