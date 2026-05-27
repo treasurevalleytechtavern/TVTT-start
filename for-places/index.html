@@ -16,6 +16,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Cute+Font&family=Jersey+15&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLGN0SBQJ9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HLGN0SBQJ9');
+  </script>
   <style>
     :root {
       color-scheme: dark;
@@ -104,7 +112,6 @@
 
     .tvtt-logo {
       display: inline-flex;
-      grid-row: 1 / 3;
       align-items: center;
       min-width: 0;
     }
@@ -1327,10 +1334,11 @@
 
       .tvtt-site-header-inner {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
         align-items: center;
-        justify-content: space-between;
-        gap: 10px 14px;
+        justify-content: center;
+        gap: 8px;
         width: min(100%, 330px) !important;
         max-width: 330px !important;
         margin: 0 auto !important;
@@ -1341,27 +1349,52 @@
       }
 
       .tvtt-logo {
-        grid-row: auto;
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+      }
+
+      .tvtt-header-actions {
+        display: grid;
+        grid-column: 1;
+        grid-row: 2;
+        justify-items: center;
+        gap: 6px;
+        margin: 0;
+        width: 100%;
       }
 
       .tvtt-start-nav {
-        display: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 8px 10px;
+        margin: 0;
+      }
+
+      .tvtt-start-nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 6px 10px;
+        border: 1px solid rgba(99, 224, 229, 0.72);
+        border-radius: 8px;
+        color: #001214;
+        background: var(--tvtt-cyan);
+        font-size: 1.1rem;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .tvtt-start-nav a:hover,
+      .tvtt-start-nav a:focus-visible {
+        color: var(--tvtt-cyan);
+        background: rgba(0, 0, 0, 0.42);
       }
 
       .tvtt-local-note {
-        position: static;
-        grid-column: auto;
-        grid-row: auto;
-        justify-self: end;
-        width: auto;
-        min-width: 0;
-        max-width: 160px;
-        margin: 0;
-        color: #d1dcdf;
-        font-size: 0.72rem;
-        line-height: 1.3;
-        text-align: right;
-        white-space: normal;
+        display: none;
       }
 
       .tvtt-local-note span {
@@ -1665,7 +1698,7 @@
   <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
     <div class="tvtt-notice-inner">
       <p class="tvtt-notice-copy"><span class="tvtt-notice-main">Your hours tell people when you're open. Your online presence should show them why they'd fit in.</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
-      <a class="tvtt-notice-button" href="#start-here">Yes, take a look &rarr;</a>
+      <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
     </div>
   </aside>
   <main class="tvtt-start-page">
@@ -1676,8 +1709,8 @@
         </a>
         <div class="tvtt-header-actions">
           <nav class="tvtt-start-nav" aria-label="Main navigation">
-            <a href="https://start.treasurevalleytechtavern.com/for-bands/">For Bands</a>
-            <a href="https://start.treasurevalleytechtavern.com/for-places/">For Bars & Venues</a>
+            <a href="https://start.treasurevalleytechtavern.com/for-bands/" data-analytics-event="package_click" data-analytics-category="navigation" data-analytics-label="For Places page - For Bands">For Bands</a>
+            <a href="https://start.treasurevalleytechtavern.com/for-places/" data-analytics-event="package_click" data-analytics-category="navigation" data-analytics-label="For Places page - For Places">For Bars & Venues</a>
           </nav>
           <p class="tvtt-local-note"><span>Boise-based.</span> <span>Built for the local scene.</span></p>
         </div>
@@ -1690,10 +1723,10 @@
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
           <p class="tvtt-hero-subtitle">Helping Treasure Valley bars and venues keep their hours, events, links, menus, and room energy clear, current, and easy to find.</p>
           <nav class="tvtt-hero-nav" aria-label="See what we fix">
-            <a href="#what-gets-in-the-way">What gets in the way</a>
-            <a href="#how-this-works">How this works</a>
-            <a href="#start-here">Start here</a>
-            <a href="#receipts">Receipts</a>
+            <a href="#what-gets-in-the-way" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - What gets in the way">What gets in the way</a>
+            <a href="#how-this-works" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - How this works">How this works</a>
+            <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Start here">Start here</a>
+            <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Receipts">Receipts</a>
           </nav>
         </div>
       </div>
@@ -1709,7 +1742,7 @@
           <p>We help make the online trail clearer, current, and easier to keep updated.</p>
         </div>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here">Want me to take a look?</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
         </div>
       </div>
     </section>
@@ -1728,7 +1761,7 @@
           <li class="tvtt-card"><p>People find your name, but not what kind of night they're walking into</p></li>
         </ul>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here">Want me to take a look?</a>
+          <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Want me to take a look?">Want me to take a look?</a>
         </div>
       </div>
     </section>
@@ -1762,7 +1795,7 @@
           </button>
         </div>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here">Get a free setup review</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Get a free setup review">Get a free setup review</a>
         </div>
       </div>
     </section>
@@ -1777,7 +1810,7 @@
           <li class="tvtt-step"><div><h3>We build around the room</h3><p>You get practical recommendations and options that fit your actual place, not a generic marketing template. Maybe that is a cleaner link page. Maybe it is better event info. Maybe it is Google cleanup, live clips, menu updates, social help, or ongoing support to keep things current.</p></div></li>
         </ol>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here">Take a look at my setup</a>
+          <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Take a look at my setup">Take a look at my setup</a>
         </div>
       </div>
     </section>
@@ -1813,7 +1846,7 @@
               <p>Bars and venues that feel scattered, outdated, hard to find, or unclear about what's happening week to week.</p>
             </div>
             <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-setup">Fix My Setup</a>
+              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-setup" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - Setup package">Fix My Setup</a>
             </div>
           </article>
           <article class="tvtt-card tvtt-package-card">
@@ -1838,7 +1871,7 @@
               <p>Bars and venues that want real content from the room but do not have the time, staff, or brain-space to capture it themselves.</p>
             </div>
             <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room">Come Capture Our Space</a>
+              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - In The Room package">Come Capture Our Space</a>
             </div>
           </article>
           <article class="tvtt-card tvtt-package-card">
@@ -1865,14 +1898,14 @@
               <p>Bars and venues that want to stay active online without managing every post, update, link, and event detail day to day.</p>
             </div>
             <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-all-hands">Handle It For Us</a>
+              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-all-hands" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - All Hands package">Handle It For Us</a>
             </div>
           </article>
         </div>
         <aside class="tvtt-card tvtt-not-sure">
           <h3>Not sure what fits yet?</h3>
           <p>Start with the general contact form and we'll help you figure out the right next step.</p>
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact">Just contact us</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="contact_click" data-analytics-category="lead" data-analytics-label="For Places page - Just contact us">Just contact us</a>
         </aside>
       </div>
     </section>
@@ -1887,7 +1920,7 @@
 
         <div class="tvtt-website-grid" aria-label="Overland Bar website examples">
           <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Home.png" data-image-modal-title="Home Page" data-image-modal-alt="Overland Bar website home page">
+            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Home.png" data-image-modal-title="Home Page" data-image-modal-alt="Overland Bar website home page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
               <img class="tvtt-website-shot" src="assets/Home.png" alt="Overland Bar website home page" loading="lazy">
             </button>
             <div class="tvtt-website-copy">
@@ -1896,7 +1929,7 @@
             </div>
           </article>
           <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Menu.png" data-image-modal-title="Menu Page" data-image-modal-alt="Overland Bar menu page">
+            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Menu.png" data-image-modal-title="Menu Page" data-image-modal-alt="Overland Bar menu page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
               <img class="tvtt-website-shot" src="assets/Menu.png" alt="Overland Bar menu page" loading="lazy">
             </button>
             <div class="tvtt-website-copy">
@@ -1905,7 +1938,7 @@
             </div>
           </article>
           <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Song Book.png" data-image-modal-title="Karaoke Song List" data-image-modal-alt="Overland Bar karaoke song list page">
+            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Song Book.png" data-image-modal-title="Karaoke Song List" data-image-modal-alt="Overland Bar karaoke song list page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
               <img class="tvtt-website-shot" src="assets/Song Book.png" alt="Overland Bar karaoke song list page" loading="lazy">
             </button>
             <div class="tvtt-website-copy">
@@ -1914,7 +1947,7 @@
             </div>
           </article>
           <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Feedback.png" data-image-modal-title="Feedback Pages" data-image-modal-alt="Overland Bar feedback page">
+            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Feedback.png" data-image-modal-title="Feedback Pages" data-image-modal-alt="Overland Bar feedback page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
               <img class="tvtt-website-shot" src="assets/Feedback.png" alt="Overland Bar feedback page" loading="lazy">
             </button>
             <div class="tvtt-website-copy">
@@ -1949,7 +1982,7 @@
         </div>
 
         <div class="tvtt-view-more-wrap">
-          <button class="tvtt-view-more" type="button" data-view-more>
+          <button class="tvtt-view-more" type="button" data-view-more data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
             <span>View More</span>
           </button>
         </div>
@@ -1959,8 +1992,8 @@
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">WANT ME TO TAKE A LOOK AT YOUR SETUP?</h2>
-        <a class="tvtt-button" href="#start-here">Take a look at my setup</a>
-        <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Not sure what kind of help fits yet? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557">208-247-2557</a></p>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
+        <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Not sure what kind of help fits yet? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557" data-analytics-event="phone_click" data-analytics-category="lead" data-analytics-label="Phone link - For Places page">208-247-2557</a></p>
       </div>
     </section>
 
@@ -2121,6 +2154,19 @@
         }
       }
     }());
+  </script>
+  <script>
+    document.addEventListener('click', function (event) {
+      const trackedElement = event.target.closest('[data-analytics-event]');
+      if (!trackedElement || typeof gtag !== 'function') return;
+
+      gtag('event', trackedElement.dataset.analyticsEvent, {
+        event_category: trackedElement.dataset.analyticsCategory || 'engagement',
+        event_label: trackedElement.dataset.analyticsLabel || trackedElement.textContent.trim(),
+        link_url: trackedElement.href || '',
+        page_location: window.location.href
+      });
+    });
   </script>
 </body>
 </html>
