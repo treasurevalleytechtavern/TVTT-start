@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://start.treasurevalleytechtavern.com/for-bands/">
   <meta property="og:image" content="https://treasurevalleytechtavern.com/favicon-tvtt.png">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="../assets/favicon-tvtt.png">
+  <link rel="icon" type="image/png" href="https://start.treasurevalleytechtavern.com/assets/Favicon%20Final.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Cute+Font&family=Jersey+15&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   <style>
     :root {
       color-scheme: dark;
-      --tvtt-notice-height: 96px;
+      --tvtt-notice-height: 0px;
       --tvtt-header-height: 156px;
       --tvtt-bg: #000;
       --tvtt-panel: rgba(7, 7, 7, 0.82);
@@ -167,7 +167,15 @@
     .tvtt-hero {
       display: grid;
       align-items: start;
-      padding: clamp(58px, 9vw, 92px) 18px 46px;
+      justify-items: center;
+      padding: clamp(58px, 9vw, 92px) 18px clamp(92px, 10vw, 128px);
+      background-image: image-set(
+        url("assets/the-usual-problem-for-bands.webp") type("image/webp"),
+        url("assets/the-usual-problem-for-bands.png") type("image/png")
+      );
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .tvtt-hero-inner,
@@ -179,6 +187,8 @@
 
     .tvtt-hero-copy {
       max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .tvtt-eyebrow,
@@ -212,6 +222,8 @@
 
     .tvtt-hero h1 {
       max-width: 820px;
+      margin-right: auto;
+      margin-left: auto;
       font-size: clamp(3.6rem, 14vw, 7.2rem);
       line-height: 0.86;
       text-shadow: 0 0 28px rgba(99, 224, 229, 0.22);
@@ -227,7 +239,7 @@
 
     .tvtt-hero-subtitle {
       max-width: 680px;
-      margin: 24px 0 0;
+      margin: 24px auto 0;
       color: var(--tvtt-muted);
       font-size: clamp(1.08rem, 2.3vw, 1.42rem);
       line-height: 1.38;
@@ -262,9 +274,10 @@
     .tvtt-hero-nav {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       max-width: 680px;
-      margin-top: 30px;
+      margin: 30px auto 0;
     }
 
     .tvtt-choice-nav {
@@ -327,6 +340,46 @@
       padding-top: 18px;
     }
 
+    .tvtt-proof-banner {
+      padding: 8px 18px 24px;
+    }
+
+    .tvtt-proof-banner-inner {
+      display: block;
+      max-width: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.26);
+      border-radius: 8px;
+      background: #050505;
+      box-shadow:
+        0 18px 44px rgba(0, 0, 0, 0.36),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+      text-decoration: none;
+    }
+
+    .tvtt-proof-banner-inner:hover,
+    .tvtt-proof-banner-inner:focus-visible {
+      border-color: rgba(99, 224, 229, 0.62);
+      box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.42),
+        0 0 24px rgba(99, 224, 229, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    .tvtt-proof-banner-inner:focus-visible {
+      outline: 2px solid var(--tvtt-cyan);
+      outline-offset: 5px;
+    }
+
+    .tvtt-proof-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 640 / 274;
+      object-fit: cover;
+      background: #050505 url("../assets/oathbound-proof-of-concept-banner-poster.jpg") center / cover no-repeat;
+    }
+
     .tvtt-section-title {
       color: #fff;
       font-size: clamp(2.8rem, 8vw, 4.4rem);
@@ -359,6 +412,188 @@
 
     .tvtt-copy-block p + p {
       margin-top: 14px;
+    }
+
+    .tvtt-next-step {
+      position: relative;
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding: clamp(24px, 4vw, 38px);
+      overflow: visible;
+      border: 1px solid rgba(99, 224, 229, 0.46);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(99, 224, 229, 0.16), rgba(185, 140, 255, 0.08) 48%, rgba(0, 0, 0, 0.7)),
+        rgba(4, 5, 6, 0.92);
+      box-shadow:
+        0 0 34px rgba(99, 224, 229, 0.13),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    .tvtt-next-step::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--tvtt-cyan), var(--tvtt-amber), var(--tvtt-violet));
+      content: "";
+    }
+
+    .tvtt-next-step-title {
+      margin: 0;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.8rem, 7vw, 4.2rem);
+      font-weight: 400;
+      line-height: 0.92;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 18px rgba(99, 224, 229, 0.18);
+    }
+
+    .tvtt-next-step-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px auto 0;
+    }
+
+    .tvtt-next-step-tab {
+      position: relative;
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.38);
+      box-shadow: 0 0 0 rgba(99, 224, 229, 0);
+      cursor: pointer;
+      font: inherit;
+      font-size: clamp(0.96rem, 1.8vw, 1.08rem);
+      font-weight: 800;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .tvtt-next-step-tab::after {
+      margin-left: 8px;
+      color: var(--tvtt-cyan);
+      font-size: 1rem;
+      line-height: 1;
+      content: "+";
+    }
+
+    .tvtt-next-step-tab:hover,
+    .tvtt-next-step-tab:focus-visible {
+      border-color: rgba(99, 224, 229, 0.72);
+      background: rgba(99, 224, 229, 0.12);
+      box-shadow: 0 0 18px rgba(99, 224, 229, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .tvtt-next-step-tab.is-active {
+      color: #001214;
+      border-color: var(--tvtt-cyan);
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 24px rgba(99, 224, 229, 0.28);
+    }
+
+    .tvtt-next-step-tab.is-active::after {
+      color: #001214;
+      content: "−";
+    }
+
+    .tvtt-next-step-panels {
+      position: relative;
+      min-height: 0;
+      margin-top: 0;
+    }
+
+    .tvtt-next-step-panel {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      z-index: 10;
+      display: grid;
+      width: min(760px, calc(100vw - 36px));
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.28);
+      border-radius: 8px;
+      opacity: 0;
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.12), rgba(0, 0, 0, 0.92) 180px),
+        rgba(5, 5, 5, 0.98);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.54), 0 0 28px rgba(99, 224, 229, 0.16);
+      pointer-events: none;
+      transform: translate(-50%, 12px) scale(0.94);
+      transform-origin: top center;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .tvtt-next-step-panel.is-active {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    .tvtt-next-step-copy {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      padding: clamp(20px, 3vw, 28px);
+    }
+
+    .tvtt-next-step-copy h3 {
+      margin: 0;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-next-step-copy p {
+      margin: 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(1rem, 1.8vw, 1.16rem);
+      line-height: 1.52;
+    }
+
+    .tvtt-next-step-help {
+      margin-top: 4px;
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .tvtt-next-step-tags {
+      color: var(--tvtt-muted);
+      font-size: clamp(0.96rem, 1.6vw, 1.05rem);
+      line-height: 1.55;
+    }
+
+    .tvtt-next-step-image {
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(99, 224, 229, 0.22);
+      background: #030303;
+      aspect-ratio: 16 / 9;
+    }
+
+    .tvtt-next-step-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
     }
 
 .tvtt-scene-strip-section {
@@ -480,6 +715,10 @@
       max-width: 760px;
     }
 
+    .tvtt-friction-list + .tvtt-proof-banner {
+      margin-top: 18px;
+    }
+
     .tvtt-card,
     .tvtt-step {
       border: 1px solid var(--tvtt-border);
@@ -509,9 +748,11 @@
     }
 
     .tvtt-service-card {
+      position: relative;
       display: block;
       width: 100%;
       min-height: 190px;
+      overflow: visible;
       appearance: none;
       cursor: pointer;
       color: inherit;
@@ -528,17 +769,88 @@
         0 0 0 1px rgba(255, 255, 255, 0.03) inset;
     }
 
+    .tvtt-service-popout {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      z-index: 5;
+      display: grid;
+      width: min(390px, calc(100vw - 36px));
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid rgba(99, 224, 229, 0.44);
+      border-radius: 8px;
+      opacity: 0;
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.12), rgba(0, 0, 0, 0.92) 120px),
+        rgba(5, 5, 5, 0.98);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46), 0 0 24px rgba(99, 224, 229, 0.16);
+      pointer-events: none;
+      transform: translate(-50%, 12px) scale(0.88);
+      transform-origin: top center;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .tvtt-service-card:first-child .tvtt-service-popout {
+      left: 0;
+      transform: translate(0, 12px) scale(0.88);
+      transform-origin: top left;
+    }
+
+    .tvtt-service-card:last-child .tvtt-service-popout {
+      right: 0;
+      left: auto;
+      transform: translate(0, 12px) scale(0.88);
+      transform-origin: top right;
+    }
+
+    .tvtt-service-card:hover,
+    .tvtt-service-card:focus-visible,
+    .tvtt-service-card.is-active {
+      z-index: 8;
+    }
+
+    .tvtt-service-card:hover .tvtt-service-popout,
+    .tvtt-service-card:focus-visible .tvtt-service-popout,
+    .tvtt-service-card.is-active .tvtt-service-popout {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    .tvtt-service-card:first-child:hover .tvtt-service-popout,
+    .tvtt-service-card:first-child:focus-visible .tvtt-service-popout,
+    .tvtt-service-card:first-child.is-active .tvtt-service-popout,
+    .tvtt-service-card:last-child:hover .tvtt-service-popout,
+    .tvtt-service-card:last-child:focus-visible .tvtt-service-popout,
+    .tvtt-service-card:last-child.is-active .tvtt-service-popout {
+      transform: translate(0, 0) scale(1);
+    }
+
     .tvtt-service-description {
-      display: none;
-    }
-
-    .tvtt-service-card.is-active .tvtt-card-mark,
-    .tvtt-service-card.is-active h3 {
-      display: none;
-    }
-
-    .tvtt-service-card.is-active .tvtt-service-description {
       display: block;
+      color: #f2fbfc;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.45;
+    }
+
+    .tvtt-service-art {
+      display: block;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.24);
+      border-radius: 6px;
+      background: #030303;
+      aspect-ratio: 1 / 1;
+    }
+
+    .tvtt-service-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .tvtt-count-grid {
@@ -558,6 +870,67 @@
     .tvtt-count-grid .tvtt-card p {
       font-size: clamp(1rem, 1.8vw, 1.16rem);
       line-height: 1.5;
+    }
+
+    .tvtt-count-section {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    .tvtt-count-section .tvtt-section-inner {
+      max-width: 1320px;
+    }
+
+    .tvtt-count-image-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: clamp(10px, 1.6vw, 18px);
+      margin: 28px auto 0;
+      padding: 0 clamp(12px, 3vw, 24px);
+    }
+
+    .tvtt-count-image {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.26);
+      border-radius: 8px;
+      appearance: none;
+      background: #030303;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+      cursor: zoom-in;
+    }
+
+    .tvtt-count-image picture,
+    .tvtt-count-image img {
+      display: block;
+      width: 100%;
+    }
+
+    .tvtt-count-image img {
+      aspect-ratio: 9 / 16;
+      height: auto;
+      object-fit: cover;
+      cursor: zoom-in;
+    }
+
+    @media (max-width: 1100px) {
+      .tvtt-count-image-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      .tvtt-count-image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .tvtt-count-image-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+      }
     }
 
     .tvtt-path-grid {
@@ -588,10 +961,15 @@
     }
 
     .tvtt-package-grid {
+      position: relative;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      grid-template-rows: auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
       max-width: 1080px;
       align-items: stretch;
+    }
+
+    .tvtt-package-grid.is-package-expanded {
+      align-items: start;
     }
 
     .tvtt-optional-grid {
@@ -607,14 +985,105 @@
 
     .tvtt-package-card {
       display: grid;
-      grid-row: span 4;
+      grid-row: span 5;
       grid-template-rows: subgrid;
       padding: 0;
     }
 
+    .tvtt-package-card.is-expanded {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%;
+      grid-column: 1 / -1;
+      grid-row: auto;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      border-color: rgba(99, 224, 229, 0.58);
+      background: #050606;
+      box-shadow: 0 0 28px rgba(99, 224, 229, 0.14), 0 24px 54px rgba(0, 0, 0, 0.38);
+    }
+
+    .tvtt-package-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 4;
+      display: none;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-close {
+      display: grid;
+    }
+
+    .tvtt-package-close:hover,
+    .tvtt-package-close:focus-visible {
+      color: var(--tvtt-cyan);
+      background: #050606;
+    }
+
     .tvtt-optional-card {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: minmax(160px, 0.45fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .tvtt-optional-card:nth-child(even) {
+      grid-template-columns: minmax(0, 1fr) minmax(160px, 0.45fr);
+    }
+
+    .tvtt-optional-card:nth-child(even) .tvtt-optional-art {
+      order: 2;
+    }
+
+    .tvtt-optional-art {
+      min-height: 100%;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.24);
+      border-radius: 6px;
+      appearance: none;
+      background: #030303;
+      cursor: zoom-in;
+      font: inherit;
+    }
+
+    .tvtt-optional-art:hover,
+    .tvtt-optional-art:focus-visible {
+      border-color: rgba(99, 224, 229, 0.68);
+      box-shadow: 0 0 24px rgba(99, 224, 229, 0.14);
+    }
+
+    .tvtt-optional-art picture,
+    .tvtt-optional-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tvtt-optional-art img {
+      min-height: 320px;
+      object-fit: cover;
+      object-position: center;
+      cursor: zoom-in;
+    }
+
+    .tvtt-optional-copy {
+      min-width: 0;
     }
 
     .tvtt-package-section {
@@ -624,6 +1093,68 @@
 
     .tvtt-package-section + .tvtt-package-section {
       border-top: 1px solid rgba(99, 224, 229, 0.22);
+    }
+
+    .tvtt-package-art-section {
+      padding: 0;
+      overflow: hidden;
+      background: #030303;
+    }
+
+    .tvtt-package-art-toggle {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .tvtt-package-art-section picture,
+    .tvtt-package-art-section img {
+      display: block;
+      width: 100%;
+    }
+
+    .tvtt-package-art-section img {
+      aspect-ratio: 3 / 1;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .tvtt-package-art-toggle:hover img,
+    .tvtt-package-art-toggle:focus-visible img {
+      filter: saturate(1.08) brightness(1.08);
+    }
+
+    .tvtt-package-art-toggle:focus-visible {
+      outline: 2px solid var(--tvtt-cyan);
+      outline-offset: -4px;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-intro {
+      grid-column: 1 / 3;
+      padding-right: 68px;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-art-section {
+      grid-column: 3 / 5;
+      grid-row: 1;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-includes {
+      grid-column: 1 / 3;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-best {
+      grid-column: 3 / 4;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-action {
+      grid-column: 4 / 5;
     }
 
     .tvtt-package-action {
@@ -877,7 +1408,7 @@
 
     .tvtt-clips-block,
     .tvtt-tour-pages {
-      margin-top: 44px;
+      margin-top: 16px;
     }
 
     .tvtt-subsection-title {
@@ -1103,64 +1634,46 @@
     }
 
     .tvtt-tour-shell {
-      position: relative;
-      margin-top: 30px;
-      padding: 0 62px;
-    }
-
-    .tvtt-tour-grid {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      margin: 0;
-      padding: 0;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-    }
-
-    .tvtt-tour-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    .tvtt-tour-card {
       display: grid;
-      flex: 0 0 100%;
-      grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
-      gap: 20px;
-      align-items: start;
-      padding: 20px;
-      scroll-snap-align: start;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+      padding: 0;
     }
 
-    .tvtt-tour-visual {
-      display: block;
+    .tvtt-tour-summary-button {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px;
+      gap: 14px;
+      align-items: center;
       width: 100%;
-      padding: 0;
-      overflow: hidden;
+      min-height: 104px;
+      padding: 20px;
       border: 1px solid rgba(99, 224, 229, 0.26);
       border-radius: 8px;
       color: inherit;
-      background: #030303;
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.1), transparent 120px),
+        var(--tvtt-panel);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
       cursor: pointer;
       font: inherit;
-      aspect-ratio: 1 / 1;
+      text-align: left;
     }
 
-    .tvtt-tour-copy {
-      display: grid;
-      gap: 14px;
-      min-width: 0;
+    .tvtt-tour-detail-media {
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.24);
+      border-radius: 6px;
+      background: #030303;
     }
 
-    .tvtt-tour-visual:hover,
-    .tvtt-tour-visual:focus-visible {
-      border-color: rgba(99, 224, 229, 0.68);
-      box-shadow: 0 0 24px rgba(99, 224, 229, 0.14);
+    .tvtt-tour-detail-media {
+      aspect-ratio: 16 / 9;
     }
 
-    .tvtt-tour-visual img {
+    .tvtt-tour-detail-media img {
       display: block;
       width: 100%;
       height: 100%;
@@ -1168,11 +1681,116 @@
       object-position: top center;
     }
 
-    .tvtt-tour-card h3 {
-      font-size: clamp(1.9rem, 3.3vw, 2.55rem);
+    .tvtt-tour-summary-button:hover,
+    .tvtt-tour-summary-button:focus-visible {
+      border-color: rgba(99, 224, 229, 0.68);
+      box-shadow: 0 0 24px rgba(99, 224, 229, 0.14);
     }
 
-    .tvtt-tour-card h4 {
+    .tvtt-tour-summary-button h3 {
+      margin: 0;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(1.9rem, 3.3vw, 2.55rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .tvtt-tour-plus {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid rgba(99, 224, 229, 0.72);
+      border-radius: 50%;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .tvtt-tour-details {
+      display: none;
+    }
+
+    .tvtt-info-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    .tvtt-info-modal.is-open {
+      display: flex;
+    }
+
+    .tvtt-info-modal-frame {
+      position: relative;
+      width: min(100%, 760px);
+      max-height: min(86vh, 820px);
+      overflow: auto;
+      padding: clamp(20px, 4vw, 30px);
+      border: 1px solid rgba(99, 224, 229, 0.42);
+      border-radius: 8px;
+      background: rgba(7, 7, 7, 0.97);
+      box-shadow: 0 0 40px rgba(99, 224, 229, 0.16);
+    }
+
+    .tvtt-info-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .tvtt-info-modal-close:hover,
+    .tvtt-info-modal-close:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.82);
+    }
+
+    .tvtt-info-modal-title {
+      margin: 0 52px 18px 0;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.1rem, 5vw, 3rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-info-modal-body {
+      display: grid;
+      gap: 16px;
+    }
+
+    .tvtt-info-modal-body p {
+      margin: 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      line-height: 1.55;
+    }
+
+    .tvtt-info-modal-body h4 {
       margin: 0 0 8px;
       color: var(--tvtt-cyan);
       font-family: "Jersey 15", Arial, sans-serif;
@@ -1182,7 +1800,7 @@
       text-transform: uppercase;
     }
 
-    .tvtt-tour-card ul {
+    .tvtt-info-modal-body ul {
       display: grid;
       gap: 8px;
       margin: 0;
@@ -1190,7 +1808,7 @@
       color: var(--tvtt-muted);
     }
 
-    .tvtt-tour-card li {
+    .tvtt-info-modal-body li {
       color: var(--tvtt-muted);
       font-size: clamp(0.98rem, 1.6vw, 1.08rem);
       line-height: 1.45;
@@ -1210,7 +1828,7 @@
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 8px;
       background: rgba(0, 0, 0, 0.76);
       backdrop-filter: blur(10px);
     }
@@ -1221,8 +1839,11 @@
 
     .tvtt-image-modal-frame {
       position: relative;
-      width: min(100%, 1080px);
-      max-height: min(86vh, 900px);
+      display: flex;
+      width: min(calc(100vw - 16px), 1400px);
+      height: calc(100vh - 16px);
+      max-height: none;
+      flex-direction: column;
       padding: 12px;
       border: 1px solid rgba(99, 224, 229, 0.42);
       border-radius: 8px;
@@ -1230,10 +1851,12 @@
       box-shadow: 0 0 40px rgba(99, 224, 229, 0.16);
     }
 
-    .tvtt-image-modal-close {
+    .tvtt-image-modal-close,
+    .tvtt-image-modal-zoom,
+    .tvtt-image-modal-zoom-out,
+    .tvtt-image-modal-reset {
       position: absolute;
       top: 10px;
-      right: 10px;
       z-index: 1;
       display: grid;
       width: 44px;
@@ -1249,14 +1872,50 @@
       cursor: pointer;
     }
 
+    .tvtt-image-modal-close {
+      right: 10px;
+    }
+
+    .tvtt-image-modal-zoom {
+      right: 114px;
+      font-size: 2rem;
+    }
+
+    .tvtt-image-modal-zoom-out {
+      right: 62px;
+      font-size: 2rem;
+    }
+
+    .tvtt-image-modal-reset {
+      right: 166px;
+      width: auto;
+      padding: 0 12px;
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: 1.45rem;
+    }
+
     .tvtt-image-modal-close:hover,
-    .tvtt-image-modal-close:focus-visible {
+    .tvtt-image-modal-close:focus-visible,
+    .tvtt-image-modal-zoom:hover,
+    .tvtt-image-modal-zoom:focus-visible,
+    .tvtt-image-modal-zoom-out:hover,
+    .tvtt-image-modal-zoom-out:focus-visible,
+    .tvtt-image-modal-reset:hover,
+    .tvtt-image-modal-reset:focus-visible {
       color: var(--tvtt-cyan);
       background: rgba(0, 0, 0, 0.72);
     }
 
+    .tvtt-image-modal-zoom:disabled,
+    .tvtt-image-modal-zoom-out:disabled,
+    .tvtt-image-modal-reset:disabled {
+      opacity: 0.68;
+      cursor: default;
+    }
+
     .tvtt-image-modal-title {
-      margin: 0 52px 10px 4px;
+      flex: 0 0 auto;
+      margin: 0 246px 10px 4px;
       color: #fff;
       font-family: "Jersey 15", Arial, sans-serif;
       font-size: clamp(1.8rem, 4vw, 2.4rem);
@@ -1265,73 +1924,41 @@
       text-transform: uppercase;
     }
 
-    .tvtt-image-modal-img {
-      display: block;
-      width: 100%;
-      max-height: calc(min(86vh, 900px) - 88px);
+    .tvtt-image-modal-viewport {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 0;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
       border: 1px solid rgba(99, 224, 229, 0.22);
       border-radius: 6px;
       background: #000;
+    }
+
+    .tvtt-image-modal-viewport.can-zoom,
+    .tvtt-image-modal-viewport.can-zoom .tvtt-image-modal-img {
+      cursor: zoom-in;
+    }
+
+    .tvtt-image-modal-viewport.is-zoomed {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .tvtt-image-modal-img {
+      display: block;
+      width: auto;
+      height: auto;
+      flex: 0 0 auto;
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
     }
 
-    .tvtt-tour-control {
-      position: absolute;
-      top: 50%;
-      z-index: 2;
-      display: grid;
-      width: 48px;
-      height: 72px;
-      place-items: center;
-      border: 1px solid var(--tvtt-cyan);
-      border-radius: 8px;
-      color: #001214;
-      background: var(--tvtt-cyan);
-      box-shadow: 0 0 22px rgba(99, 224, 229, 0.26);
-      cursor: pointer;
-      font-family: "Jersey 15", Arial, sans-serif;
-      font-size: 3rem;
-      line-height: 1;
-      transform: translateY(-50%);
-    }
-
-    .tvtt-tour-control:hover,
-    .tvtt-tour-control:focus-visible,
-    .tvtt-tour-pause:hover,
-    .tvtt-tour-pause:focus-visible {
-      color: var(--tvtt-cyan);
-      background: rgba(0, 0, 0, 0.82);
-    }
-
-    .tvtt-tour-prev {
-      left: 0;
-    }
-
-    .tvtt-tour-next {
-      right: 0;
-    }
-
-    .tvtt-tour-pause {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 40px;
-      margin: 16px auto 0;
-      padding: 0 18px;
-      border: 1px solid var(--tvtt-cyan);
-      border-radius: 8px;
-      color: #001214;
-      background: var(--tvtt-cyan);
-      cursor: pointer;
-      font-family: "Cute Font", Arial, sans-serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .tvtt-tour-controls-row {
-      display: flex;
-      justify-content: center;
+    .tvtt-image-modal-img.is-zoomed {
+      max-width: none;
+      max-height: none;
     }
 
     .tvtt-outcome {
@@ -1820,6 +2447,11 @@
         padding-top: 16px;
       }
 
+      .tvtt-proof-banner {
+        padding-right: 32px;
+        padding-left: 16px;
+      }
+
       .tvtt-section-title,
       .tvtt-copy-block p.tvtt-section-kicker,
       .tvtt-cta-title {
@@ -1828,6 +2460,10 @@
         line-height: 0.98;
         text-align: left;
         overflow-wrap: break-word;
+      }
+
+      .tvtt-count-section .tvtt-section-title {
+        text-align: center;
       }
 
       .tvtt-copy-block {
@@ -1847,6 +2483,58 @@
 
       .tvtt-copy-block p + p {
         margin-top: 10px;
+      }
+
+      .tvtt-next-step {
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        margin: 24px auto 0;
+        padding: 20px 14px 16px;
+      }
+
+      .tvtt-next-step-title {
+        font-size: 2.25rem;
+        line-height: 0.96;
+        text-align: left;
+      }
+
+      .tvtt-next-step-tabs {
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .tvtt-next-step-tab {
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: 0.92rem;
+      }
+
+      .tvtt-next-step-panel.is-active {
+        display: block;
+        position: static;
+        width: 100%;
+        margin-top: 16px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .tvtt-next-step-copy {
+        padding: 18px 14px;
+      }
+
+      .tvtt-next-step-copy h3 {
+        font-size: 1.8rem;
+      }
+
+      .tvtt-next-step-copy p,
+      .tvtt-next-step-tags {
+        font-size: 0.96rem;
+      }
+
+      .tvtt-next-step-image img {
+        height: 100%;
       }
 
       .tvtt-friction-list,
@@ -1906,12 +2594,85 @@
         min-height: 0;
       }
 
+      .tvtt-service-popout {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 14px;
+        padding: 0;
+        border: 0;
+        opacity: 1;
+        background: transparent;
+        box-shadow: none;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .tvtt-service-card:hover .tvtt-service-popout,
+      .tvtt-service-card:focus-visible .tvtt-service-popout,
+      .tvtt-service-card.is-active .tvtt-service-popout {
+        display: grid;
+        transform: none;
+      }
+
+      .tvtt-service-description {
+        font-size: 0.96rem;
+      }
+
       .tvtt-package-card {
         display: block;
       }
 
+      .tvtt-package-grid.is-package-expanded {
+        min-height: 0 !important;
+      }
+
+      .tvtt-package-card.is-expanded {
+        position: static;
+        display: block;
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+      }
+
+      .tvtt-package-card.is-expanded .tvtt-package-close {
+        display: none;
+      }
+
+      .tvtt-package-card.is-expanded .tvtt-package-intro {
+        padding-right: 16px;
+      }
+
+      .tvtt-package-art-toggle {
+        cursor: default;
+      }
+
+      .tvtt-package-art-toggle:hover img,
+      .tvtt-package-art-toggle:focus-visible img {
+        filter: none;
+      }
+
       .tvtt-package-section {
         padding: 16px;
+      }
+
+      .tvtt-optional-card,
+      .tvtt-optional-card:nth-child(even) {
+        display: block;
+        grid-template-columns: none;
+      }
+
+      .tvtt-optional-card:nth-child(even) .tvtt-optional-art {
+        order: initial;
+      }
+
+      .tvtt-optional-art {
+        margin: 0 0 14px;
+      }
+
+      .tvtt-optional-art img {
+        min-height: 0;
+        max-height: 260px;
       }
 
       .tvtt-card h3 {
@@ -1951,35 +2712,26 @@
       }
 
       .tvtt-tour-shell {
+        display: grid;
+        grid-template-columns: 1fr;
         width: min(100%, 330px) !important;
         max-width: 330px !important;
         margin: 22px auto 0;
         padding: 0;
       }
 
-      .tvtt-tour-grid {
-        gap: 12px;
-      }
-
-      .tvtt-tour-card {
-        flex-basis: min(100%, 330px);
-        width: min(100%, 330px) !important;
-        max-width: 330px !important;
+      .tvtt-tour-summary-button {
+        grid-template-columns: minmax(0, 1fr) 38px;
+        min-height: 86px;
         padding: 16px;
       }
 
-      .tvtt-tour-control {
-        width: 34px;
-        height: 54px;
-        font-size: 2.2rem;
+      .tvtt-tour-summary-button h3 {
+        font-size: 1.75rem;
       }
 
-      .tvtt-tour-prev {
-        left: -10px;
-      }
-
-      .tvtt-tour-next {
-        right: -10px;
+      .tvtt-info-modal {
+        padding: 16px;
       }
 
       .tvtt-count-grid .tvtt-card p {
@@ -2072,12 +2824,6 @@
 </style>
 </head>
 <body>
-  <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
-    <div class="tvtt-notice-inner">
-      <p class="tvtt-notice-copy"><span class="tvtt-notice-main">If someone hears your band tonight, can they find what's next tomorrow?</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
-      <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
-    </div>
-  </aside>
   <main class="tvtt-start-page">
     <header class="tvtt-site-header">
       <div class="tvtt-site-header-inner">
@@ -2108,42 +2854,16 @@
         </div>
       </div>
     </section>
-
-
-    <section class="tvtt-section tvtt-scene-strip-section" aria-label="Live music content examples">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-scene-strip" aria-label="Live music content examples">
-          <figure class="tvtt-scene-tile tvtt-scene-tile-tall">
-            <img loading="lazy" src="assets/gallery/testament-crowd-room-view-2026-03-15.webp" alt="Wide crowd view at a live Testament show with green stage lights">
-            <figcaption>Testament - Treefort Music Hall</figcaption>
-          </figure>
-
-          <figure class="tvtt-scene-tile">
-            <img loading="lazy" src="assets/gallery/black-tooth-grin-front-row-lights-2025-03-22.webp" alt="Crowd-level view of Black Tooth Grin performing under bright stage lights">
-            <figcaption>Black Tooth Grin - The Shredder</figcaption>
-          </figure>
-
-          <figure class="tvtt-scene-tile">
-            <img loading="lazy" src="assets/gallery/bbno$-crowd-phones-lights-2025-03-15.webp" alt="Concert crowd holding phones up under pink and green stage lights">
-            <figcaption>bbno$ - Revolution Concert House</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
     
     <section class="tvtt-section tvtt-section-tight" aria-labelledby="problem-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
           <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
           <p>Being in a band already comes with enough moving parts.</p>
-          <p>Writing songs. Rehearsing. Booking shows. Making flyers. Posting updates. Chasing ticket links. Loading gear. Sharing clips. Planning releases. Answering messages. Trying to keep the next thing moving while everyone has jobs, lives, and different levels of group-chat awareness.</p>
+          <p>Writing songs. Rehearsing. Booking shows. Making flyers. Loading gear. Planning releases. Answering messages. Keeping the next thing moving while everyone has jobs, lives, and different levels of group-chat awareness.</p>
           <p>Then the internet asks for more.</p>
-          <p>Show dates need to be current. Links need to point to the right place. Clips need to get posted before they disappear into someone's camera roll. Booking info needs to be easy to find. Release pages need to make sense. Tour dates need clean details. And whatever you are building online still needs to feel like your band, not a generic template wearing your logo.</p>
-          <p>When that stuff gets scattered or stale, people can hear your name, like your set, search you later, and still not know where to listen, where to follow, who to contact, or when to see you again.</p>
-          <p>We help clean up the trail around what you are already doing.</p>
-          <p>Sometimes that means a simple page. Sometimes it means show links and tour updates. Sometimes it means content help. Sometimes it means building something that fits the moment, like a temporary MySpace-style tour page with show dates that automatically move into past shows after the date passes.</p>
-          <p>The point is not to make you look like every other band.</p>
-          <p>The point is to make sure people can find the version of you that already exists in the room.</p>
+          <p>Show dates need to stay current. Links need to point to the right place. Updates need to get posted. Clips need to be shared before they disappear into someone's camera roll. Booking info needs to be easy to find. Release pages need to make sense.</p>
+          <p>And whatever you build online still needs to feel like your band, not a generic template wearing your logo.</p>
         </div>
         <div class="tvtt-section-cta">
           <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
@@ -2158,11 +2878,98 @@
           <p>Doing band shit is already enough without also becoming your own internet department.</p>
         </div>
         <ul class="tvtt-friction-list">
-          <li class="tvtt-card"><p>Your next show is buried in posts, flyers, and venue pages</p></li>
-          <li class="tvtt-card"><p>Your links do not all match, and nobody remembers which one is current</p></li>
-          <li class="tvtt-card"><p>The good clips exist, but they are scattered across random phones</p></li>
-          <li class="tvtt-card"><p>People hear about you, then the internet loses the thread before they can follow you</p></li>
+          <li class="tvtt-card"><p>Your next show is buried across posts, flyers, venue pages, and group chats.</p></li>
+          <li class="tvtt-card"><p>Your links do not all match, and no one is totally sure which one is current.</p></li>
+          <li class="tvtt-card"><p>Your best clips exist, but they are scattered across random phones.</p></li>
+          <li class="tvtt-card"><p>People hear about you, look you up, and still do not know when to show up, where to go, or what to click.</p></li>
         </ul>
+        <section class="tvtt-proof-banner" aria-label="Live tour page proof of concept">
+          <a class="tvtt-proof-banner-inner" href="../assets/oathbound-proof-of-concept.mp4" target="_blank" rel="noopener" aria-label="Open the full-size Oathbound proof of concept video" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open Oathbound proof video">
+            <video class="tvtt-proof-video" autoplay muted loop playsinline preload="metadata" poster="../assets/oathbound-proof-of-concept-banner-poster.jpg">
+              <source src="../assets/oathbound-proof-of-concept-banner.webm" type="video/webm">
+              <source src="../assets/oathbound-proof-of-concept-banner.mp4" type="video/mp4">
+            </video>
+          </a>
+        </section>
+        <div class="tvtt-next-step" data-next-step>
+          <h3 class="tvtt-next-step-title">We help make the next step obvious.</h3>
+          <div class="tvtt-next-step-tabs" role="tablist" aria-label="Fan next steps">
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-listen" id="next-step-listen-tab" data-next-step-tab="listen">Listen</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-follow" id="next-step-follow-tab" data-next-step-tab="follow">Follow</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-tickets" id="next-step-tickets-tab" data-next-step-tab="tickets">Buy tickets</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-book" id="next-step-book-tab" data-next-step-tab="book">Book the band</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-watch" id="next-step-watch-tab" data-next-step-tab="watch">Watch the clip</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-show" id="next-step-show-tab" data-next-step-tab="show">Show up</button>
+          </div>
+          <div class="tvtt-next-step-panels">
+            <article class="tvtt-next-step-panel" id="next-step-listen" role="tabpanel" aria-labelledby="next-step-listen-tab" data-next-step-panel="listen" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Make the music easy to find.</h3>
+                <p>Your songs should not be buried under old posts, broken links, or a bio that sends people in circles. We help organize your streaming links, latest release, featured tracks, and embedded players so new fans can hit play immediately.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Streaming links · Featured songs · Release pages · Link hubs · Embedded players</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/listen.png" alt="Organized music links and embedded player setup">
+              </figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-follow" role="tabpanel" aria-labelledby="next-step-follow-tab" data-next-step-panel="follow" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Turn the first spark into an actual connection.</h3>
+                <p>A follow is how casual listeners become people who know when you drop a song, announce a show, or need a room full of bodies. We help make your socials, mailing list, and bio links clear, consistent, and easy to find.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Social links · Bio links · Mailing list placement · Platform cleanup · Consistent handles</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/follow.png" alt="Social follow buttons and band bio link setup">
+              </figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-tickets" role="tabpanel" aria-labelledby="next-step-tickets-tab" data-next-step-panel="tickets" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Remove the friction between “I’m interested” and “I’m going.”</h3>
+                <p>When the ticket link is missing, buried, or confusing, people hesitate. We help keep show pages updated with ticket links, price info, age restrictions, venue details, and clear calls to action.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Ticket buttons · Show pages · Event links · Door prices · Age restrictions · Free show labeling</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/buy-tickets.png" alt="Ticket links and show details setup">
+              </figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-book" role="tabpanel" aria-labelledby="next-step-book-tab" data-next-step-panel="book" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Make it easy for venues, promoters, and other bands to understand what you bring.</h3>
+                <p>Booking should not require someone to piece together your genre, location, live energy, contact info, and current lineup from five platforms. We help build a clean booking path that gives people what they need to say yes.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Booking pages · Contact sections · EPK-style info · Live clips · Band photos · Genre/location clarity</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/book-the-band.png" alt="Booking page with band information and contact details">
+              </figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-watch" role="tabpanel" aria-labelledby="next-step-watch-tab" data-next-step-panel="watch" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Show the room before they enter it.</h3>
+                <p>A strong clip can do what a paragraph cannot. We help place live videos, reels, music videos, and short-form proof where fans and bookers will actually see them.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Featured videos · Live clips · Reel placement · Media sections · YouTube embeds</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/watch-the-clips.png" alt="Featured live clips and video links setup">
+              </figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-show" role="tabpanel" aria-labelledby="next-step-show-tab" data-next-step-panel="show" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Make the plan obvious enough to act on.</h3>
+                <p>Fans need the basics fast: date, venue, city, doors, lineup, tickets, age limits, and where to go. We help organize show info so people can stop decoding flyers and start making plans.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Tour dates · Venue info · Addresses · Doors/show times · Lineups · Parking/accessibility notes</p>
+              </div>
+              <figure class="tvtt-next-step-image">
+                <img loading="lazy" src="assets/next-step/show-up.png" alt="Show details and upcoming tour date setup">
+              </figure>
+            </article>
+          </div>
+        </div>
         <div class="tvtt-section-cta">
           <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
         </div>
@@ -2179,22 +2986,34 @@
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Websites +<br>Link pages</h3>
-            <p class="tvtt-service-description">A clear online home base for your music, shows, videos, photos, booking info, merch, socials, and whatever people need next. This can be a full website, a simple landing page, a tour page, or a link hub that actually feels like your band.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">A clear online home base for your music, shows, videos, photos, booking info, merch, socials, and whatever people need next. This can be a full website, a simple landing page, a tour page, or a link hub that actually feels like your band.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/websites-and-link-pages.png" alt="Website and link page service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Shows +<br>Tour support</h3>
-            <p class="tvtt-service-description">Show dates, ticket links, venue details, age restrictions, lineups, flyer info, and tour pages that stay easier to follow. We can also build smart show pages where upcoming dates stay current and past shows archive automatically after the date passes.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Show dates, ticket links, venue details, age restrictions, lineups, flyer info, and tour pages that stay easier to follow. We can also build smart show pages where upcoming dates stay current and past shows archive automatically after the date passes.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/shows-and-tour-support.png" alt="Shows and tour support service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Social setup +<br>Posting help</h3>
-            <p class="tvtt-service-description">Help turning the content you already have into posts that feel like you. Not fake influencer mode. Not "post three times a day forever." Just useful clips, reminders, updates, and release/show content that help people keep up with the band.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Help turning the content you already have into posts that feel like you. Not fake influencer mode. Not "post three times a day forever." Just useful clips, reminders, updates, and release/show content that help people keep up with the band.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/social-setup-and-posting-help.png" alt="Social setup and posting help service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Live content<br>Capture</h3>
-            <p class="tvtt-service-description">Clips from shows, rehearsals, crowd moments, stage energy, behind-the-scenes bits, and the little proof-of-life moments that show people what it feels like to be in the room. We help capture it, organize it, and make it usable.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Clips from shows, rehearsals, crowd moments, stage energy, behind-the-scenes bits, and the little proof-of-life moments that show people what it feels like to be in the room. We help capture it, organize it, and make it usable.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/content-capture.png" alt="Live content capture service artwork"></span>
+            </span>
           </button>
         </div>
         <div class="tvtt-section-cta">
@@ -2207,10 +3026,10 @@
       <div class="tvtt-section-inner">
         <h2 class="tvtt-section-title" id="plan-title">How this works</h2>
         <ol class="tvtt-steps">
-          <li class="tvtt-step"><div><h3>Choose where you need backup</h3><p>Pick the option that sounds closest: cleanup, a better home base, show support, content help, or ongoing digital support. You do not need to know the perfect package before reaching out. The form just helps us start in the right place.</p></div></li>
-          <li class="tvtt-step"><div><h3>Send what you have</h3><p>Share your band name, website, socials, streaming links, show dates, flyers, videos, or whatever exists right now. Messy is fine. Half-updated is fine. "We meant to fix this months ago" is extremely normal.</p></div></li>
-          <li class="tvtt-step"><div><h3>We check the online trail</h3><p>We look at what people actually find: your website or link page, socials, show dates, ticket links, streaming links, videos, booking info, and anything that helps someone decide to listen, follow, book, or show up.</p></div></li>
-          <li class="tvtt-step"><div><h3>We build around the band</h3><p>You get practical recommendations and options that fit your actual band, not a generic template. Maybe that is a simple link page. Maybe it is show dates that archive themselves. Maybe it is social help, live clips, release support, or a weird little themed page for one specific run.</p></div></li>
+          <li class="tvtt-step"><div><h3>Choose where you need backup</h3><p>Pick the option that sounds closest: cleanup, a better home base, show support, content help, or ongoing digital support. You do not need to know the perfect package. The form just helps us start in the right place.</p></div></li>
+          <li class="tvtt-step"><div><h3>Send what you have</h3><p>Share your band name and what you are interested in. Messy is fine. Half-updated is fine. "We meant to fix this months ago" is extremely normal.</p></div></li>
+          <li class="tvtt-step"><div><h3>We look at what people find</h3><p>We check your website or link page, socials, show dates, ticket links, streaming links, videos, booking info, and anything else that helps someone decide to listen, follow, book, or show up.</p></div></li>
+          <li class="tvtt-step"><div><h3>We build what actually helps</h3><p>You get practical recommendations and options that fit your actual band, not a generic template. Maybe that is a simple link page, auto-archiving show dates, social help, live clips, release support, or a weird little themed page for one specific run.</p></div></li>
         </ol>
         <div class="tvtt-section-cta">
           <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Look at my band's setup">Look at my band's setup</a>
@@ -2291,11 +3110,20 @@
           <p>Pick the kind of backup your band needs. It does not have to be perfect.</p>
         </div>
         <div class="tvtt-package-grid">
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="load-in">
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Load-in package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>Load-in</h3>
               <p class="tvtt-package-lead">Get your online setup cleaned up so people can actually find you.</p>
               <p>We take a look at what you already have, clean up the obvious problems, and give you a clearer path forward.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Load-in package details">
+                <picture>
+                  <source srcset="assets/packages/load-in.webp" type="image/webp">
+                  <img loading="lazy" src="assets/packages/load-in.png" alt="Band members carrying gear from a van into a venue at sunset">
+                </picture>
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -2315,11 +3143,20 @@
               <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-load-in" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Load-in package">Fix My Setup</a>
             </div>
           </article>
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="backline">
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Backline package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>Backline</h3>
               <p class="tvtt-package-lead">Keep your socials moving without turning the band into a posting machine.</p>
               <p>You already have content. We help shape it, schedule it, and keep your pages active so people know what is happening.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Backline package details">
+                <picture>
+                  <source srcset="assets/packages/backline.webp" type="image/webp">
+                  <img loading="lazy" src="assets/packages/backline.png" alt="Stage backline with drums, guitars, amplifiers, cases, and microphones under teal and red lights">
+                </picture>
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -2340,11 +3177,20 @@
               <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-backline" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Backline package">Keep Me Posting</a>
             </div>
           </article>
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="camera-op">
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Camera Op package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>Camera Op</h3>
               <p class="tvtt-package-lead">Capture what your band actually feels like in the room.</p>
               <p>We show up and film real moments from shows, practice, load-in, backstage, or wherever the useful stuff is happening.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Camera Op package details">
+                <picture>
+                  <source srcset="assets/packages/camera-ops.webp" type="image/webp">
+                  <img loading="lazy" src="assets/packages/camera-ops.png" alt="A live band being filmed on a phone from the crowd under bright concert lights">
+                </picture>
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -2364,11 +3210,20 @@
               <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-camera-op" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Camera Op package">Come Film Us</a>
             </div>
           </article>
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="road-crew">
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Road Crew package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>Road Crew</h3>
               <p class="tvtt-package-lead">We help capture, post, organize, and keep the band visible.</p>
               <p>This is the bigger support plan. We help with both sides: creating content and keeping the online trail current.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Road Crew package details">
+                <picture>
+                  <source srcset="assets/packages/road-crew.webp" type="image/webp">
+                  <img loading="lazy" src="assets/packages/road-crew.png" alt="Crew unloading gear from a van outside a downtown venue at sunset">
+                </picture>
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -2406,78 +3261,93 @@
 
     <div class="tvtt-optional-grid">
       <article class="tvtt-card tvtt-optional-card">
-        <h3>Optional: Digital setup and distribution</h3>
-        <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
-        <p>This is the stuff most bands don't think about until something breaks.</p>
+        <button class="tvtt-optional-art" type="button" data-image-modal-src="assets/addon-distribution-help.png" data-image-modal-title="Digital Setup and Distribution" data-image-modal-alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center" aria-label="Open larger Digital setup and distribution banner">
+          <picture>
+            <source srcset="assets/addon-distribution-help.webp" type="image/webp">
+            <img loading="lazy" src="assets/addon-distribution-help.png" alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center">
+          </picture>
+        </button>
+        <div class="tvtt-optional-copy">
+          <h3>Optional: Digital setup and distribution</h3>
+          <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
+          <p>This is the stuff most bands don't think about until something breaks.</p>
 
-        <h4>We can help with</h4>
-        <ul>
-          <li>Bandsintown setup and show syncing</li>
-          <li>Music release support through TuneCore, DistroKid, and more</li>
-          <li>Musixmatch lyric setup</li>
-          <li>Linktree or Carrd organization</li>
-          <li>Platform alignment across Spotify, YouTube, and more</li>
-        </ul>
+          <h4>We can help with</h4>
+          <ul>
+            <li>Bandsintown setup and show syncing</li>
+            <li>Music release support through TuneCore, DistroKid, and more</li>
+            <li>Musixmatch lyric setup</li>
+            <li>Linktree or Carrd organization</li>
+            <li>Platform alignment across Spotify, YouTube, and more</li>
+          </ul>
 
-        <p>Available with any package. Often bundled into Road Crew when needed.</p>
+          <p>Available with any package. Often bundled into Road Crew when needed.</p>
+        </div>
       </article>
 
       <article class="tvtt-card tvtt-optional-card">
-        <h3>Optional: Print + QR coordination</h3>
-        <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
-        <p>This is the offline stuff that helps fans get to the right online place.</p>
+        <button class="tvtt-optional-art" type="button" data-image-modal-src="assets/addon-print-and-qr-code.png" data-image-modal-title="Print and QR Coordination" data-image-modal-alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map" aria-label="Open larger Print and QR coordination banner">
+          <picture>
+            <source srcset="assets/addon-print-and-qr-code.webp" type="image/webp">
+            <img loading="lazy" src="assets/addon-print-and-qr-code.png" alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map">
+          </picture>
+        </button>
+        <div class="tvtt-optional-copy">
+          <h3>Optional: Print + QR coordination</h3>
+          <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
+          <p>This is the offline stuff that helps fans get to the right online place.</p>
 
-        <h4>We can help with</h4>
-        <ul>
-          <li>QR flyers for shows, releases, merch, tip jars, or mailing lists</li>
-          <li>Merch table cards that point people to music, socials, videos, and upcoming dates</li>
-          <li>Small handouts for shows, tours, release nights, or special events</li>
-          <li>Simple printed signs for merch tables, venues, or promo moments</li>
-          <li>Basic design cleanup so the print piece matches the page it sends people to</li>
-          <li>QR code checks so fans land where they are supposed to land</li>
-          <li>Print-ready files for posters, banners, stickers, or bulk orders</li>
-          <li>Coordination with a print shop when the project needs more than small-run support</li>
-        </ul>
-
-
+          <h4>We can help with</h4>
+          <ul>
+            <li>QR flyers for shows, releases, merch, tip jars, or mailing lists</li>
+            <li>Merch table cards that point people to music, socials, videos, and upcoming dates</li>
+            <li>Small handouts for shows, tours, release nights, or special events</li>
+            <li>Simple printed signs for merch tables, venues, or promo moments</li>
+            <li>Basic design cleanup so the print piece matches the page it sends people to</li>
+            <li>QR code checks so fans land where they are supposed to land</li>
+            <li>Print-ready files for posters, banners, stickers, or bulk orders</li>
+            <li>Coordination with a print shop when the project needs more than small-run support</li>
+          </ul>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-    <section class="tvtt-section" aria-labelledby="count-title">
+    <section class="tvtt-section tvtt-count-section" aria-labelledby="count-title">
       <div class="tvtt-section-inner">
-        <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="count-title">What you can count on</h2>
-        </div>
-        <div class="tvtt-count-grid">
-          <article class="tvtt-card">
-            <h3>Built around who your band actually is</h3>
-            <p>Your online setup should feel like your sound, your shows, your visuals, your humor, your crowd, and your level of chaos. Not a generic band page with your logo slapped on top.</p>
-          </article>
-          <article class="tvtt-card">
-            <h3>Clear does not mean corporate</h3>
-            <p>People should be able to find your music, shows, links, videos, and booking info without your band losing its personality.</p>
-          </article>
-          <article class="tvtt-card">
-            <h3>No "post every day forever" nonsense</h3>
-            <p>We care about rhythm, not burnout. The goal is to help you show up online in a way that is useful, realistic, and actually sustainable.</p>
-          </article>
-          <article class="tvtt-card">
-            <h3>No tech knowledge required</h3>
-            <p>You do not need to know what is broken before you reach out. Send what you have, and we will help sort the useful fixes from the noise.</p>
-          </article>
-          <article class="tvtt-card">
-            <h3>You stay in control</h3>
-            <p>Your voice, your accounts, your music, your content, your comfort level. We explain the options, the tradeoffs, and work with you to figure out what makes sense for the band.</p>
-          </article>
-          <article class="tvtt-card">
-            <h3>We build around the moment</h3>
-            <p>A release, a tour, a themed run, a show push, a weird little idea that fits your band. We can help build the digital pieces around what is actually happening, not force everything into the same template.</p>
-          </article>
-        </div>
-        <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Look at my band's setup">Look at my band's setup</a>
+        <h2 class="tvtt-section-title" id="count-title">WHAT YOU CAN COUNT ON</h2>
+        <div class="tvtt-count-image-grid" aria-label="What you can count on from Treasure Valley Tech Tavern">
+          <button class="tvtt-count-image" type="button" data-image-modal-src="assets/what-you-can-count-on/1.png" data-image-modal-title="What You Can Count On" data-image-modal-alt="Built around your band. Your online setup should fit your sound, shows, visuals, humor, crowd, chaos, and whatever is happening now. Not a generic band page with your logo slapped on top." aria-label="Open larger What you can count on image 1">
+            <picture>
+              <source srcset="assets/what-you-can-count-on/1.webp" type="image/webp">
+              <img loading="lazy" src="assets/what-you-can-count-on/1.png" alt="Built around your band. Your online setup should fit your sound, shows, visuals, humor, crowd, chaos, and whatever is happening now. Not a generic band page with your logo slapped on top.">
+            </picture>
+          </button>
+          <button class="tvtt-count-image" type="button" data-image-modal-src="assets/what-you-can-count-on/2.png" data-image-modal-title="What You Can Count On" data-image-modal-alt="Clear without going corporate. People should be able to find your music, shows, links, videos, and booking info without your band losing its personality." aria-label="Open larger What you can count on image 2">
+            <picture>
+              <source srcset="assets/what-you-can-count-on/2.webp" type="image/webp">
+              <img loading="lazy" src="assets/what-you-can-count-on/2.png" alt="Clear without going corporate. People should be able to find your music, shows, links, videos, and booking info without your band losing its personality.">
+            </picture>
+          </button>
+          <button class="tvtt-count-image" type="button" data-image-modal-src="assets/what-you-can-count-on/3.png" data-image-modal-title="What You Can Count On" data-image-modal-alt="Useful, not exhausting. No post every day forever nonsense. We care about rhythm, not burnout, and help you show up online in a way that is realistic enough to keep using." aria-label="Open larger What you can count on image 3">
+            <picture>
+              <source srcset="assets/what-you-can-count-on/3.webp" type="image/webp">
+              <img loading="lazy" src="assets/what-you-can-count-on/3.png" alt="Useful, not exhausting. No post every day forever nonsense. We care about rhythm, not burnout, and help you show up online in a way that is realistic enough to keep using.">
+            </picture>
+          </button>
+          <button class="tvtt-count-image" type="button" data-image-modal-src="assets/what-you-can-count-on/4.png" data-image-modal-title="What You Can Count On" data-image-modal-alt="No tech knowledge required. You do not need to know what is broken before you reach out. Send what exists, even if it is messy, and we will help sort the useful fixes from the noise." aria-label="Open larger What you can count on image 4">
+            <picture>
+              <source srcset="assets/what-you-can-count-on/4.webp" type="image/webp">
+              <img loading="lazy" src="assets/what-you-can-count-on/4.png" alt="No tech knowledge required. You do not need to know what is broken before you reach out. Send what exists, even if it is messy, and we will help sort the useful fixes from the noise.">
+            </picture>
+          </button>
+          <button class="tvtt-count-image" type="button" data-image-modal-src="assets/what-you-can-count-on/5.png" data-image-modal-title="What You Can Count On" data-image-modal-alt="You stay in control. Your voice, your accounts, your music, your content, your comfort level. We explain the options and tradeoffs, then work with you to figure out what actually makes sense." aria-label="Open larger What you can count on image 5">
+            <picture>
+              <source srcset="assets/what-you-can-count-on/5.webp" type="image/webp">
+              <img loading="lazy" src="assets/what-you-can-count-on/5.png" alt="You stay in control. Your voice, your accounts, your music, your content, your comfort level. We explain the options and tradeoffs, then work with you to figure out what actually makes sense.">
+            </picture>
+          </button>
         </div>
       </div>
     </section>
@@ -2501,88 +3371,6 @@
           </article>
         </div>
 
-        <div class="tvtt-tour-shell">
-          <button class="tvtt-tour-control tvtt-tour-prev" type="button" aria-label="Previous tour page example" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Previous tour page example">‹</button>
-          <div class="tvtt-tour-grid" aria-label="Tour page examples">
-            <article class="tvtt-card tvtt-tour-card">
-              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Widget Tour Info.png" data-image-modal-title="Home Page Show Widget" data-image-modal-alt="Home page show widget screenshot" aria-label="Open full-size Home page show widget screenshot" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open full-size Home page show widget screenshot">
-                <img loading="lazy" src="assets/Widget Tour Info.png" alt="Home page show widget screenshot">
-              </button>
-              <div class="tvtt-tour-copy">
-                <div>
-                  <h3>Home page show widget</h3>
-                  <p>A small show widget can live on your main band website or landing page and show the next few upcoming dates without taking over the whole page.</p>
-                  <p>It can show the next 3 shows, including date, city, venue, age restriction, and ticket or info links. A "View all shows" button takes fans to the full tour page.</p>
-                </div>
-                <div>
-                  <h4>Best for</h4>
-                  <p>Bands that already have a website but need their upcoming shows to be easier to find right away.</p>
-                </div>
-              </div>
-            </article>
-            <article class="tvtt-card tvtt-tour-card">
-              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Standard Tour Page.png" data-image-modal-title="Standard Tour Page" data-image-modal-alt="Standard tour page screenshot" aria-label="Open full-size Standard tour page screenshot" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open full-size Standard tour page screenshot">
-                <img loading="lazy" src="assets/Standard Tour Page.png" alt="Standard tour page screenshot">
-              </button>
-              <div class="tvtt-tour-copy">
-                <div>
-                  <h3>Standard tour page</h3>
-                  <p>A full tour page gives your band one reliable place for show dates, ticket links, venue details, lineups, and past show history.</p>
-                  <p>The design can still match your band's vibe. It might use live video footage in the background, band photos, release artwork, or colors and textures that fit the current era.</p>
-                </div>
-                <div>
-                  <h4>Tabs</h4>
-                  <p><strong>Active Tour:</strong> Shows only upcoming shows.</p>
-                  <p><strong>Past Shows:</strong> Shows past dates automatically after they have passed. Past shows should be organized by year so the page becomes a living archive instead of a dead list.</p>
-                </div>
-                <div>
-                  <h4>Best for</h4>
-                  <p>Bands with multiple shows, regional runs, tour dates, or recurring bookings that need one clean place for fans, venues, and bookers to check.</p>
-                </div>
-                <div>
-                  <h4>Features</h4>
-                  <ul>
-                    <li>Upcoming shows only on the active tab</li>
-                    <li>Past shows archive automatically</li>
-                    <li>Past shows grouped by year</li>
-                    <li>Ticket and info links included</li>
-                    <li>Built around the band's visuals and tone</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-            <article class="tvtt-card tvtt-tour-card">
-              <button class="tvtt-tour-visual" type="button" data-image-modal-src="assets/Custom Tour Page.png" data-image-modal-title="Custom Tour Page" data-image-modal-alt="Custom MySpace-style Oathbound tour page screenshot" aria-label="Open full-size Custom MySpace-style Oathbound tour page screenshot" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open full-size Custom MySpace-style Oathbound tour page screenshot">
-                <img loading="lazy" src="assets/Custom Tour Page.png" alt="Custom MySpace-style Oathbound tour page screenshot">
-              </button>
-              <div class="tvtt-tour-copy">
-                <div>
-                  <h3>Custom tour page</h3>
-                  <p>Some tours deserve their own little world.</p>
-                  <p>A custom tour page can be built around a specific theme, joke, release, or visual era. For example, Oathbound's MySpace-themed tour page was designed to match the concept of the MySpace tour while still doing the practical work: showing upcoming shows, linking tickets, and moving past dates into the archive automatically.</p>
-                </div>
-                <div>
-                  <h4>Best for</h4>
-                  <p>Bands doing a themed run, release tour, special event series, anniversary show, or anything that deserves more personality than a standard show list.</p>
-                </div>
-                <div>
-                  <h4>Features</h4>
-                  <ul>
-                    <li>Custom visual concept</li>
-                    <li>Tour-specific design</li>
-                    <li>Upcoming and past show logic</li>
-                    <li>Ticket links and venue info</li>
-                    <li>Built to feel like the tour, not a generic template</li>
-                  </ul>
-                </div>
-              </div>
-            </article>
-          </div>
-          <button class="tvtt-tour-control tvtt-tour-next" type="button" aria-label="Next tour page example" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Next tour page example">›</button>
-          <div class="tvtt-tour-controls-row">
-            <button class="tvtt-tour-pause" type="button" aria-pressed="false" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Interactive detail">Pause carousel</button>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -2591,14 +3379,110 @@
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
           <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages</h2>
-          <p>Make your shows easier to find, easier to share, and easier to keep current.</p>
-          <p>Tour pages give your band one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history. They can be simple and practical, or built around the vibe of a specific tour, release, or era of the band.</p>
-          <p>The point is not to make every band look the same. The point is to make sure people can find the next show and feel like they are still inside your band's world.</p>
+          <p>Make your shows easier to find, share, and keep current.</p>
+          <p>Tour pages give you one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history.</p>
+          <p>They can stay simple and practical, or be built around the vibe of a specific tour, release, or era.</p>
+          <p>The point is not to make every band look the same. It is to help people find the next show and still feel like they are inside your world.</p>
         </div>
+        <div class="tvtt-tour-shell">
+          <article>
+            <button class="tvtt-tour-summary-button" type="button" data-tour-info="tour-home-widget" aria-label="Open Home page show widget details" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Home page show widget details">
+              <h3>Home page show widget</h3>
+              <span class="tvtt-tour-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="tvtt-tour-details" id="tour-home-widget">
+              <figure class="tvtt-tour-detail-media">
+                <img loading="lazy" src="assets/Widget Tour Info.png" alt="Home page show widget screenshot">
+              </figure>
+              <p>A small show widget can live on your main band website or landing page and show the next few upcoming dates without taking over the whole page.</p>
+              <p>It can show the next 3 shows, including date, city, venue, age restriction, and ticket or info links. A "View all shows" button takes fans to the full tour page.</p>
+              <div>
+                <h4>Best for</h4>
+                <p>Bands that already have a website but need their upcoming shows to be easier to find right away.</p>
+              </div>
+            </div>
+          </article>
+          <article>
+            <button class="tvtt-tour-summary-button" type="button" data-tour-info="tour-standard-page" aria-label="Open Standard tour page details" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Standard tour page details">
+              <h3>Standard tour page</h3>
+              <span class="tvtt-tour-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="tvtt-tour-details" id="tour-standard-page">
+              <figure class="tvtt-tour-detail-media">
+                <img loading="lazy" src="assets/Standard Tour Page.png" alt="Standard tour page screenshot">
+              </figure>
+              <p>A full tour page gives your band one reliable place for show dates, ticket links, venue details, lineups, and past show history.</p>
+              <p>The design can still match your band's vibe. It might use live video footage in the background, band photos, release artwork, or colors and textures that fit the current era.</p>
+              <div>
+                <h4>Tabs</h4>
+                <p><strong>Active Tour:</strong> Shows only upcoming shows.</p>
+                <p><strong>Past Shows:</strong> Shows past dates automatically after they have passed. Past shows should be organized by year so the page becomes a living archive instead of a dead list.</p>
+              </div>
+              <div>
+                <h4>Best for</h4>
+                <p>Bands with multiple shows, regional runs, tour dates, or recurring bookings that need one clean place for fans, venues, and bookers to check.</p>
+              </div>
+              <div>
+                <h4>Features</h4>
+                <ul>
+                  <li>Upcoming shows only on the active tab</li>
+                  <li>Past shows archive automatically</li>
+                  <li>Past shows grouped by year</li>
+                  <li>Ticket and info links included</li>
+                  <li>Built around the band's visuals and tone</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article>
+            <button class="tvtt-tour-summary-button" type="button" data-tour-info="tour-custom-page" aria-label="Open Custom tour page details" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Custom tour page details">
+              <h3>Custom tour page</h3>
+              <span class="tvtt-tour-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="tvtt-tour-details" id="tour-custom-page">
+              <figure class="tvtt-tour-detail-media">
+                <img loading="lazy" src="assets/Custom Tour Page.png" alt="Custom MySpace-style Oathbound tour page screenshot">
+              </figure>
+              <p>Some tours deserve their own little world.</p>
+              <p>A custom tour page can be built around a specific theme, joke, release, or visual era. For example, Oathbound's MySpace-themed tour page was designed to match the concept of the MySpace tour while still doing the practical work: showing upcoming shows, linking tickets, and moving past dates into the archive automatically.</p>
+              <div>
+                <h4>Best for</h4>
+                <p>Bands doing a themed run, release tour, special event series, anniversary show, or anything that deserves more personality than a standard show list.</p>
+              </div>
+              <div>
+                <h4>Features</h4>
+                <ul>
+                  <li>Custom visual concept</li>
+                  <li>Tour-specific design</li>
+                  <li>Upcoming and past show logic</li>
+                  <li>Ticket links and venue info</li>
+                  <li>Built to feel like the tour, not a generic template</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+
         <div class="tvtt-card tvtt-tour-cta">
           <h3>Need a tour page that fits your band?</h3>
           <p>Whether you need a simple show list, a homepage widget, or a themed tour page with its own weird little world, we can help build something that keeps your dates clear and your band's personality intact.</p>
           <a class="tvtt-button" href="https://treasurevalleytechtavern.com/tour-page-request" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Tour Page">Request a tour page estimate</a>
+        </div>
+        <div class="tvtt-scene-strip" aria-label="Live music content examples">
+          <figure class="tvtt-scene-tile tvtt-scene-tile-tall">
+            <img loading="lazy" src="assets/gallery/testament-crowd-room-view-2026-03-15.webp" alt="Wide crowd view at a live Testament show with green stage lights">
+            <figcaption>Testament - Treefort Music Hall</figcaption>
+          </figure>
+
+          <figure class="tvtt-scene-tile">
+            <img loading="lazy" src="assets/gallery/black-tooth-grin-front-row-lights-2025-03-22.webp" alt="Crowd-level view of Black Tooth Grin performing under bright stage lights">
+            <figcaption>Black Tooth Grin - The Shredder</figcaption>
+          </figure>
+
+          <figure class="tvtt-scene-tile">
+            <img loading="lazy" src="assets/gallery/bbno$-crowd-phones-lights-2025-03-15.webp" alt="Concert crowd holding phones up under pink and green stage lights">
+            <figcaption>bbno$ - Revolution Concert House</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -2606,7 +3490,7 @@
     <section class="tvtt-section" aria-label="Outcome">
       <div class="tvtt-section-inner">
         <div class="tvtt-outcome">
-          <p>So when people hear your name,<br>they don't lose the thread.</p>
+          <p>So when people hear your name, they do not hit a dead end.</p>
           <p>They find your music.</p>
           <p>They find your next show.</p>
           <p>They follow the band.</p>
@@ -2644,9 +3528,21 @@
   </main>
   <div class="tvtt-image-modal" data-image-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="image-modal-title">
     <div class="tvtt-image-modal-frame">
+      <button class="tvtt-image-modal-reset" type="button" data-image-modal-reset aria-label="Fit image to window" disabled>Fit</button>
+      <button class="tvtt-image-modal-zoom-out" type="button" data-image-modal-zoom-out aria-label="Zoom image out" disabled>-</button>
+      <button class="tvtt-image-modal-zoom" type="button" data-image-modal-zoom aria-label="Zoom image in">+</button>
       <button class="tvtt-image-modal-close" type="button" data-image-modal-close aria-label="Close image preview">&times;</button>
       <h2 class="tvtt-image-modal-title" id="image-modal-title" data-image-modal-title></h2>
-      <img class="tvtt-image-modal-img" src="" alt="" data-image-modal-img>
+      <div class="tvtt-image-modal-viewport" data-image-modal-viewport>
+        <img class="tvtt-image-modal-img" src="" alt="" data-image-modal-img>
+      </div>
+    </div>
+  </div>
+  <div class="tvtt-info-modal" data-info-modal aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
+    <div class="tvtt-info-modal-frame">
+      <button class="tvtt-info-modal-close" type="button" data-info-modal-close aria-label="Close details">&times;</button>
+      <h2 class="tvtt-info-modal-title" id="info-modal-title" data-info-modal-title></h2>
+      <div class="tvtt-info-modal-body" data-info-modal-body></div>
     </div>
   </div>
   <script type="application/ld+json">
@@ -2677,13 +3573,230 @@
   </script>
   <script>
     (function () {
+      const nextStep = document.querySelector("[data-next-step]");
+      if (nextStep) {
+        const tabs = Array.from(nextStep.querySelectorAll("[data-next-step-tab]"));
+        const panels = Array.from(nextStep.querySelectorAll("[data-next-step-panel]"));
+        let pinnedNextStep = null;
+
+        function collapseNextStep() {
+          pinnedNextStep = null;
+          tabs.forEach((tab) => {
+            tab.classList.remove("is-active");
+            tab.setAttribute("aria-selected", "false");
+          });
+
+          panels.forEach((panel) => {
+            panel.classList.remove("is-active");
+            panel.hidden = true;
+          });
+        }
+
+        function activateNextStep(id, pin) {
+          if (pin) {
+            pinnedNextStep = id;
+          }
+
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.nextStepTab === id;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+          });
+
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.nextStepPanel === id;
+            panel.classList.toggle("is-active", isActive);
+            panel.hidden = !isActive;
+          });
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            if (tab.classList.contains("is-active")) {
+              collapseNextStep();
+              return;
+            }
+
+            activateNextStep(tab.dataset.nextStepTab, true);
+          });
+
+          tab.addEventListener("mouseenter", () => {
+            if (!pinnedNextStep) {
+              activateNextStep(tab.dataset.nextStepTab, false);
+            }
+          });
+
+          tab.addEventListener("focus", () => {
+            if (!pinnedNextStep) {
+              activateNextStep(tab.dataset.nextStepTab, false);
+            }
+          });
+        });
+
+        nextStep.addEventListener("mouseleave", () => {
+          if (!pinnedNextStep) {
+            collapseNextStep();
+          }
+        });
+      }
+
       const serviceCards = document.querySelectorAll(".tvtt-service-card");
       serviceCards.forEach((card) => {
         card.addEventListener("click", () => {
-          const isOpen = card.classList.toggle("is-active");
+          const isOpen = !card.classList.contains("is-active");
+          serviceCards.forEach((otherCard) => {
+            if (otherCard !== card) {
+              otherCard.classList.remove("is-active");
+              otherCard.setAttribute("aria-expanded", "false");
+            }
+          });
+          card.classList.toggle("is-active", isOpen);
           card.setAttribute("aria-expanded", String(isOpen));
         });
       });
+
+      const packageToggles = document.querySelectorAll("[data-package-expand]");
+      const packageCloseButtons = document.querySelectorAll("[data-package-close]");
+      const packageExpansionMedia = window.matchMedia("(min-width: 781px)");
+
+      function packageExpansionEnabled() {
+        return packageExpansionMedia.matches;
+      }
+
+      function closeExpandedPackageCard(packageGrid, focusTarget) {
+        if (!packageGrid) {
+          return;
+        }
+
+        packageGrid.querySelectorAll(".tvtt-package-card.is-expanded").forEach((card) => {
+          card.classList.remove("is-expanded");
+          const cardToggle = card.querySelector("[data-package-expand]");
+          if (cardToggle) {
+            cardToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+        packageGrid.classList.remove("is-package-expanded");
+        packageGrid.style.minHeight = "";
+
+        if (focusTarget) {
+          focusTarget.focus();
+        }
+      }
+
+      function setPackageSectionUrl(sectionKey) {
+        const url = new URL(window.location.href);
+        if (sectionKey) {
+          url.searchParams.set("section", sectionKey);
+        } else {
+          url.searchParams.delete("section");
+        }
+        window.history.replaceState({}, "", url);
+      }
+
+      function openPackageCard(packageCard, options) {
+        if (!packageExpansionEnabled()) {
+          return;
+        }
+
+        const packageGrid = packageCard ? packageCard.closest(".tvtt-package-grid") : null;
+        const toggle = packageCard ? packageCard.querySelector("[data-package-expand]") : null;
+        if (!packageCard || !packageGrid || !toggle) {
+          return;
+        }
+
+        closeExpandedPackageCard(packageGrid);
+        packageGrid.classList.add("is-package-expanded");
+        packageCard.classList.add("is-expanded");
+        toggle.setAttribute("aria-expanded", "true");
+        packageGrid.style.minHeight = "";
+        packageGrid.style.minHeight = `${Math.max(packageGrid.offsetHeight, packageCard.scrollHeight)}px`;
+
+        if (options && options.updateUrl) {
+          setPackageSectionUrl(packageCard.dataset.packageSection || "");
+        }
+
+        if (options && options.scroll) {
+          packageGrid.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+
+      function resizeExpandedPackageCards() {
+        document.querySelectorAll(".tvtt-package-grid.is-package-expanded").forEach((packageGrid) => {
+          const expandedCard = packageGrid.querySelector(".tvtt-package-card.is-expanded");
+          if (!expandedCard) {
+            packageGrid.classList.remove("is-package-expanded");
+            packageGrid.style.minHeight = "";
+            return;
+          }
+
+          packageGrid.style.minHeight = "";
+          packageGrid.style.minHeight = `${Math.max(packageGrid.offsetHeight, expandedCard.scrollHeight)}px`;
+        });
+      }
+
+      packageToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          if (!packageExpansionEnabled()) {
+            return;
+          }
+
+          const packageCard = toggle.closest(".tvtt-package-card");
+          const packageGrid = packageCard ? packageCard.closest(".tvtt-package-grid") : null;
+          if (!packageCard || !packageGrid) {
+            return;
+          }
+
+          const shouldOpen = !packageCard.classList.contains("is-expanded");
+          if (!shouldOpen) {
+            closeExpandedPackageCard(packageGrid);
+            setPackageSectionUrl("");
+            return;
+          }
+
+          openPackageCard(packageCard, { updateUrl: true });
+        });
+      });
+
+      packageCloseButtons.forEach((closeButton) => {
+        closeButton.addEventListener("click", () => {
+          const packageCard = closeButton.closest(".tvtt-package-card");
+          const packageGrid = packageCard ? packageCard.closest(".tvtt-package-grid") : null;
+          const packageToggle = packageCard ? packageCard.querySelector("[data-package-expand]") : null;
+          closeExpandedPackageCard(packageGrid, packageToggle);
+          setPackageSectionUrl("");
+        });
+      });
+
+      const sectionAliases = {
+        "load-in": "load-in",
+        "loadin": "load-in",
+        "backline": "backline",
+        "camera-op": "camera-op",
+        "camera-ops": "camera-op",
+        "camera": "camera-op",
+        "road-crew": "road-crew",
+        "roadcrew": "road-crew"
+      };
+      const requestedSection = new URLSearchParams(window.location.search).get("section");
+      const normalizedSection = requestedSection ? sectionAliases[requestedSection.trim().toLowerCase()] : "";
+      if (normalizedSection && packageExpansionEnabled()) {
+        const packageCard = document.querySelector(`[data-package-section="${normalizedSection}"]`);
+        if (packageCard) {
+          window.requestAnimationFrame(() => {
+            openPackageCard(packageCard, { updateUrl: false, scroll: true });
+          });
+        }
+      }
+      packageExpansionMedia.addEventListener("change", () => {
+        if (!packageExpansionEnabled()) {
+          document.querySelectorAll(".tvtt-package-grid").forEach((packageGrid) => {
+            closeExpandedPackageCard(packageGrid);
+          });
+        } else {
+          resizeExpandedPackageCards();
+        }
+      });
+      window.addEventListener("resize", resizeExpandedPackageCards);
     }());
   </script>
   <script>
@@ -2692,7 +3805,78 @@
       const modalImage = modal ? modal.querySelector("[data-image-modal-img]") : null;
       const modalTitle = modal ? modal.querySelector("[data-image-modal-title]") : null;
       const modalClose = modal ? modal.querySelector("[data-image-modal-close]") : null;
+      const modalZoom = modal ? modal.querySelector("[data-image-modal-zoom]") : null;
+      const modalZoomOut = modal ? modal.querySelector("[data-image-modal-zoom-out]") : null;
+      const modalReset = modal ? modal.querySelector("[data-image-modal-reset]") : null;
+      const modalViewport = modal ? modal.querySelector("[data-image-modal-viewport]") : null;
+      const infoModal = document.querySelector("[data-info-modal]");
+      const infoModalTitle = infoModal ? infoModal.querySelector("[data-info-modal-title]") : null;
+      const infoModalBody = infoModal ? infoModal.querySelector("[data-info-modal-body]") : null;
+      const infoModalClose = infoModal ? infoModal.querySelector("[data-info-modal-close]") : null;
       let lastModalTrigger = null;
+      let lastInfoTrigger = null;
+      let imageZoom = 1;
+      let fittedImageWidth = 0;
+      let fittedImageHeight = 0;
+
+      function measureFittedImageSize() {
+        if (!modalImage || !modalViewport || !modalImage.naturalWidth || !modalImage.naturalHeight) {
+          fittedImageWidth = 0;
+          fittedImageHeight = 0;
+          return;
+        }
+
+        const viewportWidth = Math.max(modalViewport.clientWidth - 2, 1);
+        const viewportHeight = Math.max(modalViewport.clientHeight - 2, 1);
+        const fitScale = Math.min(viewportWidth / modalImage.naturalWidth, viewportHeight / modalImage.naturalHeight, 1);
+        fittedImageWidth = Math.round(modalImage.naturalWidth * fitScale);
+        fittedImageHeight = Math.round(modalImage.naturalHeight * fitScale);
+      }
+
+      function setImageZoom(nextZoom) {
+        if (!modalImage || !modalViewport) {
+          return;
+        }
+
+        if (!fittedImageWidth || !fittedImageHeight) {
+          measureFittedImageSize();
+        }
+
+        if (!fittedImageWidth || !fittedImageHeight) {
+          imageZoom = 1;
+          return;
+        }
+
+        const previousZoom = imageZoom;
+        imageZoom = Math.min(Math.max(nextZoom, 1), 2.5);
+        modalImage.classList.toggle("is-zoomed", imageZoom > 1);
+        modalViewport.classList.toggle("is-zoomed", imageZoom > 1);
+        modalImage.style.width = `${Math.round(fittedImageWidth * imageZoom)}px`;
+        modalImage.style.height = `${Math.round(fittedImageHeight * imageZoom)}px`;
+        if (previousZoom <= 1 && imageZoom > 1) {
+          modalViewport.scrollTo({ top: 0, left: 0 });
+        }
+        if (modalZoom) {
+          modalZoom.disabled = imageZoom >= 2.5;
+          modalZoom.textContent = "+";
+        }
+        if (modalZoomOut) {
+          modalZoomOut.disabled = imageZoom <= 1;
+        }
+        if (modalReset) {
+          modalReset.disabled = imageZoom <= 1;
+        }
+        modalViewport.classList.toggle("can-zoom", imageZoom < 2.5);
+      }
+
+      function resetImageZoom() {
+        imageZoom = 1;
+        measureFittedImageSize();
+        setImageZoom(1);
+        if (modalViewport) {
+          modalViewport.scrollTo({ top: 0, left: 0 });
+        }
+      }
 
       function closeImageModal() {
         if (!modal || !modalImage || !modalTitle) {
@@ -2701,9 +3885,30 @@
 
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
+        modalImage.classList.remove("is-zoomed");
+        modalImage.style.width = "";
+        modalImage.style.height = "";
         modalImage.removeAttribute("src");
         modalImage.alt = "";
         modalTitle.textContent = "";
+        modalImage.onload = null;
+        imageZoom = 1;
+        fittedImageWidth = 0;
+        fittedImageHeight = 0;
+        if (modalViewport) {
+          modalViewport.classList.remove("is-zoomed");
+          modalViewport.classList.remove("can-zoom");
+          modalViewport.scrollTo({ top: 0, left: 0 });
+        }
+        if (modalZoom) {
+          modalZoom.disabled = false;
+        }
+        if (modalZoomOut) {
+          modalZoomOut.disabled = true;
+        }
+        if (modalReset) {
+          modalReset.disabled = true;
+        }
 
         if (lastModalTrigger) {
           lastModalTrigger.focus();
@@ -2716,13 +3921,54 @@
 
         if (imageTrigger && modal && modalImage && modalTitle) {
           lastModalTrigger = imageTrigger;
+          fittedImageWidth = 0;
+          fittedImageHeight = 0;
           modalImage.src = imageTrigger.dataset.imageModalSrc;
           modalImage.alt = imageTrigger.dataset.imageModalAlt || "";
           modalTitle.textContent = imageTrigger.dataset.imageModalTitle || "Tour page preview";
           modal.classList.add("is-open");
           modal.setAttribute("aria-hidden", "false");
+          modalImage.onload = resetImageZoom;
           if (modalClose) {
             modalClose.focus();
+          }
+          return;
+        }
+
+        if (event.target.closest("[data-image-modal-zoom]")) {
+          setImageZoom(imageZoom + 0.25);
+          return;
+        }
+
+        if (event.target.closest("[data-image-modal-zoom-out]")) {
+          setImageZoom(imageZoom - 0.25);
+          return;
+        }
+
+        if (event.target.closest("[data-image-modal-reset]")) {
+          resetImageZoom();
+          return;
+        }
+
+        if (modalViewport && modalViewport.contains(event.target) && modal.classList.contains("is-open") && imageZoom < 2.5) {
+          setImageZoom(imageZoom + 0.25);
+          return;
+        }
+
+        const infoTrigger = event.target.closest("[data-tour-info]");
+
+        if (infoTrigger && infoModal && infoModalTitle && infoModalBody) {
+          const detail = document.getElementById(infoTrigger.dataset.tourInfo);
+          const title = infoTrigger.querySelector("h3")?.textContent.trim() || "Tour page details";
+          if (detail) {
+            lastInfoTrigger = infoTrigger;
+            infoModalTitle.textContent = title;
+            infoModalBody.innerHTML = detail.innerHTML;
+            infoModal.classList.add("is-open");
+            infoModal.setAttribute("aria-hidden", "false");
+            if (infoModalClose) {
+              infoModalClose.focus();
+            }
           }
           return;
         }
@@ -2730,13 +3976,37 @@
         if (event.target.closest("[data-image-modal-close]") || event.target === modal) {
           closeImageModal();
         }
+
+        if (event.target.closest("[data-info-modal-close]") || event.target === infoModal) {
+          closeInfoModal();
+        }
       });
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal && modal.classList.contains("is-open")) {
           closeImageModal();
         }
+
+        if (event.key === "Escape" && infoModal && infoModal.classList.contains("is-open")) {
+          closeInfoModal();
+        }
       });
+
+      function closeInfoModal() {
+        if (!infoModal || !infoModalTitle || !infoModalBody) {
+          return;
+        }
+
+        infoModal.classList.remove("is-open");
+        infoModal.setAttribute("aria-hidden", "true");
+        infoModalTitle.textContent = "";
+        infoModalBody.innerHTML = "";
+
+        if (lastInfoTrigger) {
+          lastInfoTrigger.focus();
+          lastInfoTrigger = null;
+        }
+      }
 
       document.querySelectorAll(".tvtt-video-frame img").forEach((image) => {
         image.addEventListener("error", () => {
@@ -2781,75 +4051,10 @@
       }
 
       setupGallery(".tvtt-video-gallery", ".tvtt-clips-shell .tvtt-gallery-arrow");
-
-      const tourGallery = document.querySelector(".tvtt-tour-grid");
-      const tourSlides = tourGallery ? Array.from(tourGallery.querySelectorAll(".tvtt-tour-card")) : [];
-      const tourPrev = document.querySelector(".tvtt-tour-prev");
-      const tourNext = document.querySelector(".tvtt-tour-next");
-      const tourPause = document.querySelector(".tvtt-tour-pause");
-      let tourIndex = 0;
-      let tourPaused = false;
-      let tourTimer = null;
-
-      function syncTourHeight() {
-        if (!tourGallery || tourSlides.length === 0) {
-          return;
-        }
-        tourGallery.style.height = "auto";
-        const tallest = tourSlides.reduce((height, slide) => Math.max(height, slide.offsetHeight), 0);
-        if (tallest) {
-          tourGallery.style.height = tallest + "px";
-        }
-      }
-
-      function goToTourSlide(index, userInitiated) {
-        if (!tourGallery || tourSlides.length === 0) {
-          return;
-        }
-        tourIndex = (index + tourSlides.length) % tourSlides.length;
-        tourGallery.scrollTo({ left: tourSlides[tourIndex].offsetLeft, behavior: userInitiated ? "smooth" : "smooth" });
-      }
-
-      function startTourTimer() {
-        window.clearInterval(tourTimer);
-        if (tourPaused || tourSlides.length < 2) {
-          return;
-        }
-        tourTimer = window.setInterval(() => {
-          goToTourSlide(tourIndex + 1, false);
-        }, 15000);
-      }
-
-      if (tourGallery && tourSlides.length) {
-        syncTourHeight();
-        window.addEventListener("resize", syncTourHeight);
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(syncTourHeight);
-        }
-        tourPrev?.addEventListener("click", () => {
-          goToTourSlide(tourIndex - 1, true);
-          startTourTimer();
-        });
-        tourNext?.addEventListener("click", () => {
-          goToTourSlide(tourIndex + 1, true);
-          startTourTimer();
-        });
-        tourPause?.addEventListener("click", () => {
-          tourPaused = !tourPaused;
-          tourPause.setAttribute("aria-pressed", String(tourPaused));
-          tourPause.textContent = tourPaused ? "Resume carousel" : "Pause carousel";
-          startTourTimer();
-        });
-        startTourTimer();
-      }
     }());
   </script>
   <script>
     (function () {
-      const banner = document.querySelector(".tvtt-notice-banner");
-      if (!banner) {
-        return;
-      }
       const root = document.documentElement;
       function syncHeaderHeight() {
         const header = document.querySelector(".site-header, .tvtt-site-header");
