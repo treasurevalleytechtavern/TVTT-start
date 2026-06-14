@@ -3801,7 +3801,7 @@
 
         tabs.forEach((tab) => {
           tab.addEventListener("click", () => {
-            if (tab.classList.contains("is-active")) {
+            if (pinnedNextStep === tab.dataset.nextStepTab) {
               collapseNextStep();
               return;
             }
