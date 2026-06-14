@@ -27,7 +27,7 @@
   <style>
     :root {
       color-scheme: dark;
-      --tvtt-notice-height: 0px;
+      --tvtt-notice-height: 96px;
       --tvtt-header-height: 156px;
       --tvtt-bg: #000;
       --tvtt-panel: rgba(7, 7, 7, 0.82);
@@ -125,13 +125,13 @@
     .tvtt-header-actions {
       display: grid;
       justify-items: end;
-      gap: 0;
+      gap: 8px;
       margin-left: auto;
     }
 
     .tvtt-local-note {
       width: auto;
-      margin: -2px 0 0;
+      margin: 0;
       color: var(--tvtt-soft);
       font-size: clamp(0.82rem, 1.8vw, 1rem);
       font-weight: 700;
@@ -143,7 +143,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 6px 18px;
+      gap: 8px;
       margin: 0;
     }
 
@@ -157,11 +157,28 @@
       text-decoration: none;
     }
 
+    .tvtt-start-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border: 1px solid rgba(99, 224, 229, 0.42);
+      border-radius: 8px;
+      background: rgba(99, 224, 229, 0.08);
+      box-shadow: 0 0 16px rgba(99, 224, 229, 0.08);
+    }
+
     .tvtt-start-nav a:hover,
     .tvtt-start-nav a:focus-visible,
     .tvtt-footer-links a:hover,
     .tvtt-footer-links a:focus-visible {
       color: var(--tvtt-cyan);
+    }
+
+    .tvtt-start-nav a:hover,
+    .tvtt-start-nav a:focus-visible {
+      border-color: rgba(99, 224, 229, 0.78);
+      background: rgba(99, 224, 229, 0.16);
     }
 
     .tvtt-hero {
@@ -245,6 +262,14 @@
       line-height: 1.38;
     }
 
+    .tvtt-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
     .tvtt-button {
       display: inline-flex;
       align-items: center;
@@ -271,6 +296,44 @@
       background: rgba(0, 0, 0, 0.36);
     }
 
+    .tvtt-button-secondary {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.42);
+    }
+
+    .tvtt-button-secondary:hover,
+    .tvtt-button-secondary:focus-visible {
+      color: #001214;
+      background: var(--tvtt-cyan);
+    }
+
+    .tvtt-hero-actions .tvtt-button {
+      margin-top: 0;
+    }
+
+    .tvtt-hero-microcopy {
+      max-width: 660px;
+      margin: 16px auto 0;
+      color: var(--tvtt-soft);
+      font-size: clamp(0.98rem, 2vw, 1.15rem);
+      font-weight: 700;
+      line-height: 1.42;
+    }
+
+    .tvtt-browse-block {
+      margin-top: 28px;
+    }
+
+    .tvtt-browse-label {
+      margin: 0;
+      color: var(--tvtt-cyan);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
     .tvtt-hero-nav {
       display: flex;
       flex-wrap: wrap;
@@ -285,6 +348,11 @@
       max-width: 720px;
       margin-right: auto;
       margin-left: auto;
+    }
+
+    .tvtt-browse-nav {
+      max-width: 760px;
+      margin-top: 12px;
     }
 
     .tvtt-hero-nav a {
@@ -1051,21 +1119,16 @@
     }
 
     .tvtt-optional-art {
-      min-height: 100%;
+      position: relative;
+      align-self: stretch;
+      height: auto;
+      min-height: 0;
+      margin: 0;
       padding: 0;
       overflow: hidden;
       border: 1px solid rgba(99, 224, 229, 0.24);
       border-radius: 6px;
-      appearance: none;
       background: #030303;
-      cursor: zoom-in;
-      font: inherit;
-    }
-
-    .tvtt-optional-art:hover,
-    .tvtt-optional-art:focus-visible {
-      border-color: rgba(99, 224, 229, 0.68);
-      box-shadow: 0 0 24px rgba(99, 224, 229, 0.14);
     }
 
     .tvtt-optional-art picture,
@@ -1075,11 +1138,14 @@
       height: 100%;
     }
 
+    .tvtt-optional-art picture {
+      position: absolute;
+      inset: 0;
+    }
+
     .tvtt-optional-art img {
-      min-height: 320px;
       object-fit: cover;
       object-position: center;
-      cursor: zoom-in;
     }
 
     .tvtt-optional-copy {
@@ -1328,7 +1394,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1fr);
       gap: 18px;
-      max-width: 760px;
+      max-width: 980px;
       margin: 28px auto 0;
     }
 
@@ -1404,6 +1470,52 @@
     .tvtt-receipt-stat {
       color: #fff;
       font-weight: 800;
+    }
+
+    .tvtt-receipt-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .tvtt-receipt-proof {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.3);
+      border-radius: 8px;
+      color: #fff;
+      background: #030303;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(99, 224, 229, 0.08);
+    }
+
+    .tvtt-receipt-proof:hover,
+    .tvtt-receipt-proof:focus-visible {
+      border-color: rgba(99, 224, 229, 0.76);
+      box-shadow: 0 0 28px rgba(99, 224, 229, 0.16);
+    }
+
+    .tvtt-receipt-proof video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 215 / 174;
+      object-fit: cover;
+      background: #050505;
+    }
+
+    .tvtt-receipt-proof span {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 36px 10px 10px;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0));
+      font-size: 0.94rem;
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.92);
     }
 
     .tvtt-clips-block,
@@ -2417,6 +2529,25 @@
         line-height: 1.05;
       }
 
+      .tvtt-hero-actions {
+        display: grid;
+        justify-items: center;
+        gap: 10px;
+        width: min(100%, 330px);
+        margin: 22px auto 0;
+      }
+
+      .tvtt-hero-microcopy {
+        max-width: 330px;
+        margin-top: 14px;
+        font-size: 0.96rem;
+        line-height: 1.45;
+      }
+
+      .tvtt-browse-block {
+        margin-top: 22px;
+      }
+
       .tvtt-hero-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2433,6 +2564,10 @@
         min-height: 42px;
         padding: 8px 10px;
         font-size: 1.22rem;
+      }
+
+      .tvtt-browse-nav {
+        grid-template-columns: 1fr;
       }
 
       .tvtt-section {
@@ -2585,6 +2720,15 @@
         padding: 16px;
       }
 
+      .tvtt-receipt-proof-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .tvtt-receipt-proof span {
+        font-size: 0.88rem;
+      }
+
       .tvtt-service-grid .tvtt-service-card {
         min-height: 108px;
         padding: 18px 16px;
@@ -2668,11 +2812,11 @@
 
       .tvtt-optional-art {
         margin: 0 0 14px;
+        height: 220px;
       }
 
       .tvtt-optional-art img {
-        min-height: 0;
-        max-height: 260px;
+        max-height: none;
       }
 
       .tvtt-card h3 {
@@ -2824,6 +2968,12 @@
 </style>
 </head>
 <body>
+  <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
+    <div class="tvtt-notice-inner">
+      <p class="tvtt-notice-copy"><span class="tvtt-notice-main">If someone hears your band tonight, can they find what's next tomorrow?</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
+      <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
+    </div>
+  </aside>
   <main class="tvtt-start-page">
     <header class="tvtt-site-header">
       <div class="tvtt-site-header-inner">
@@ -2844,13 +2994,21 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
-          <p class="tvtt-hero-subtitle">Helping bands keep their shows, links, releases, clips, and online home base clear, current, and true to who they are.</p>
-          <nav class="tvtt-hero-nav" aria-label="See what we fix">
-            <a href="#what-gets-in-the-way" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - What gets in the way">What gets in the way</a>
-            <a href="#how-this-works" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - How this works">How this works</a>
-            <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Start here">Start here</a>
-            <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Receipts">Receipts</a>
-          </nav>
+          <p class="tvtt-hero-subtitle">Helping bands keep their shows, links, releases, clips, and online home base clear, current, and still true to the band people meet in the room.</p>
+          <div class="tvtt-hero-actions" aria-label="Start here">
+            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Hero setup review">Get a Free Setup Review</a>
+            <a class="tvtt-button tvtt-button-secondary" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Hero compare packages">Compare Packages</a>
+          </div>
+          <p class="tvtt-hero-microcopy">Not sure what's broken? Send your band name. We'll look at what fans, venues, and bookers actually find.</p>
+          <div class="tvtt-browse-block">
+            <p class="tvtt-browse-label">Browse</p>
+            <nav class="tvtt-hero-nav tvtt-browse-nav" aria-label="Browse this page">
+              <a href="#what-we-do" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - What We Do">What We Do</a>
+              <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Find Your Fit">Find Your Fit</a>
+              <a href="#what-you-can-count-on" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - The House Rules">The House Rules</a>
+              <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Receipts">Receipts</a>
+            </nav>
+          </div>
         </div>
       </div>
     </section>
@@ -2871,6 +3029,15 @@
       </div>
     </section>
 
+    <section class="tvtt-proof-banner" aria-label="Live tour page proof of concept">
+      <a class="tvtt-proof-banner-inner" href="../assets/oathbound-proof-of-concept.mp4" target="_blank" rel="noopener" aria-label="Open the full-size Oathbound proof of concept video" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open Oathbound proof video">
+        <video class="tvtt-proof-video" autoplay muted loop playsinline preload="metadata" poster="../assets/oathbound-proof-of-concept-banner-poster.jpg">
+          <source src="../assets/oathbound-proof-of-concept-banner.webm" type="video/webm">
+          <source src="../assets/oathbound-proof-of-concept-banner.mp4" type="video/mp4">
+        </video>
+      </a>
+    </section>
+
     <section class="tvtt-section" id="what-gets-in-the-way" aria-labelledby="friction-title">
       <div class="tvtt-section-inner">
         <h2 class="tvtt-section-title" id="friction-title">STUFF THAT GETS IN THE WAY</h2>
@@ -2883,15 +3050,7 @@
           <li class="tvtt-card"><p>Your best clips exist, but they are scattered across random phones.</p></li>
           <li class="tvtt-card"><p>People hear about you, look you up, and still do not know when to show up, where to go, or what to click.</p></li>
         </ul>
-        <section class="tvtt-proof-banner" aria-label="Live tour page proof of concept">
-          <a class="tvtt-proof-banner-inner" href="../assets/oathbound-proof-of-concept.mp4" target="_blank" rel="noopener" aria-label="Open the full-size Oathbound proof of concept video" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open Oathbound proof video">
-            <video class="tvtt-proof-video" autoplay muted loop playsinline preload="metadata" poster="../assets/oathbound-proof-of-concept-banner-poster.jpg">
-              <source src="../assets/oathbound-proof-of-concept-banner.webm" type="video/webm">
-              <source src="../assets/oathbound-proof-of-concept-banner.mp4" type="video/mp4">
-            </video>
-          </a>
-        </section>
-        <div class="tvtt-next-step" data-next-step>
+        <div class="tvtt-next-step" id="what-we-do" data-next-step>
           <h3 class="tvtt-next-step-title">We help make the next step obvious.</h3>
           <div class="tvtt-next-step-tabs" role="tablist" aria-label="Fan next steps">
             <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-listen" id="next-step-listen-tab" data-next-step-tab="listen">Listen</button>
@@ -3261,12 +3420,12 @@
 
     <div class="tvtt-optional-grid">
       <article class="tvtt-card tvtt-optional-card">
-        <button class="tvtt-optional-art" type="button" data-image-modal-src="assets/addon-distribution-help.png" data-image-modal-title="Digital Setup and Distribution" data-image-modal-alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center" aria-label="Open larger Digital setup and distribution banner">
+        <figure class="tvtt-optional-art">
           <picture>
             <source srcset="assets/addon-distribution-help.webp" type="image/webp">
             <img loading="lazy" src="assets/addon-distribution-help.png" alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center">
           </picture>
-        </button>
+        </figure>
         <div class="tvtt-optional-copy">
           <h3>Optional: Digital setup and distribution</h3>
           <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
@@ -3286,12 +3445,12 @@
       </article>
 
       <article class="tvtt-card tvtt-optional-card">
-        <button class="tvtt-optional-art" type="button" data-image-modal-src="assets/addon-print-and-qr-code.png" data-image-modal-title="Print and QR Coordination" data-image-modal-alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map" aria-label="Open larger Print and QR coordination banner">
+        <figure class="tvtt-optional-art">
           <picture>
             <source srcset="assets/addon-print-and-qr-code.webp" type="image/webp">
             <img loading="lazy" src="assets/addon-print-and-qr-code.png" alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map">
           </picture>
-        </button>
+        </figure>
         <div class="tvtt-optional-copy">
           <h3>Optional: Print + QR coordination</h3>
           <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
@@ -3314,7 +3473,7 @@
   </div>
 </section>
 
-    <section class="tvtt-section tvtt-count-section" aria-labelledby="count-title">
+    <section class="tvtt-section tvtt-count-section" id="what-you-can-count-on" aria-labelledby="count-title">
       <div class="tvtt-section-inner">
         <h2 class="tvtt-section-title" id="count-title">WHAT YOU CAN COUNT ON</h2>
         <div class="tvtt-count-image-grid" aria-label="What you can count on from Treasure Valley Tech Tavern">
@@ -3367,6 +3526,36 @@
               <p>For their MySpace-themed tour run, we built a temporary tour page that matched the moment instead of forcing the band into a generic template.</p>
               <p>The page includes upcoming show details, ticket links, venue info, and built-in logic so shows automatically move into past shows once the date has passed.</p>
               <p class="tvtt-receipt-stat">A reliable online home base while the band is moving.</p>
+            </div>
+            <div class="tvtt-receipt-proof-grid" aria-label="Oathbound proof clips">
+              <a class="tvtt-receipt-proof" href="assets/oathbound-proof-home.mp4" target="_blank" rel="noopener" aria-label="Open full-size Oathbound home page proof video">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="assets/oathbound-proof-home.webm" type="video/webm">
+                  <source src="assets/oathbound-proof-home.mp4" type="video/mp4">
+                </video>
+                <span>Home page proof</span>
+              </a>
+              <a class="tvtt-receipt-proof" href="assets/oathbound-proof-myspace-tour.mp4" target="_blank" rel="noopener" aria-label="Open full-size Oathbound MySpace tour proof video">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="assets/oathbound-proof-myspace-tour.webm" type="video/webm">
+                  <source src="assets/oathbound-proof-myspace-tour.mp4" type="video/mp4">
+                </video>
+                <span>MySpace tour page</span>
+              </a>
+              <a class="tvtt-receipt-proof" href="assets/oathbound-proof-past-shows.mp4" target="_blank" rel="noopener" aria-label="Open full-size Oathbound past shows proof video">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="assets/oathbound-proof-past-shows.webm" type="video/webm">
+                  <source src="assets/oathbound-proof-past-shows.mp4" type="video/mp4">
+                </video>
+                <span>Past shows archive</span>
+              </a>
+              <a class="tvtt-receipt-proof" href="assets/oathbound-proof-street-team-v2.mp4" target="_blank" rel="noopener" aria-label="Open full-size Oathbound street team proof video">
+                <video autoplay muted loop playsinline preload="metadata">
+                  <source src="assets/oathbound-proof-street-team-v2.webm" type="video/webm">
+                  <source src="assets/oathbound-proof-street-team-v2.mp4" type="video/mp4">
+                </video>
+                <span>Street team page</span>
+              </a>
             </div>
           </article>
         </div>
@@ -3797,6 +3986,30 @@
         }
       });
       window.addEventListener("resize", resizeExpandedPackageCards);
+    }());
+  </script>
+  <script>
+    (function () {
+      const proofVideos = document.querySelectorAll(".tvtt-receipt-proof video");
+      if (!proofVideos.length || !("IntersectionObserver" in window)) {
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }, { threshold: 0.35 });
+
+      proofVideos.forEach((video) => {
+        video.pause();
+        observer.observe(video);
+      });
     }());
   </script>
   <script>
