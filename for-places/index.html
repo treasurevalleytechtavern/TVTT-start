@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://start.treasurevalleytechtavern.com/for-places/">
   <meta property="og:image" content="https://treasurevalleytechtavern.com/favicon-tvtt.png">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="../assets/favicon-tvtt.png">
+  <link rel="icon" type="image/png" href="https://start.treasurevalleytechtavern.com/assets/Favicon%20Final.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Cute+Font&family=Jersey+15&display=swap" rel="stylesheet">
@@ -72,11 +72,10 @@
       z-index: -1;
       content: "";
       background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.3), #000 96%),
+        linear-gradient(180deg, transparent 0, transparent 48vh, #000 96%),
         radial-gradient(circle at 16% 12%, rgba(99, 224, 229, 0.14), transparent 28%),
         radial-gradient(circle at 84% 34%, rgba(185, 140, 255, 0.12), transparent 26%),
-        radial-gradient(circle at 54% 76%, rgba(255, 209, 102, 0.08), transparent 28%),
-        rgba(0, 0, 0, 0.58);
+        radial-gradient(circle at 54% 76%, rgba(255, 209, 102, 0.08), transparent 28%);
     }
 
     a {
@@ -125,13 +124,13 @@
     .tvtt-header-actions {
       display: grid;
       justify-items: end;
-      gap: 0;
+      gap: 8px;
       margin-left: auto;
     }
 
     .tvtt-local-note {
       width: auto;
-      margin: -2px 0 0;
+      margin: 0;
       color: var(--tvtt-soft);
       font-size: clamp(0.82rem, 1.8vw, 1rem);
       font-weight: 700;
@@ -143,7 +142,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 6px 18px;
+      gap: 8px;
       margin: 0;
     }
 
@@ -164,10 +163,32 @@
       color: var(--tvtt-cyan);
     }
 
+    .tvtt-start-nav a {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid rgba(99, 224, 229, 0.42);
+      border-radius: 8px;
+      background: rgba(99, 224, 229, 0.08);
+      box-shadow: 0 0 16px rgba(99, 224, 229, 0.08);
+    }
+
+    .tvtt-start-nav a:hover,
+    .tvtt-start-nav a:focus-visible {
+      border-color: rgba(99, 224, 229, 0.78);
+      background: rgba(99, 224, 229, 0.16);
+    }
+
     .tvtt-hero {
       display: grid;
       align-items: start;
-      padding: clamp(58px, 9vw, 92px) 18px 46px;
+      justify-items: center;
+      padding: clamp(58px, 9vw, 92px) 18px clamp(92px, 10vw, 128px);
+      background-image: url("assets/for-places-background.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .tvtt-hero-inner,
@@ -179,6 +200,8 @@
 
     .tvtt-hero-copy {
       max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .tvtt-eyebrow,
@@ -212,6 +235,8 @@
 
     .tvtt-hero h1 {
       max-width: 820px;
+      margin-right: auto;
+      margin-left: auto;
       font-size: clamp(3.6rem, 14vw, 7.2rem);
       line-height: 0.86;
       text-shadow: 0 0 28px rgba(99, 224, 229, 0.22);
@@ -227,10 +252,18 @@
 
     .tvtt-hero-subtitle {
       max-width: 680px;
-      margin: 24px 0 0;
+      margin: 24px auto 0;
       color: var(--tvtt-muted);
       font-size: clamp(1.08rem, 2.3vw, 1.42rem);
       line-height: 1.38;
+    }
+
+    .tvtt-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
     }
 
     .tvtt-button {
@@ -259,12 +292,51 @@
       background: rgba(0, 0, 0, 0.36);
     }
 
+    .tvtt-button-secondary {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.42);
+    }
+
+    .tvtt-button-secondary:hover,
+    .tvtt-button-secondary:focus-visible {
+      color: #001214;
+      background: var(--tvtt-cyan);
+    }
+
+    .tvtt-hero-actions .tvtt-button {
+      margin-top: 0;
+    }
+
+    .tvtt-hero-microcopy {
+      max-width: 660px;
+      margin: 16px auto 0;
+      color: var(--tvtt-soft);
+      font-size: clamp(0.98rem, 2vw, 1.15rem);
+      font-weight: 700;
+      line-height: 1.42;
+    }
+
+    .tvtt-browse-block {
+      margin-top: 28px;
+    }
+
+    .tvtt-browse-label {
+      margin: 0;
+      color: var(--tvtt-cyan);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.45rem);
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
     .tvtt-hero-nav {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
       max-width: 680px;
-      margin-top: 30px;
+      margin: 30px auto 0;
     }
 
     .tvtt-choice-nav {
@@ -272,6 +344,11 @@
       max-width: 720px;
       margin-right: auto;
       margin-left: auto;
+    }
+
+    .tvtt-browse-nav {
+      max-width: 760px;
+      margin-top: 12px;
     }
 
     .tvtt-hero-nav a {
@@ -1448,6 +1525,25 @@
         line-height: 1.05;
       }
 
+      .tvtt-hero-actions {
+        display: grid;
+        justify-items: center;
+        gap: 10px;
+        width: min(100%, 330px);
+        margin: 22px auto 0;
+      }
+
+      .tvtt-hero-microcopy {
+        max-width: 330px;
+        margin-top: 14px;
+        font-size: 0.96rem;
+        line-height: 1.45;
+      }
+
+      .tvtt-browse-block {
+        margin-top: 22px;
+      }
+
       .tvtt-hero-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1464,6 +1560,10 @@
         min-height: 42px;
         padding: 8px 10px;
         font-size: 1.22rem;
+      }
+
+      .tvtt-browse-nav {
+        grid-template-columns: 1fr;
       }
 
       .tvtt-section {
@@ -1692,12 +1792,644 @@
         font-size: 1.35rem;
       }
     }
+    /* For Places mirrors the interactive patterns used on the For Bands page. */
+    .tvtt-section-tight {
+      padding-top: 42px;
+    }
+
+    .tvtt-proof-banner {
+      padding: 8px 18px 24px;
+    }
+
+    .tvtt-proof-banner-inner {
+      display: block;
+      max-width: 1080px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.26);
+      border-radius: 8px;
+      background: #050505;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    .tvtt-proof-banner-inner img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform: scale(1);
+      transform-origin: var(--tvtt-proof-zoom-x, 50%) var(--tvtt-proof-zoom-y, 50%);
+      transition: transform 180ms ease;
+      will-change: transform;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .tvtt-proof-banner-inner {
+        cursor: zoom-in;
+      }
+    }
+
+    .tvtt-proof-banner-inner.is-pointer-zooming img {
+      transform: scale(1.38);
+    }
+
+    .tvtt-next-step {
+      position: relative;
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding: clamp(24px, 4vw, 38px);
+      overflow: visible;
+      border: 1px solid rgba(99, 224, 229, 0.46);
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(99, 224, 229, 0.16), rgba(185, 140, 255, 0.08) 48%, rgba(0, 0, 0, 0.7)), rgba(4, 5, 6, 0.92);
+      box-shadow: 0 0 34px rgba(99, 224, 229, 0.13), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    }
+
+    .tvtt-next-step::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--tvtt-cyan), var(--tvtt-amber), var(--tvtt-violet));
+      content: "";
+    }
+
+    .tvtt-next-step-title {
+      margin: 0;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.8rem, 7vw, 4.2rem);
+      font-weight: 400;
+      line-height: 0.92;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 18px rgba(99, 224, 229, 0.18);
+    }
+
+    .tvtt-next-step-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 24px auto 0;
+    }
+
+    .tvtt-next-step-tab {
+      position: relative;
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.38);
+      cursor: pointer;
+      font: inherit;
+      font-size: clamp(0.92rem, 1.5vw, 1.02rem);
+      font-weight: 800;
+      line-height: 1;
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .tvtt-next-step-tab::after {
+      margin-left: 8px;
+      color: var(--tvtt-cyan);
+      content: "+";
+    }
+
+    .tvtt-next-step-tab:hover,
+    .tvtt-next-step-tab:focus-visible {
+      border-color: rgba(99, 224, 229, 0.72);
+      background: rgba(99, 224, 229, 0.12);
+      box-shadow: 0 0 18px rgba(99, 224, 229, 0.16);
+      transform: translateY(-2px);
+    }
+
+    .tvtt-next-step-tab.is-active {
+      color: #001214;
+      border-color: var(--tvtt-cyan);
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 24px rgba(99, 224, 229, 0.28);
+    }
+
+    .tvtt-next-step-tab.is-active::after {
+      color: #001214;
+      content: "-";
+    }
+
+    .tvtt-next-step-panels {
+      position: relative;
+      min-height: 0;
+    }
+
+    .tvtt-next-step-panel {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      z-index: 10;
+      display: grid;
+      width: min(760px, calc(100vw - 36px));
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.28);
+      border-radius: 8px;
+      opacity: 0;
+      background: linear-gradient(180deg, rgba(99, 224, 229, 0.12), rgba(0, 0, 0, 0.92) 180px), rgba(5, 5, 5, 0.98);
+      box-shadow: 0 22px 46px rgba(0, 0, 0, 0.54), 0 0 28px rgba(99, 224, 229, 0.16);
+      pointer-events: none;
+      transform: translate(-50%, 12px) scale(0.94);
+      transform-origin: top center;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .tvtt-next-step-panel.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    .tvtt-next-step-copy {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      padding: clamp(20px, 3vw, 28px);
+    }
+
+    .tvtt-next-step-copy h3 {
+      margin: 0;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-next-step-copy p {
+      margin: 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(1rem, 1.8vw, 1.16rem);
+      line-height: 1.52;
+    }
+
+    .tvtt-next-step-help {
+      margin-top: 4px;
+      color: #fff !important;
+      font-weight: 800;
+    }
+
+    .tvtt-next-step-tags {
+      font-size: clamp(0.96rem, 1.6vw, 1.05rem) !important;
+      line-height: 1.55 !important;
+    }
+
+    .tvtt-next-step-image {
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(99, 224, 229, 0.22);
+      background: #030303;
+      aspect-ratio: 16 / 9;
+    }
+
+    .tvtt-next-step-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tvtt-next-step-closing {
+      max-width: 820px;
+      margin: 62px auto 0;
+      text-align: center;
+    }
+
+    .tvtt-next-step-closing-title {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .tvtt-next-step-closing p {
+      margin: 16px auto 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(1.03rem, 2vw, 1.2rem);
+      line-height: 1.55;
+    }
+
+    .tvtt-service-card {
+      position: relative;
+      display: block;
+      width: 100%;
+      min-height: 190px;
+      overflow: visible;
+      appearance: none;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+      text-align: left;
+    }
+
+    .tvtt-service-card:hover,
+    .tvtt-service-card:focus-visible,
+    .tvtt-service-card.is-active {
+      z-index: 8;
+      border-color: rgba(99, 224, 229, 0.62);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    }
+
+    .tvtt-service-popout {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      z-index: 5;
+      display: grid;
+      width: min(390px, calc(100vw - 36px));
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid rgba(99, 224, 229, 0.44);
+      border-radius: 8px;
+      opacity: 0;
+      background: linear-gradient(180deg, rgba(99, 224, 229, 0.12), rgba(0, 0, 0, 0.92) 120px), rgba(5, 5, 5, 0.98);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.46), 0 0 24px rgba(99, 224, 229, 0.16);
+      pointer-events: none;
+      transform: translate(-50%, 12px) scale(0.88);
+      transform-origin: top center;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .tvtt-service-card:first-child .tvtt-service-popout {
+      left: 0;
+      transform: translate(0, 12px) scale(0.88);
+      transform-origin: top left;
+    }
+
+    .tvtt-service-card:last-child .tvtt-service-popout {
+      right: 0;
+      left: auto;
+      transform: translate(0, 12px) scale(0.88);
+      transform-origin: top right;
+    }
+
+    .tvtt-service-card:hover .tvtt-service-popout,
+    .tvtt-service-card:focus-visible .tvtt-service-popout,
+    .tvtt-service-card.is-active .tvtt-service-popout {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, 0) scale(1);
+    }
+
+    .tvtt-service-card:first-child:hover .tvtt-service-popout,
+    .tvtt-service-card:first-child:focus-visible .tvtt-service-popout,
+    .tvtt-service-card:first-child.is-active .tvtt-service-popout,
+    .tvtt-service-card:last-child:hover .tvtt-service-popout,
+    .tvtt-service-card:last-child:focus-visible .tvtt-service-popout,
+    .tvtt-service-card:last-child.is-active .tvtt-service-popout {
+      transform: translate(0, 0) scale(1);
+    }
+
+    .tvtt-service-description {
+      display: block;
+      color: #f2fbfc;
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.45;
+    }
+
+    .tvtt-service-art {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.24);
+      border-radius: 6px;
+      background: #030303;
+      aspect-ratio: 1 / 1;
+    }
+
+    .tvtt-service-art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .tvtt-place-package-grid {
+      position: relative;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto auto auto auto auto;
+      align-items: stretch;
+    }
+
+    .tvtt-place-package-grid .tvtt-package-card {
+      position: relative;
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      padding: 0;
+    }
+
+    .tvtt-package-expand-control,
+    .tvtt-package-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 4;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .tvtt-package-close {
+      display: none;
+    }
+
+    .tvtt-package-expand-control:hover,
+    .tvtt-package-expand-control:focus-visible,
+    .tvtt-package-close:hover,
+    .tvtt-package-close:focus-visible {
+      color: var(--tvtt-cyan);
+      background: #050606;
+    }
+
+    .tvtt-place-package-grid.is-package-expanded {
+      align-items: start;
+    }
+
+    .tvtt-place-package-grid .tvtt-package-card.is-expanded {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 9;
+      width: 100%;
+      display: grid;
+      grid-column: 1 / -1;
+      grid-row: auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      border-color: rgba(99, 224, 229, 0.58);
+      background: #050606;
+      box-shadow: 0 0 28px rgba(99, 224, 229, 0.14), 0 24px 54px rgba(0, 0, 0, 0.38);
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-expand-control {
+      display: none;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-close {
+      display: grid;
+    }
+
+    .tvtt-package-art-section {
+      padding: 0;
+      overflow: hidden;
+      background: #030303;
+    }
+
+    .tvtt-package-art-toggle {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: 0;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .tvtt-package-art-section img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .tvtt-package-art-toggle:hover img,
+    .tvtt-package-art-toggle:focus-visible img {
+      filter: saturate(1.08) brightness(1.08);
+    }
+
+    .tvtt-package-art-toggle:focus-visible {
+      outline: 2px solid var(--tvtt-cyan);
+      outline-offset: -4px;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-intro {
+      grid-column: 1 / 3;
+      padding-right: 68px;
+    }
+
+    .tvtt-package-card.is-expanded:not(:has(.tvtt-package-art-section)) .tvtt-package-intro {
+      grid-column: 1 / -1;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-art-section {
+      grid-column: 3 / 4;
+      grid-row: 1;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-art-section img {
+      height: auto;
+      min-height: 0;
+      object-fit: contain;
+      aspect-ratio: 3 / 1;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-includes {
+      grid-column: 1 / 2;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-best {
+      grid-column: 2 / 3;
+    }
+
+    .tvtt-package-card.is-expanded .tvtt-package-action {
+      grid-column: 3 / 4;
+    }
+
+    .tvtt-overland-receipt-card {
+      display: grid;
+      gap: 18px;
+      max-width: 820px;
+      margin: 28px auto 0;
+      padding: 22px;
+    }
+
+    .tvtt-overland-receipt-card .tvtt-receipt-copy {
+      text-align: center;
+    }
+
+    .tvtt-overland-receipt-card .tvtt-receipt-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .tvtt-receipt-proof video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #050505;
+    }
+
+    @media (max-width: 780px) {
+      .tvtt-section-tight {
+        padding-top: 30px;
+      }
+
+      .tvtt-proof-banner {
+        padding: 4px 16px 20px;
+      }
+
+      .tvtt-proof-banner-inner img {
+        height: auto;
+      }
+
+      .tvtt-next-step {
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+        margin: 24px auto 0;
+        padding: 20px 14px 16px;
+      }
+
+      .tvtt-next-step-title {
+        font-size: 2.25rem;
+        line-height: 0.96;
+        text-align: left;
+      }
+
+      .tvtt-next-step-tabs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .tvtt-next-step-tab {
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: 0.92rem;
+      }
+
+      .tvtt-next-step-panel.is-active {
+        position: static;
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        opacity: 1;
+        transform: none;
+      }
+
+      .tvtt-next-step-copy {
+        padding: 18px 14px;
+      }
+
+      .tvtt-next-step-copy h3 {
+        font-size: 1.8rem;
+      }
+
+      .tvtt-next-step-copy p,
+      .tvtt-next-step-tags {
+        font-size: 0.96rem !important;
+      }
+
+      .tvtt-next-step-closing {
+        width: min(100%, 330px);
+        margin-top: 34px;
+        text-align: left;
+      }
+
+      .tvtt-next-step-closing-title {
+        font-size: 1.35rem;
+      }
+
+      .tvtt-service-grid .tvtt-service-card {
+        min-height: 108px;
+        padding: 18px 16px;
+      }
+
+      .tvtt-service-popout {
+        position: static;
+        display: none;
+        width: 100%;
+        margin-top: 14px;
+        padding: 0;
+        border: 0;
+        opacity: 1;
+        background: transparent;
+        box-shadow: none;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .tvtt-service-card:hover .tvtt-service-popout,
+      .tvtt-service-card:focus-visible .tvtt-service-popout,
+      .tvtt-service-card.is-active .tvtt-service-popout {
+        display: grid;
+        transform: none;
+      }
+
+      .tvtt-place-package-grid .tvtt-package-card,
+      .tvtt-place-package-grid .tvtt-package-card.is-expanded {
+        position: static;
+        display: block;
+        width: min(100%, 330px) !important;
+        max-width: 330px !important;
+      }
+
+      .tvtt-package-expand-control,
+      .tvtt-package-close {
+        display: none !important;
+      }
+
+      .tvtt-package-art-section img {
+        min-height: 0;
+        aspect-ratio: 3 / 1;
+      }
+
+      .tvtt-package-art-toggle {
+        cursor: default;
+      }
+
+      .tvtt-overland-receipt-card {
+        width: min(100%, 330px);
+        padding: 16px;
+      }
+
+      .tvtt-overland-receipt-card .tvtt-receipt-proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tvtt-proof-banner-inner img {
+        transition: none;
+      }
+
+      .tvtt-proof-banner-inner.is-pointer-zooming img {
+        transform: none;
+      }
+    }
 </style>
 </head>
 <body>
   <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
     <div class="tvtt-notice-inner">
-      <p class="tvtt-notice-copy"><span class="tvtt-notice-main">Your hours tell people when you're open. Your online presence should show them why they'd fit in.</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
+      <p class="tvtt-notice-copy"><span class="tvtt-notice-main">YOUR HOURS SAY WHEN THE DOOR OPENS. YOUR INTERNET SHOULD SHOW WHY PEOPLE WALK THROUGH IT.</span><span class="tvtt-notice-small">Want another set of eyes on it?</span></p>
       <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
     </div>
   </aside>
@@ -1721,13 +2453,21 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
-          <p class="tvtt-hero-subtitle">Helping Treasure Valley bars and venues keep their hours, events, links, menus, and room energy clear, current, and easy to find.</p>
-          <nav class="tvtt-hero-nav" aria-label="See what we fix">
-            <a href="#what-gets-in-the-way" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - What gets in the way">What gets in the way</a>
-            <a href="#how-this-works" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - How this works">How this works</a>
-            <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Start here">Start here</a>
-            <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Receipts">Receipts</a>
-          </nav>
+          <p class="tvtt-hero-subtitle">We help Treasure Valley bars and venues keep their hours, events, menus, links, and room energy clear, current, and easy to find.</p>
+          <div class="tvtt-hero-actions" aria-label="Start here">
+            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Hero setup review">Get a Free Setup Review</a>
+            <a class="tvtt-button tvtt-button-secondary" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Hero compare packages">Compare Packages</a>
+          </div>
+          <p class="tvtt-hero-microcopy">Not sure what's unclear? Send your bar or venue name. We'll look at what guests, regulars, and people making plans actually find.</p>
+          <div class="tvtt-browse-block">
+            <p class="tvtt-browse-label">Browse</p>
+            <nav class="tvtt-hero-nav tvtt-browse-nav" aria-label="Browse this page">
+              <a href="#what-we-do" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - What We Do">What We Do</a>
+              <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Find Your Fit">Find Your Fit</a>
+              <a href="#how-this-works" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - How This Works">How This Works</a>
+              <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Receipts">Receipts</a>
+            </nav>
+          </div>
         </div>
       </div>
     </section>
@@ -1737,13 +2477,20 @@
         <div class="tvtt-copy-block">
           <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
           <p>Running the room is already a lot.</p>
-          <p>Then the internet asks for more: Google hours, event posts, flyers, menus, ticket links, website updates, booking messages, social clips, and whatever platform people are checking this week.</p>
-          <p>When that stuff gets scattered or stale, people might find your name and still not know what's happening, what it feels like, or why tonight is worth showing up for.</p>
-          <p>We help make the online trail clearer, current, and easier to keep updated.</p>
+          <p>People are checking before they show up. Some are looking for your place by name. Others are just looking for something to do tonight.</p>
+          <p>They might land on Google, Instagram, Facebook, an old flyer, a menu photo, a ticket link, or whatever post the group chat sends around.</p>
+          <p>If the details are scattered or stale, they may never get a clear answer: what's happening, when it starts, what the room feels like, or why they should come through.</p>
+          <p>We help make the online trail clearer, more current, and easier to keep updated.</p>
         </div>
         <div class="tvtt-section-cta">
           <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
         </div>
+      </div>
+    </section>
+
+    <section class="tvtt-proof-banner" aria-label="Overland Bar online setup proof">
+      <div class="tvtt-proof-banner-inner">
+        <img src="assets/overlandbar-proof.png" alt="Overland Bar website, menu, karaoke, and social content examples">
       </div>
     </section>
 
@@ -1760,13 +2507,81 @@
           <li class="tvtt-card"><p>Your site or link page is harder to use than it should be</p></li>
           <li class="tvtt-card"><p>People find your name, but not what kind of night they're walking into</p></li>
         </ul>
-        <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Want me to take a look?">Want me to take a look?</a>
+        <div class="tvtt-next-step" id="next-step" data-next-step>
+          <h3 class="tvtt-next-step-title">We help make the next step obvious.</h3>
+          <div class="tvtt-next-step-tabs" role="tablist" aria-label="Guest next steps">
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-tonight" id="next-step-tonight-tab" data-next-step-tab="tonight">Tonight</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-room" id="next-step-room-tab" data-next-step-tab="room">Feel the room</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-details" id="next-step-details-tab" data-next-step-tab="details">Find the details</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-join" id="next-step-join-tab" data-next-step-tab="join">Join the night</button>
+            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-return" id="next-step-return-tab" data-next-step-tab="return">Come back</button>
+          </div>
+          <div class="tvtt-next-step-panels">
+            <article class="tvtt-next-step-panel" id="next-step-tonight" role="tabpanel" aria-labelledby="next-step-tonight-tab" data-next-step-panel="tonight" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Check tonight.</h3>
+                <p>People should not have to dig through old posts, screenshots, half-updated event pages, or a mystery Facebook thread to figure out what is happening tonight.</p>
+                <p>We help keep the important details easy to find so someone can make the tiny but powerful decision to leave the house.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Tonight's events &middot; Karaoke times &middot; Live music &middot; Trivia &middot; Specials &middot; Cover &middot; Age restrictions &middot; Hours &middot; Last-minute updates</p>
+              </div>
+              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/check-tonight.png" alt="Tonight's event details organized for quick browsing"></figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-room" role="tabpanel" aria-labelledby="next-step-room-tab" data-next-step-panel="room" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Feel the room.</h3>
+                <p>People do not choose a bar from information alone. They choose it because they can picture themselves there.</p>
+                <p>We help show the real texture of the place: the singer at the mic, the regulars laughing, the band setting up, the bartender moving through the night, the patio doing patio things, the room filling in.</p>
+                <p>Not fake hype. Not glossy nonsense. Just proof that the place is alive.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">TikToks &middot; Reels &middot; Stories &middot; Photos &middot; Crowd clips &middot; Karaoke moments &middot; Live music coverage &middot; Event recaps</p>
+              </div>
+              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/feel-the-room.png" alt="Real room energy captured through social content"></figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-details" role="tabpanel" aria-labelledby="next-step-details-tab" data-next-step-panel="details" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Find the details.</h3>
+                <p>The basics should be easy.</p>
+                <p>If someone wants your hours, address, menu, food options, happy hour, event schedule, songbook, ticket link, or contact info, they should not have to bounce between Google, Facebook, Yelp, Instagram, and three outdated listings to piece it together.</p>
+                <p>We help clean up the trail so people can find what they need without getting lost.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Websites &middot; Google Business details &middot; Menus &middot; Hours &middot; Event pages &middot; Link cleanup &middot; Search-friendly pages &middot; Social profile updates</p>
+              </div>
+              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/find-the-details.png" alt="Venue details organized across web and search listings"></figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-join" role="tabpanel" aria-labelledby="next-step-join-tab" data-next-step-panel="join" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Join the night.</h3>
+                <p>Some rooms are not just watched. They are joined.</p>
+                <p>Karaoke, trivia, open mics, theme nights, pool tournaments, local shows, watch parties, fundraisers, and private events all work better when people know how to participate.</p>
+                <p>We help make the "how do I get involved?" part less awkward.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Karaoke songbooks &middot; Theme nights &middot; Signup links &middot; Event instructions &middot; Recurring events &middot; Private party info &middot; Community nights</p>
+              </div>
+              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/join-the-night.png" alt="Clear instructions for joining recurring venue events"></figure>
+            </article>
+            <article class="tvtt-next-step-panel" id="next-step-return" role="tabpanel" aria-labelledby="next-step-return-tab" data-next-step-panel="return" hidden>
+              <div class="tvtt-next-step-copy">
+                <h3>Come back.</h3>
+                <p>The goal is not one perfect post. It is making the place easier to remember.</p>
+                <p>We help keep your online presence active enough that people know what is happening, see what they missed, and have a reason to check again the next time they are looking for somewhere to go.</p>
+                <p class="tvtt-next-step-help">We help with:</p>
+                <p class="tvtt-next-step-tags">Regular updates &middot; Story reminders &middot; Weekly event posts &middot; Recaps &middot; Website updates &middot; Shareable clips &middot; Follow-up content</p>
+              </div>
+              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/come-back.png" alt="Ongoing updates that give guests a reason to return"></figure>
+            </article>
+          </div>
+        </div>
+        <div class="tvtt-next-step-closing">
+          <p class="tvtt-next-step-closing-title">Your place does not need to be louder online.<br>It needs to be easier to find, feel, and choose.</p>
+          <p>Send what exists: old flyers, menus, social links, event posts, karaoke info, Google listings, blurry clips, half-finished pages, whatever you have.</p>
+          <p>We will help sort the useful stuff from the noise and build a cleaner path for the people trying to find their next night out.</p>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Next step setup review">Free Online Setup Review &rarr;</a>
         </div>
       </div>
     </section>
 
-    <section class="tvtt-section" aria-labelledby="services-title">
+    <section class="tvtt-section" id="what-we-do" aria-labelledby="services-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
           <h2 class="tvtt-section-title" id="services-title">WHAT WE DO</h2>
@@ -1776,22 +2591,34 @@
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Websites +<br>Link hubs</h3>
-            <p class="tvtt-service-description">A clear online home base for your bar, venue, events, menu, hours, photos, socials, booking info, and whatever people need before they walk in. This can be a full website, a simple landing page, a menu page, an event page, or a link hub that actually helps people figure out where to go next.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">A clear online home base for your bar, venue, events, menu, hours, photos, socials, booking info, and whatever people need before they walk in. This can be a full website, a simple landing page, a menu page, an event page, or a link hub that actually helps people figure out where to go next.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/websites-link-hubs.png" alt="Websites and link hubs service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Schedules +<br>Event info</h3>
-            <p class="tvtt-service-description">Show dates, recurring nights, karaoke, trivia, live music, DJ sets, ticket links, cover info, age restrictions, menus, hours, and details that need to stay current. We help organize the info so people know what's happening, when it's happening, and what kind of night they're walking into.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Show dates, recurring nights, karaoke, trivia, live music, DJ sets, ticket links, cover info, age restrictions, menus, hours, and details that need to stay current. We help organize the info so people know what's happening, when it's happening, and what kind of night they're walking into.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/schedules-and-info.png" alt="Schedules and event information service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Social setup +<br>Posting</h3>
-            <p class="tvtt-service-description">Help turning the content you already have into posts that feel like your place. Not fake influencer mode. Not "post three times a day forever." Just useful clips, reminders, updates, flyers, captions, and social posts that help people keep up with what's going on.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Help turning the content you already have into posts that feel like your place. Not fake influencer mode. Not "post three times a day forever." Just useful clips, reminders, updates, flyers, captions, and social posts that help people keep up with what's going on.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/social-setup-and-posting.png" alt="Social setup and posting service artwork"></span>
+            </span>
           </button>
           <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
             <span class="tvtt-card-mark" aria-hidden="true"></span>
             <h3>Live content<br>Capture</h3>
-            <p class="tvtt-service-description">Clips from shows, karaoke nights, events, crowds, bartenders, room energy, behind-the-scenes bits, and little proof-of-life moments that show people what it actually feels like to be there. We help capture it, organize it, and make it usable across your site and socials.</p>
+            <span class="tvtt-service-popout">
+              <span class="tvtt-service-description">Clips from shows, karaoke nights, events, crowds, bartenders, room energy, behind-the-scenes bits, and little proof-of-life moments that show people what it actually feels like to be there. We help capture it, organize it, and make it usable across your site and socials.</span>
+              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/live-content-capture.png" alt="Live content capture service artwork"></span>
+            </span>
           </button>
         </div>
         <div class="tvtt-section-cta">
@@ -1822,11 +2649,18 @@
           <p>Pick the kind of backup your bar or venue needs. It does not have to be perfect.</p>
         </div>
         <div class="tvtt-package-grid tvtt-place-package-grid">
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="setup">
+            <button class="tvtt-package-expand-control" type="button" data-package-expand aria-expanded="false" aria-label="Expand Setup package details" title="Expand Setup package details">+</button>
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Setup package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>Setup</h3>
               <p class="tvtt-package-lead">Make it easy for people to find you and understand what's happening.</p>
               <p>We take a look at what you already have and clean it up so your online setup works the way it should. The goal is simple: someone new should be able to find your place, understand your nights, and know what to do next without guessing.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Setup package details from artwork">
+                <img loading="lazy" src="assets/packages/setup.png" alt="Setup package artwork">
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -1849,11 +2683,18 @@
               <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-setup" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - Setup package">Fix My Setup</a>
             </div>
           </article>
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="in-the-room">
+            <button class="tvtt-package-expand-control" type="button" data-package-expand aria-expanded="false" aria-label="Expand In The Room package details" title="Expand In The Room package details">+</button>
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close In The Room package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>In The Room</h3>
               <p class="tvtt-package-lead">Show people what it actually feels like to be there.</p>
               <p>We show up and capture real moments as they happen, then give you usable content that reflects your bar or venue the way it actually is. Not staged. Not overproduced. Just proof that the room is alive.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand In The Room package details from artwork">
+                <img loading="lazy" src="assets/packages/in-the-room.png" alt="In The Room package artwork">
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -1874,11 +2715,18 @@
               <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - In The Room package">Come Capture Our Space</a>
             </div>
           </article>
-          <article class="tvtt-card tvtt-package-card">
+          <article class="tvtt-card tvtt-package-card" data-package-section="all-hands">
+            <button class="tvtt-package-expand-control" type="button" data-package-expand aria-expanded="false" aria-label="Expand All Hands package details" title="Expand All Hands package details">+</button>
+            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close All Hands package details">&times;</button>
             <div class="tvtt-package-section tvtt-package-intro">
               <h3>All Hands</h3>
               <p class="tvtt-package-lead">We help capture, post, organize, and keep the online trail current.</p>
               <p>This is the bigger support plan. We help with both sides: creating content and making sure it actually gets out into the world consistently, so your place keeps showing signs of life online.</p>
+            </div>
+            <div class="tvtt-package-section tvtt-package-art-section">
+              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand All Hands package details from artwork">
+                <img loading="lazy" src="assets/packages/all-hands.png" alt="All Hands package artwork">
+              </button>
             </div>
             <div class="tvtt-package-section tvtt-package-includes">
               <h4>Includes</h4>
@@ -1910,56 +2758,46 @@
       </div>
     </section>
 
-    <section class="tvtt-section tvtt-receipts" id="receipts" aria-labelledby="website-receipts-title">
+    <section class="tvtt-section tvtt-receipts" id="receipts" aria-labelledby="receipts-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-proof-intro">
-          <h2 class="tvtt-section-title" id="website-receipts-title">Website</h2>
-          <p>A bar website does not need to be fancy to be useful. It needs to answer the questions people actually have before they show up: what's happening, what's on the menu, how karaoke works, where to click, and how to get help when something is wrong.</p>
-          <p>For Overland Bar, we built the website as a practical online home base, not just a brochure.</p>
+          <h2 class="tvtt-section-title" id="receipts-title">Receipts</h2>
+          <p>Not theory. Not a mood board. Work that is already helping a real Boise bar make its website, karaoke, menu, and social trail easier to use.</p>
         </div>
-
-        <div class="tvtt-website-grid" aria-label="Overland Bar website examples">
-          <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Home.png" data-image-modal-title="Home Page" data-image-modal-alt="Overland Bar website home page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
-              <img class="tvtt-website-shot" src="assets/Home.png" alt="Overland Bar website home page" loading="lazy">
-            </button>
-            <div class="tvtt-website-copy">
-              <h3>Home Page</h3>
-              <p>A clear front door for the bar, built to help people understand the vibe and find the next step quickly.</p>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Menu.png" data-image-modal-title="Menu Page" data-image-modal-alt="Overland Bar menu page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
-              <img class="tvtt-website-shot" src="assets/Menu.png" alt="Overland Bar menu page" loading="lazy">
-            </button>
-            <div class="tvtt-website-copy">
-              <h3>Menu Page</h3>
-              <p>A dedicated menu page so people can check food and drink options without hunting through posts or old files.</p>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Song Book.png" data-image-modal-title="Karaoke Song List" data-image-modal-alt="Overland Bar karaoke song list page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
-              <img class="tvtt-website-shot" src="assets/Song Book.png" alt="Overland Bar karaoke song list page" loading="lazy">
-            </button>
-            <div class="tvtt-website-copy">
-              <h3>Karaoke Song List</h3>
-              <p>A searchable karaoke catalog that helps customers find songs faster and makes karaoke night easier to navigate.</p>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-website-card">
-            <button class="tvtt-website-image-button" type="button" data-image-modal-src="assets/Feedback.png" data-image-modal-title="Feedback Pages" data-image-modal-alt="Overland Bar feedback page" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
-              <img class="tvtt-website-shot" src="assets/Feedback.png" alt="Overland Bar feedback page" loading="lazy">
-            </button>
-            <div class="tvtt-website-copy">
-              <h3>Feedback Pages</h3>
-              <p>A simple feedback path so customers can flag problems, suggest updates, and help keep the online setup useful.</p>
-            </div>
-          </article>
-        </div>
+        <article class="tvtt-card tvtt-overland-receipt-card">
+          <div class="tvtt-receipt-copy">
+            <h3>Overland Bar</h3>
+            <p>Website, searchable karaoke songbook, menu access, and short-form social content built around how the room actually works.</p>
+            <p class="tvtt-receipt-stat">A practical online home base that helps people find the details, feel the room, and choose the night.</p>
+          </div>
+          <div class="tvtt-receipt-proof-grid" aria-label="Overland Bar proof clips">
+            <a class="tvtt-receipt-proof" href="https://overlandbar.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the Overland Bar website" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places receipt - Overland Bar website and menu">
+              <video muted loop playsinline preload="metadata">
+                <source src="assets/receipts/overlandbar/homepage-and-menu-preview.webm" type="video/webm">
+                <source src="assets/receipts/overlandbar/homepage-and-menu-preview.mp4" type="video/mp4">
+              </video>
+              <span>Website + menu</span>
+            </a>
+            <a class="tvtt-receipt-proof" href="https://songs.overlandbar.com" target="_blank" rel="noopener noreferrer" aria-label="Visit the Overland Bar karaoke songbook" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places receipt - Overland Bar karaoke songbook">
+              <video muted loop playsinline preload="metadata">
+                <source src="assets/receipts/overlandbar/karaoke-songbook-preview.webm" type="video/webm">
+                <source src="assets/receipts/overlandbar/karaoke-songbook-preview.mp4" type="video/mp4">
+              </video>
+              <span>Karaoke songbook</span>
+            </a>
+            <a class="tvtt-receipt-proof" href="https://www.tiktok.com/@overlandbar" target="_blank" rel="noopener noreferrer" aria-label="Visit Overland Bar on TikTok" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places receipt - Overland Bar TikTok">
+              <video muted loop playsinline preload="metadata">
+                <source src="assets/receipts/overlandbar/tiktok-preview.webm" type="video/webm">
+                <source src="assets/receipts/overlandbar/tiktok-preview.mp4" type="video/mp4">
+              </video>
+              <span>Social proof</span>
+            </a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="tvtt-section" aria-labelledby="all-hands-receipts-title">
+    <section class="tvtt-section" id="all-hands" aria-labelledby="all-hands-receipts-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-proof-intro">
           <h2 class="tvtt-section-title" id="all-hands-receipts-title">All Hands</h2>
@@ -1968,21 +2806,21 @@
 
         <div class="tvtt-clip-grid" aria-label="Overland Bar social clips">
           <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625908691325242638" title="Just another karaoke night at Overland Bar in Boise." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625384010683796749" title="turns out everyone knows the words" loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607572876845272333" title="Kurtis across the bar, running drinks, resetting the room... still singing." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625384010683796749" title="Turns out everyone knows the words." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607572876845272333" title="Kurtis across the bar, running drinks, resetting the room, and still singing." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625384816782871821" title="Megan on the mic while making your drink." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607530893292489998" title="The Only Exception turned the whole room into phone lights." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7616436367202979086" title="Karaoke nights at Overland Bar always turn into a group effort." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625381570639088910" title="2am on the Boise Bench just hits different." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625381570639088910" title="Two in the morning on the Boise Bench just hits different." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7616436666709970189" title="Bartending and karaoke at the same time." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7615435175136185613" title="That moment when the work day ends and someone says meet me at the bar." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607573848149560590" title="Doug behind the bar all night and suddenly it is a full singalong." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607571404476665101" title="Weekend at Overland equals packed room and full-send vibes." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607571404476665101" title="Weekend at Overland means a packed room and full-send energy." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
           <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607574669620677901" title="Ty behind the bar all night and then A Bar Song takes over the room." loading="lazy" allow="fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
         </div>
 
         <div class="tvtt-view-more-wrap">
-          <button class="tvtt-view-more" type="button" data-view-more data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - Interactive detail">
+          <button class="tvtt-view-more" type="button" data-view-more data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - View more All Hands clips">
             <span>View More</span>
           </button>
         </div>
@@ -2049,13 +2887,211 @@
   </script>
   <script>
     (function () {
+      const proofBanner = document.querySelector(".tvtt-proof-banner-inner");
+      if (proofBanner) {
+        proofBanner.addEventListener("pointermove", (event) => {
+          if (event.pointerType === "touch") {
+            return;
+          }
+          const bounds = proofBanner.getBoundingClientRect();
+          const x = Math.max(0, Math.min(100, ((event.clientX - bounds.left) / bounds.width) * 100));
+          const y = Math.max(0, Math.min(100, ((event.clientY - bounds.top) / bounds.height) * 100));
+          proofBanner.style.setProperty("--tvtt-proof-zoom-x", `${x}%`);
+          proofBanner.style.setProperty("--tvtt-proof-zoom-y", `${y}%`);
+          proofBanner.classList.add("is-pointer-zooming");
+        });
+
+        proofBanner.addEventListener("pointerleave", () => {
+          proofBanner.classList.remove("is-pointer-zooming");
+          proofBanner.style.setProperty("--tvtt-proof-zoom-x", "50%");
+          proofBanner.style.setProperty("--tvtt-proof-zoom-y", "50%");
+        });
+      }
+
+      const nextStep = document.querySelector("[data-next-step]");
+      if (nextStep) {
+        const tabs = Array.from(nextStep.querySelectorAll("[data-next-step-tab]"));
+        const panels = Array.from(nextStep.querySelectorAll("[data-next-step-panel]"));
+        let pinnedNextStep = null;
+
+        function collapseNextStep() {
+          pinnedNextStep = null;
+          tabs.forEach((tab) => {
+            tab.classList.remove("is-active");
+            tab.setAttribute("aria-selected", "false");
+          });
+          panels.forEach((panel) => {
+            panel.classList.remove("is-active");
+            panel.hidden = true;
+          });
+        }
+
+        function activateNextStep(id, pin) {
+          if (pin) {
+            pinnedNextStep = id;
+          }
+          tabs.forEach((tab) => {
+            const isActive = tab.dataset.nextStepTab === id;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+          });
+          panels.forEach((panel) => {
+            const isActive = panel.dataset.nextStepPanel === id;
+            panel.classList.toggle("is-active", isActive);
+            panel.hidden = !isActive;
+          });
+        }
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            if (pinnedNextStep === tab.dataset.nextStepTab) {
+              collapseNextStep();
+              return;
+            }
+            activateNextStep(tab.dataset.nextStepTab, true);
+          });
+          tab.addEventListener("mouseenter", () => {
+            if (!pinnedNextStep) {
+              activateNextStep(tab.dataset.nextStepTab, false);
+            }
+          });
+          tab.addEventListener("focus", () => {
+            if (!pinnedNextStep) {
+              activateNextStep(tab.dataset.nextStepTab, false);
+            }
+          });
+        });
+
+        nextStep.addEventListener("mouseleave", () => {
+          if (!pinnedNextStep) {
+            collapseNextStep();
+          }
+        });
+      }
+
       const serviceCards = document.querySelectorAll(".tvtt-service-card");
       serviceCards.forEach((card) => {
         card.addEventListener("click", () => {
-          const isOpen = card.classList.toggle("is-active");
+          const isOpen = !card.classList.contains("is-active");
+          serviceCards.forEach((otherCard) => {
+            if (otherCard !== card) {
+              otherCard.classList.remove("is-active");
+              otherCard.setAttribute("aria-expanded", "false");
+            }
+          });
+          card.classList.toggle("is-active", isOpen);
           card.setAttribute("aria-expanded", String(isOpen));
         });
       });
+
+      const packageToggles = document.querySelectorAll("[data-package-expand]");
+      const packageCloseButtons = document.querySelectorAll("[data-package-close]");
+      const packageExpansionMedia = window.matchMedia("(min-width: 781px)");
+
+      function closeExpandedPackageCard(packageGrid, focusTarget) {
+        if (!packageGrid) {
+          return;
+        }
+        packageGrid.querySelectorAll(".tvtt-package-card.is-expanded").forEach((card) => {
+          card.classList.remove("is-expanded");
+          card.querySelectorAll("[data-package-expand]").forEach((toggle) => toggle.setAttribute("aria-expanded", "false"));
+        });
+        packageGrid.classList.remove("is-package-expanded");
+        packageGrid.style.minHeight = "";
+        if (focusTarget) {
+          focusTarget.focus();
+        }
+      }
+
+      function setPackageSectionUrl(sectionKey) {
+        const url = new URL(window.location.href);
+        if (sectionKey) {
+          url.searchParams.set("section", sectionKey);
+        } else {
+          url.searchParams.delete("section");
+        }
+        window.history.replaceState({}, "", url);
+      }
+
+      function openPackageCard(packageCard, updateUrl) {
+        if (!packageExpansionMedia.matches || !packageCard) {
+          return;
+        }
+        const packageGrid = packageCard.closest(".tvtt-package-grid");
+        const toggles = packageCard.querySelectorAll("[data-package-expand]");
+        if (!packageGrid || !toggles.length) {
+          return;
+        }
+        closeExpandedPackageCard(packageGrid);
+        packageGrid.classList.add("is-package-expanded");
+        packageCard.classList.add("is-expanded");
+        toggles.forEach((toggle) => toggle.setAttribute("aria-expanded", "true"));
+        packageGrid.style.minHeight = `${Math.max(packageGrid.offsetHeight, packageCard.scrollHeight)}px`;
+        if (updateUrl) {
+          setPackageSectionUrl(packageCard.dataset.packageSection || "");
+        }
+      }
+
+      packageToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          if (!packageExpansionMedia.matches) {
+            return;
+          }
+          const packageCard = toggle.closest(".tvtt-package-card");
+          const packageGrid = packageCard ? packageCard.closest(".tvtt-package-grid") : null;
+          if (!packageCard || !packageGrid) {
+            return;
+          }
+          if (packageCard.classList.contains("is-expanded")) {
+            closeExpandedPackageCard(packageGrid);
+            setPackageSectionUrl("");
+            return;
+          }
+          openPackageCard(packageCard, true);
+        });
+      });
+
+      packageCloseButtons.forEach((closeButton) => {
+        closeButton.addEventListener("click", () => {
+          const packageCard = closeButton.closest(".tvtt-package-card");
+          const packageGrid = packageCard ? packageCard.closest(".tvtt-package-grid") : null;
+          const toggle = packageCard ? packageCard.querySelector("[data-package-expand]") : null;
+          closeExpandedPackageCard(packageGrid, toggle);
+          setPackageSectionUrl("");
+        });
+      });
+
+      const requestedSection = new URLSearchParams(window.location.search).get("section");
+      if (requestedSection && packageExpansionMedia.matches) {
+        const packageCard = document.querySelector(`[data-package-section="${requestedSection.trim().toLowerCase()}"]`);
+        if (packageCard) {
+          window.requestAnimationFrame(() => openPackageCard(packageCard, false));
+        }
+      }
+
+      packageExpansionMedia.addEventListener("change", () => {
+        if (!packageExpansionMedia.matches) {
+          document.querySelectorAll(".tvtt-package-grid").forEach((packageGrid) => closeExpandedPackageCard(packageGrid));
+        }
+      });
+
+      const proofVideos = document.querySelectorAll(".tvtt-receipt-proof video");
+      if (proofVideos.length && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.play().catch(() => {});
+            } else {
+              entry.target.pause();
+            }
+          });
+        }, { threshold: 0.35 });
+        proofVideos.forEach((video) => {
+          video.muted = true;
+          video.pause();
+          observer.observe(video);
+        });
+      }
     }());
   </script>
   <script>
