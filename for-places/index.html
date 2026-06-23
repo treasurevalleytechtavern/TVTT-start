@@ -1244,7 +1244,11 @@
 
     @media (max-width: 640px) {
       body::before {
-        background-image: url("../assets/black-brick-wall-960.jpg");
+        background: #000 url("../assets/black-brick-wall-1920.jpg") top center / cover no-repeat;
+      }
+
+      body::after {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), #000 92%);
       }
 
       .tvtt-site-header-inner {
@@ -1264,6 +1268,7 @@
       .tvtt-hero {
         padding-top: 42px;
         padding-bottom: 24px;
+        background-image: none;
       }
 
       .tvtt-button {
@@ -2331,12 +2336,15 @@
       top: calc(var(--tvtt-header-height) + 20px);
       display: block;
       margin: clamp(22px, 4vw, 34px);
+      padding: 0;
       overflow: hidden;
       border: 1px solid rgba(99, 224, 229, 0.38);
       border-radius: 8px;
       color: #001214;
       background: #030303;
       box-shadow: 0 0 24px rgba(99, 224, 229, 0.12);
+      cursor: pointer;
+      appearance: none;
       text-decoration: none;
     }
 
@@ -2742,7 +2750,7 @@
           <p class="tvtt-hero-subtitle">Your hours show when the doors open. Your online presence should show why the room is worth walking into.</p>
           <p class="tvtt-hero-subtitle">We help Treasure Valley bars and venues turn scattered online info into a clearer path from &ldquo;what should we do tonight?&rdquo; to &ldquo;let&rsquo;s go there.&rdquo;</p>
           <div class="tvtt-hero-actions" aria-label="Start here">
-            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Hero setup review">Get a Free Setup Review</a>
+            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Hero setup review">Free setup review</a>
             <a class="tvtt-button tvtt-button-secondary" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Hero compare packages">Compare Packages</a>
           </div>
         </div>
@@ -2764,7 +2772,7 @@
           </ul>
         </div>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free setup review">Free setup review &rarr;</a>
         </div>
       </div>
     </section>
@@ -2816,6 +2824,9 @@
             </article>
           </div>
           <p class="tvtt-next-step-inside-closing">Your venue does not need to be louder online.<br>It just needs to be easier to find, feel, and choose.</p>
+                <div class="tvtt-section-cta">
+          <a class="tvtt-button" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - See the packages">See the Packages &rarr;</a>
+        </div>
         </div>
       </div>
     </section>
@@ -2829,9 +2840,7 @@
           <li class="tvtt-step"><div><h3>We map the trail</h3><p>We look at what people see when they search for your spot online, or map out what they should see if you are starting fresh. We find the broken links, missing hours, buried events, and empty spaces keeping people on the couch.</p></div></li>
           <li class="tvtt-step"><div><h3>We build around the room</h3><p>You get practical recommendations and digital support built for a real, breathing local space, not a generic marketing template. We help clean up the setup, show the room more clearly, and make it easier for people to know what kind of night they are walking into.</p></div></li>
         </ol>
-        <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - See the packages">See the Packages &rarr;</a>
-        </div>
+  
       </div>
     </section>
 
@@ -2890,7 +2899,7 @@
                 </ul>
                 <h4>Best for</h4>
                 <p>Bars and venues that want real content from the room but do not have the time, staff, or brain-space to capture it themselves.</p>
-                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - In The Room package">Come Capture Our Space</a>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - In The Room package">Capture Our Space</a>
               </div>
             </div>
           </article>
@@ -2916,7 +2925,7 @@
                 </ul>
                 <h4>Best for</h4>
                 <p>Bars and venues that want to stay active online without managing every post, update, link, and event detail day to day.</p>
-                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-all-hands" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - All Hands package">Handle It For Us</a>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-all-hands" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - All Hands package">Handle It</a>
               </div>
             </div>
           </article>
@@ -2938,13 +2947,13 @@
         </div>
         <div class="tvtt-card tvtt-proof-case">
           <article class="tvtt-proof-row">
-            <a class="tvtt-proof-media" href="assets/receipts/overlandbar/tik-tok-mobile.mp4" aria-label="View the full Overland Bar TikTok launch video" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places proof - TikTok launch video">
+            <button class="tvtt-proof-media" type="button" aria-label="Pause the Overland Bar TikTok launch video" data-video-toggle data-analytics-event="receipt_pause_toggle" data-analytics-category="engagement" data-analytics-label="For Places proof - TikTok launch video">
               <video muted loop playsinline preload="metadata">
                 <source src="assets/receipts/overlandbar/tik-tok-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/tik-tok-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>View full video</span>
-            </a>
+              <span>Pause preview</span>
+            </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
                 <p class="tvtt-proof-number">01 / THE TRAFFIC ENGINE</p>
@@ -2970,13 +2979,13 @@
           </article>
 
           <article class="tvtt-proof-row">
-            <a class="tvtt-proof-media" href="assets/receipts/overlandbar/karaoke-songlist-mobile.mp4" aria-label="View the full searchable karaoke songbook video" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places proof - Karaoke songbook video">
+            <button class="tvtt-proof-media" type="button" aria-label="Pause the searchable karaoke songbook video" data-video-toggle data-analytics-event="receipt_pause_toggle" data-analytics-category="engagement" data-analytics-label="For Places proof - Karaoke songbook video">
               <video muted loop playsinline preload="metadata">
                 <source src="assets/receipts/overlandbar/karaoke-songlist-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/karaoke-songlist-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>View full video</span>
-            </a>
+              <span>Pause preview</span>
+            </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
                 <p class="tvtt-proof-number">02 / THE OPERATIONAL FIX</p>
@@ -2994,13 +3003,13 @@
           </article>
 
           <article class="tvtt-proof-row">
-            <a class="tvtt-proof-media" href="assets/receipts/overlandbar/website-menu-mobile.mp4" aria-label="View the full mobile homepage and digital menu video" data-analytics-event="receipt_click" data-analytics-category="engagement" data-analytics-label="For Places proof - Homepage and menu video">
+            <button class="tvtt-proof-media" type="button" aria-label="Pause the mobile homepage and digital menu video" data-video-toggle data-analytics-event="receipt_pause_toggle" data-analytics-category="engagement" data-analytics-label="For Places proof - Homepage and menu video">
               <video muted loop playsinline preload="metadata">
                 <source src="assets/receipts/overlandbar/website-menu-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/website-menu-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>View full video</span>
-            </a>
+              <span>Pause preview</span>
+            </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
                 <p class="tvtt-proof-number">03 / THE FRONT DOOR &amp; TAB STARTER</p>
@@ -3052,7 +3061,7 @@
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">WANT ME TO TAKE A LOOK AT YOUR SETUP?</h2>
-        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free setup review">Free setup review &rarr;</a>
         <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Not sure what kind of help fits yet? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557" data-analytics-event="phone_click" data-analytics-category="lead" data-analytics-label="Phone link - For Places page">208-247-2557</a></p>
       </div>
     </section>
@@ -3110,11 +3119,48 @@
   <script>
     (function () {
       const proofVideos = document.querySelectorAll(".tvtt-proof-media video, .tvtt-receipt-proof video");
+      const proofVideoToggles = document.querySelectorAll("[data-video-toggle]");
+
+      function setVideoToggleState(button, video) {
+        const label = button.querySelector("span");
+        const isPaused = video.paused;
+        button.setAttribute("aria-label", isPaused ? "Play the video preview" : "Pause the video preview");
+        button.setAttribute("aria-pressed", String(!isPaused));
+        if (label) {
+          label.textContent = isPaused ? "Play preview" : "Pause preview";
+        }
+      }
+
+      proofVideoToggles.forEach((button) => {
+        const video = button.querySelector("video");
+        if (!video) {
+          return;
+        }
+
+        button.addEventListener("click", () => {
+          if (video.paused) {
+            button.dataset.userPaused = "false";
+            video.play().catch(() => {});
+          } else {
+            button.dataset.userPaused = "true";
+            video.pause();
+          }
+          setVideoToggleState(button, video);
+        });
+
+        video.addEventListener("play", () => setVideoToggleState(button, video));
+        video.addEventListener("pause", () => setVideoToggleState(button, video));
+        setVideoToggleState(button, video);
+      });
+
       if (proofVideos.length && "IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
+            const toggle = entry.target.closest("[data-video-toggle]");
             if (entry.isIntersecting) {
-              entry.target.play().catch(() => {});
+              if (!toggle || toggle.dataset.userPaused !== "true") {
+                entry.target.play().catch(() => {});
+              }
             } else {
               entry.target.pause();
             }
