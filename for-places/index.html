@@ -802,8 +802,7 @@
       padding: 18px;
     }
 
-    .tvtt-website-copy h3,
-    .tvtt-clip-card h3 {
+    .tvtt-website-copy h3 {
       display: flex;
       align-items: center;
       margin: 0 0 10px;
@@ -815,68 +814,15 @@
       text-transform: uppercase;
     }
 
-    .tvtt-website-copy p,
-    .tvtt-clip-card p {
+    .tvtt-website-copy p {
       margin: 0;
       color: var(--tvtt-muted);
       font-size: clamp(1rem, 1.7vw, 1.12rem);
       line-height: 1.48;
     }
 
-    .tvtt-clip-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin: 32px auto 0;
-      max-width: 1080px;
-    }
-
-    .tvtt-clip-card {
-      overflow: hidden;
-    }
-
-    .tvtt-clip-card iframe {
-      display: block;
-      width: 100%;
-      aspect-ratio: 9 / 16;
-      border: 0;
-      background: #000;
-    }
-
     .tvtt-hidden {
       display: none;
-    }
-
-    .tvtt-view-more-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 26px;
-    }
-
-    .tvtt-view-more {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      width: min(100%, 280px);
-      padding: 0 24px;
-      border: 1px solid var(--tvtt-cyan);
-      border-radius: 8px;
-      color: #001214;
-      background: var(--tvtt-cyan);
-      box-shadow: 0 0 22px rgba(99, 224, 229, 0.2);
-      font-family: "Cute Font", Arial, sans-serif;
-      font-size: clamp(1.75rem, 6vw, 2rem);
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .tvtt-view-more:hover,
-    .tvtt-view-more:focus-visible {
-      color: var(--tvtt-cyan);
-      background: rgba(0, 0, 0, 0.36);
     }
 
     .tvtt-image-modal {
@@ -1231,10 +1177,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .tvtt-clip-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       .tvtt-package-card {
         display: flex;
         flex-direction: column;
@@ -1305,8 +1247,7 @@
 
       .tvtt-package-grid,
       .tvtt-optional-grid,
-      .tvtt-website-grid,
-      .tvtt-clip-grid {
+      .tvtt-website-grid {
         grid-template-columns: 1fr;
       }
 
@@ -2225,6 +2166,21 @@
       object-fit: cover;
     }
 
+    .tvtt-tier-concepts {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .tvtt-tier-concepts img {
+      box-shadow: 0 0 18px rgba(99, 224, 229, 0.1);
+    }
+
+    .tvtt-tier-concept-left {
+      justify-self: start;
+      object-position: left center;
+    }
+
     .tvtt-tier-copy h3 {
       margin: 0 0 12px;
       color: #fff;
@@ -2502,6 +2458,32 @@
       line-height: 1.48;
     }
 
+    .tvtt-proof-closeout {
+      margin: 0;
+      padding: clamp(24px, 4vw, 34px);
+      border-top: 1px solid rgba(99, 224, 229, 0.24);
+      background: linear-gradient(135deg, rgba(99, 224, 229, 0.1), rgba(185, 140, 255, 0.06)), rgba(0, 0, 0, 0.36);
+    }
+
+    .tvtt-proof-closeout h3 {
+      margin: 0 0 10px;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-proof-closeout p {
+      max-width: 780px;
+      margin: 0;
+      color: var(--tvtt-text);
+      font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+      font-weight: 800;
+      line-height: 1.48;
+    }
+
     @media (max-width: 780px) {
       .tvtt-section-tight {
         padding-top: 30px;
@@ -2644,7 +2626,15 @@
         margin: 0 auto;
       }
 
-      .tvtt-tier-art-pair img:nth-child(2) {
+      .tvtt-tier-art-pair > img:nth-child(2) {
+        display: none;
+      }
+
+      #tier-in-the-room .tvtt-tier-concepts {
+        display: none;
+      }
+
+      #tier-all-hands .tvtt-tier-concepts img:nth-child(2) {
         display: none;
       }
 
@@ -2747,8 +2737,7 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
-          <p class="tvtt-hero-subtitle">Your hours show when the doors open. Your online presence should show why the room is worth walking into.</p>
-          <p class="tvtt-hero-subtitle">We help Treasure Valley bars and venues turn scattered online info into a clearer path from &ldquo;what should we do tonight?&rdquo; to &ldquo;let&rsquo;s go there.&rdquo;</p>
+          <p class="tvtt-hero-subtitle">We help Treasure Valley bars and venues make their events, hours, links, and room energy easy to find, so more people go from &ldquo;what should we do tonight?&rdquo; to &ldquo;let&rsquo;s go there.&rdquo;</p>
           <div class="tvtt-hero-actions" aria-label="Start here">
             <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Hero setup review">Free setup review</a>
             <a class="tvtt-button tvtt-button-secondary" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - Hero compare packages">Compare Packages</a>
@@ -2762,85 +2751,21 @@
         <div class="tvtt-reality-check">
           <div class="tvtt-copy-block">
             <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
-            <p><strong>Running the room is already a full-time job.</strong><br>Between inventory, staffing, and managing the floor, you don&rsquo;t have time to play digital detective. But when your online trail gets scattered, a group chat looking for something to do tonight hits a wall of friction:</p>
+            <p><strong>Running a bar is already a full-time job.</strong></p>
+            <p>You&rsquo;re handling staff, inventory, regulars, vendors, events, and whatever breaks right before the rush. The internet becomes one more thing asking for attention.</p>
+            <p>But when your hours, events, menus, photos, or links are scattered online, people hit friction before they ever hit the door.</p>
+            <p>We clean up the online trail so your bar is easier to find, understand, and choose.</p>
           </div>
           <ul class="tvtt-reality-list">
-            <li class="tvtt-card"><h3>Too many platforms to keep current</h3><p>They check Google, Instagram, and Facebook, but find three different answers.</p></li>
-            <li class="tvtt-card"><h3>Events get buried in old posts</h3><p>Your upcoming Tuesday karaoke or live show gets lost under weeks of random content.</p></li>
-            <li class="tvtt-card"><h3>Menus, hours, and links don&rsquo;t match</h3><p>An outdated photo or a broken link means they can&rsquo;t verify what you&rsquo;re serving tonight.</p></li>
-            <li class="tvtt-card"><h3>People find your name, but not your vibe</h3><p>If they can&rsquo;t instantly see the room energy, they assume it&rsquo;s dead and pick somewhere else.</p></li>
+            <li class="tvtt-card"><h3>Same bar, different answers</h3><p>Google says one thing. Instagram says another. Facebook says something else. We help keep the important stuff lined up.</p></li>
+            <li class="tvtt-card"><h3>Events get buried</h3><p>Your Tuesday karaoke night or next live show should not disappear under weeks of old posts.</p></li>
+            <li class="tvtt-card"><h3>The basics get fuzzy</h3><p>A stale menu photo, outdated hours, or broken link can make customers second-guess what is actually available tonight.</p></li>
+            <li class="tvtt-card"><h3>The vibe does not show up</h3><p>People may find your name, but if they cannot quickly see the room energy, it is harder for them to picture themselves there.</p></li>
           </ul>
         </div>
         <div class="tvtt-section-cta">
           <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Free setup review">Free setup review &rarr;</a>
         </div>
-      </div>
-    </section>
-
-    <section class="tvtt-section" id="what-gets-in-the-way" aria-labelledby="next-step-title">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-next-step" id="next-step">
-          <h2 class="tvtt-next-step-title" id="next-step-title">We help make the next step obvious.</h2>
-          <div class="tvtt-next-step-panels">
-            <article class="tvtt-next-step-panel" id="next-step-tonight">
-              <div class="tvtt-next-step-copy">
-                <h3>Check tonight.</h3>
-                <p>When people in the Valley ask the group chat what the plan is for tonight, they should not have to hunt through dead Facebook threads or stale screenshots to find an answer.</p>
-                <p>We build a clear, friction-free digital front door. Whether it is a sudden schedule swap, a specific karaoke start time, or tonight&rsquo;s draft lineup, we ensure your daily vibe is instantly findable for crowds ready to start a tab.</p>
-              </div>
-              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/check-tonight.png" alt="Tonight's event details organized for quick browsing"></figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-room">
-              <div class="tvtt-next-step-copy">
-                <h3>Feel the room.</h3>
-                <p>People do not pick a venue based on a text address. Instead, they choose it because they want to feel the energy before they even show up.</p>
-                <p>We capture the real, gritty texture of your best nights. Through high-impact short-form video, crowd-driven clips, and live music recaps, we show potential patrons exactly what they are missing out on if they stay on the couch.</p>
-              </div>
-              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/feel-the-room.png" alt="Real room energy captured through social content"></figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-details">
-              <div class="tvtt-next-step-copy">
-                <h3>Find the details.</h3>
-                <p>If a local show is happening or a trivia night is launching, a broken ticket link or an unreadable, outdated PDF menu photo on a smartphone is a guaranteed way to lose a group.</p>
-                <p>We sync your digital footprint into a seamless, mobile-optimized experience. From Google Business listings to interactive menus and event landing pages, we make sure finding you is effortless.</p>
-              </div>
-              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/find-the-details.png" alt="Venue details organized across web and search listings"></figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-join">
-              <div class="tvtt-next-step-copy">
-                <h3>Join the night.</h3>
-                <p>Your regular weeknight events, like trivia leagues, open mics, theme nights, and pool tournaments, only work if your audience feels invited to participate.</p>
-                <p>We turn passive spectators into active regulars. By putting digital sign-up sheets, songbooks, and clear event instructions directly into their hands, we drive the recurring foot traffic that keeps your staff busy on slow nights.</p>
-              </div>
-              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/join-the-night.png" alt="Clear instructions for joining recurring venue events"></figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-return">
-              <div class="tvtt-next-step-copy">
-                <h3>Come back.</h3>
-                <p>A great night should not disappear when the house lights come up. Building a true neighborhood staple means keeping the momentum rolling long after last call.</p>
-                <p>We transform casual drop-ins into a loyal local community. Through consistent story reminders, high-energy weekend recaps, and upcoming monthly calendars, we keep your venue top-of-mind all week long.</p>
-              </div>
-              <figure class="tvtt-next-step-image"><img loading="lazy" src="assets/next-steps/come-back.png" alt="Ongoing updates that give guests a reason to return"></figure>
-            </article>
-          </div>
-          <p class="tvtt-next-step-inside-closing">Your venue does not need to be louder online.<br>It just needs to be easier to find, feel, and choose.</p>
-                <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Places page - See the packages">See the Packages &rarr;</a>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="tvtt-section" id="how-this-works" aria-labelledby="plan-title">
-      <div class="tvtt-section-inner">
-        <h2 class="tvtt-section-title" id="plan-title">How this works</h2>
-        <ol class="tvtt-steps">
-          <li class="tvtt-step"><div><h3>Choose your backup</h3><p>Pick the plan that fits your immediate headache: cleaning up your listings, launching a new home base, or getting more eyes on your events. You do not need to know the perfect package before reaching out. We start wherever you are.</p></div></li>
-          <li class="tvtt-step"><div><h3>Tell us your spot</h3><p>Just send your bar or venue name. If you have Facebook, Instagram, Google, or a messy old website, great. If you have almost nothing online yet, that works too. No homework required.</p></div></li>
-          <li class="tvtt-step"><div><h3>We map the trail</h3><p>We look at what people see when they search for your spot online, or map out what they should see if you are starting fresh. We find the broken links, missing hours, buried events, and empty spaces keeping people on the couch.</p></div></li>
-          <li class="tvtt-step"><div><h3>We build around the room</h3><p>You get practical recommendations and digital support built for a real, breathing local space, not a generic marketing template. We help clean up the setup, show the room more clearly, and make it easier for people to know what kind of night they are walking into.</p></div></li>
-        </ol>
-  
       </div>
     </section>
 
@@ -2859,22 +2784,20 @@
                 <img loading="lazy" src="assets/what-we-do/schedules-and-info.png" alt="Schedules and event information">
               </div>
               <div class="tvtt-tier-copy">
-                <h3>Setup</h3>
-                <p class="tvtt-package-lead">Make it easy for people to find you and understand what&rsquo;s happening.</p>
-                <p>We take a look at what you already have and clean it up so your online setup works the way it should. The goal is simple: someone new should be able to find your place, understand your nights, and know what to do next without guessing.</p>
+                <h3>SETUP</h3>
+                <p class="tvtt-package-lead">Make it easy for people to find you, understand your nights, and know what to do next.</p>
+                <p>We look at what you already have and clean up the pieces that are scattered, outdated, or unclear. The goal is simple: when someone finds you online, they should instantly tell what kind of place you are, what is happening this week, and how to take the next step.</p>
                 <h4>Includes</h4>
                 <ul>
-                  <li>Review of your Instagram, Facebook, Google Business Profile, website, link pages, and other public-facing pages</li>
-                  <li>Fixing incorrect hours, broken links, missing info, or confusing details</li>
-                  <li>Clear weekly schedule setup so people know what happens each night</li>
-                  <li>Bio and profile cleanup so people understand what you are, what you do, and what nights matter</li>
-                  <li>Basic organization like a link hub, simple mobile-friendly page, or clearer navigation</li>
-                  <li>Google Business Profile cleanup and optimization</li>
-                  <li>Up to 10 QR table or bar inserts, sized 3x5 or 4x6</li>
-                  <li>Clear recommendations on what to fix next</li>
+                  <li><strong>Full Digital Review &amp; Cleanup:</strong> Fixing incorrect hours, broken links, missing info, and messy bios across Google, Instagram, Facebook, and your website.</li>
+                  <li><strong>Google Business Profile Optimization:</strong> Cleaning up your primary search footprint so your digital front door is working properly.</li>
+                  <li><strong>Clear Weekly Schedule Setup:</strong> Mapping out your regular nights, like trivia, karaoke, or live music, so your weekly calendar is impossible to miss.</li>
+                  <li><strong>Mobile Link Hub or Navigation:</strong> A simple, mobile-friendly landing page designed so patrons can find menus and event details on a phone in under three seconds.</li>
+                  <li><strong>Up to 10 Custom QR Bar Inserts:</strong> Physical 4x6 or 5x7 table cards linking customers straight to your current drafts, food, or schedules.</li>
+                  <li><strong>Next-Step Roadmap:</strong> Clear, practical recommendations on exactly what your venue should clean up next.</li>
                 </ul>
                 <h4>Best for</h4>
-                <p>Bars and venues that feel scattered, outdated, hard to find, or unclear about what&rsquo;s happening week to week.</p>
+                <p>Bars and venues that feel scattered, outdated, hard to find, or unclear about what is happening week to week.</p>
                 <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-setup" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - Setup package">Fix My Setup</a>
               </div>
             </div>
@@ -2883,22 +2806,26 @@
           <article class="tvtt-card tvtt-tier-card" id="tier-in-the-room">
             <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/in-the-room.png" alt="In The Room package">
             <div class="tvtt-tier-body">
-              <div class="tvtt-tier-art"><img loading="lazy" src="assets/what-we-do/live-content-capture.png" alt="Live content capture"></div>
+              <div class="tvtt-tier-art">
+                <img loading="lazy" src="assets/what-we-do/live-content-capture.png" alt="Live content capture">
+                <div class="tvtt-tier-concepts" aria-label="In The Room visual example">
+                  <img class="tvtt-tier-concept-left" loading="lazy" src="assets/next-steps/feel-the-room.png" alt="Real room energy captured through social content">
+                </div>
+              </div>
               <div class="tvtt-tier-copy">
-                <h3>In The Room</h3>
+                <h3>IN THE ROOM</h3>
                 <p class="tvtt-package-lead">Show people what it actually feels like to be there.</p>
-                <p>We show up and capture real moments as they happen, then give you usable content that reflects your bar or venue the way it actually is. Not staged. Not overproduced. Just proof that the room is alive.</p>
+                <p>We show up and capture real moments as they happen, giving you usable content that reflects your bar or venue the way it actually is. Not staged. Not overproduced. Just proof that the room is alive.</p>
                 <h4>Includes</h4>
                 <ul>
-                  <li>On-site content capture through short visits, not full-night coverage</li>
-                  <li>Footage of the crowd, room, bartenders, events, performers, regulars, and atmosphere</li>
-                  <li>Short-form video clips ready for Instagram, TikTok, Facebook, and more</li>
-                  <li>Light editing to keep clips clean and usable</li>
-                  <li>Organized delivery so you can post the content yourself</li>
-                  <li>Content that reflects real energy, not fake promo gloss</li>
+                  <li><strong>Flexible On-Site Capture:</strong> Tailored floor visits built around your schedule, whether it&rsquo;s a quick high-energy sweep during a rush or full, evening-long coverage for headline events.</li>
+                  <li><strong>Full Room Coverage:</strong> Raw footage targeting the crowd, bartenders, performers, regulars, and overall atmosphere when the venue is buzzing.</li>
+                  <li><strong>Platform-Ready Video Clips:</strong> Short-form vertical video cut and optimized for Instagram, TikTok, and Facebook Reels.</li>
+                  <li><strong>Light, Authentic Editing:</strong> Clean, rapid turnaround editing designed to highlight real room energy instead of fake promo gloss.</li>
+                  <li><strong>Organized Content Delivery:</strong> Assets delivered clean and categorized so your team can easily grab a file and post it themselves.</li>
                 </ul>
                 <h4>Best for</h4>
-                <p>Bars and venues that want real content from the room but do not have the time, staff, or brain-space to capture it themselves.</p>
+                <p>Bars and venues that want real content from the room but do not have the time, staff, or headspace to capture it themselves.</p>
                 <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-in-the-room" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - In The Room package">Capture Our Space</a>
               </div>
             </div>
@@ -2907,43 +2834,59 @@
           <article class="tvtt-card tvtt-tier-card" id="tier-all-hands">
             <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/all-hands.png" alt="All Hands package">
             <div class="tvtt-tier-body">
-              <div class="tvtt-tier-art"><img loading="lazy" src="assets/what-we-do/social-setup-and-posting.png" alt="Social setup and posting"></div>
+              <div class="tvtt-tier-art">
+                <div class="tvtt-tier-concepts" aria-label="All Hands visual examples">
+                  <img loading="lazy" src="assets/next-steps/join-the-night.png" alt="Clear instructions for joining recurring venue events">
+                  <img loading="lazy" src="assets/next-steps/come-back.png" alt="Ongoing updates that give guests a reason to return">
+                </div>
+              </div>
               <div class="tvtt-tier-copy">
-                <h3>All Hands</h3>
+                <h3>ALL HANDS</h3>
                 <p class="tvtt-package-lead">We help capture, post, organize, and keep the online trail current.</p>
-                <p>This is the bigger support plan. We help with both sides: creating content and making sure it actually gets out into the world consistently, so your place keeps showing signs of life online.</p>
+                <p>This is the bigger support plan for bars and venues that want both sides handled: the content people can feel and the details people need. We keep your place showing signs of life online without making you manage every post, link, update, and event detail yourself.</p>
                 <h4>Includes</h4>
                 <ul>
-                  <li>Everything from Setup and In The Room</li>
-                  <li>Content captured at your space on a consistent schedule</li>
-                  <li>Short-form posts created and scheduled</li>
-                  <li>Posting support across Instagram, TikTok, Facebook, and other useful platforms</li>
-                  <li>Captions, tagging, formatting, and basic post cleanup handled</li>
-                  <li>Ongoing schedule updates and visibility support</li>
-                  <li>Featured posts on our page when applicable to help promote your space</li>
-                  <li>Help keeping your online setup current instead of slowly turning into a haunted junk drawer</li>
+                  <li><strong>The Complete Package:</strong> Everything from both the Setup and In The Room tiers fully integrated.</li>
+                  <li><strong>Routine Floor Coverage:</strong> Content captured at your space on a consistent, repeating schedule.</li>
+                  <li><strong>Full-Service Publishing:</strong> Short-form vertical posts fully created, scheduled, and published across Instagram, TikTok, and Facebook Reels.</li>
+                  <li><strong>Handled Copywriting &amp; Tagging:</strong> Captions, hyper-local tagging, formatting, and post optimization taken completely off your plate.</li>
+                  <li><strong>Live Schedule Maintenance:</strong> Ongoing digital calendar updates and visibility support to ensure your weekly events stay accurate.</li>
+                  <li><strong>Cross-Promotion Boosts:</strong> Featured posts on our page when applicable to drive extra local eyes to your upcoming events.</li>
+                  <li><strong>Junk Drawer Prevention:</strong> Continuous maintenance to keep your entire digital footprint current before it slips out of date.</li>
                 </ul>
                 <h4>Best for</h4>
-                <p>Bars and venues that want to stay active online without managing every post, update, link, and event detail day to day.</p>
+                <p>Bars and venues that want regular online support without handling every post, update, link, and event detail day to day.</p>
                 <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-places-all-hands" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Places page - All Hands package">Handle It</a>
               </div>
             </div>
           </article>
         </div>
         <aside class="tvtt-card tvtt-not-sure">
-          <h3>Not sure what fits yet?</h3>
-          <p>Start with the general contact form and we'll help you figure out the right next step.</p>
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="contact_click" data-analytics-category="lead" data-analytics-label="For Places page - Just contact us">Just contact us</a>
+          <h3>NOT SURE WHAT FITS YET?</h3>
+          <p>Start with the general contact form. You do not need to know the right plan before reaching out. We&rsquo;ll help you sort out the next step.</p>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="contact_click" data-analytics-category="lead" data-analytics-label="For Places page - Contact us">Contact us</a>
         </aside>
+      </div>
+    </section>
+
+    <section class="tvtt-section" id="how-this-works" aria-labelledby="plan-title">
+      <div class="tvtt-section-inner">
+        <h2 class="tvtt-section-title" id="plan-title">HOW THIS WORKS</h2>
+        <ol class="tvtt-steps">
+          <li class="tvtt-step"><div><h3>Choose your backup</h3><p>Pick the plan that fits the immediate headache: cleaning up listings, launching a home base, or getting eyes on your events. Don&rsquo;t worry about picking the perfect package yet&mdash;we start wherever you are.</p></div></li>
+          <li class="tvtt-step"><div><h3>Tell us your spot</h3><p>Send your bar or venue name. Existing socials, a messy website, or starting from absolute zero&mdash;it all works. No homework required.</p></div></li>
+          <li class="tvtt-step"><div><h3>We map the trail</h3><p>We look at what people see when they search for your spot, finding the broken links, missing hours, and buried events that make people hesitate.</p></div></li>
+          <li class="tvtt-step"><div><h3>We build around the room</h3><p>You get practical digital support built for a real local space, not a generic template. We clean up the setup, show off the room, and make it easy for crowds to choose your venue tonight.</p></div></li>
+        </ol>
       </div>
     </section>
 
     <section class="tvtt-section tvtt-receipts" id="receipts" aria-labelledby="receipts-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-proof-intro">
-          <h2 class="tvtt-section-title" id="receipts-title">The Proof</h2>
-          <p>A bar website does not need to be fancy to be useful. It needs to show people why tonight is worth showing up for, take the administrative friction out of your busiest nights, and turn online attention into real bar tabs.</p>
-          <p>For Overland Bar, we built an entire digital ecosystem from the floor up, led by an organic traffic engine and a custom-engineered entertainment setup.</p>
+          <h2 class="tvtt-section-title" id="receipts-title">THE PROOF</h2>
+          <p>A useful bar website does more than list hours. It helps people see the room, check what is happening tonight, and know what to do next.</p>
+          <p>For Overland Bar, we built a digital home base around the real rhythm of the place: daily karaoke, regulars, food, drinks, events, and the details people need before they walk in.</p>
         </div>
         <div class="tvtt-card tvtt-proof-case">
           <article class="tvtt-proof-row">
@@ -2960,7 +2903,7 @@
                 <h3>TikTok Launch</h3>
               </div>
               <div class="tvtt-proof-content">
-                <p>We launched their brand-new channel from absolute zero on February 9, 2026 with <strong>zero dollars spent on ads.</strong> Just pure atmosphere capture.</p>
+                <p>We launched their brand-new channel from absolute zero on February 9, 2026, with <strong>zero dollars spent on ads.</strong> Just pure atmosphere capture.</p>
                 <h4>The First 30 Days <span>(The Splash)</span></h4>
                 <div class="tvtt-proof-stats tvtt-proof-stats-compact">
                   <p><strong>88,000+</strong><span>Organic TikTok video views</span></p>
@@ -2969,7 +2912,7 @@
                 </div>
                 <h4>Totals as of 6/22/2026 <span>(The Momentum)</span></h4>
                 <div class="tvtt-proof-stats">
-                  <p><strong>350,800+</strong><span>Total TikTok video plays &mdash; over a third of a million times local screens have looped, watched, and re-watched the energy inside the bar.</span></p>
+                  <p><strong>350,800+</strong><span>Total TikTok video plays &mdash; over a third of a million times local screens have looped and watched the energy inside the bar.</span></p>
                   <p><strong>233,100+</strong><span>Unique video views &mdash; massive, sustained local awareness keeping Overland top-of-mind across the Treasure Valley.</span></p>
                   <p><strong>4,860+</strong><span>Total profile visits &mdash; nearly 5,000 times someone stopped scrolling to actively check out the bar&rsquo;s location, hours, links, or menu.</span></p>
                   <p><strong>1,250+</strong><span>Digital regulars &mdash; a dedicated TikTok community that gives the bar a direct, organic line to local patrons every weekend.</span></p>
@@ -2994,9 +2937,9 @@
               <div class="tvtt-proof-content">
                 <p>We took a raw, chaotic database of 116,000 unorganized song files, stripped the duplicates, normalized the formatting, and compressed it into a lightning-fast, mobile-friendly catalog of 8,000 searchable tracks.</p>
                 <ul class="tvtt-proof-features">
-                  <li><strong>Intelligent Search Aliases</strong><span>Built to handle real-world user error&mdash;whether someone searches for &ldquo;P!nk&rdquo; or &ldquo;Pink,&rdquo; the system finds it instantly.</span></li>
-                  <li><strong>Custom Theme Night Configurations</strong><span>Dedicated filters and quick-lists instantly adapt the catalog for specialized theme nights.</span></li>
-                  <li><strong>Line Speed Optimizer</strong><span>Drastically cuts down the time customers spend crowding the KJ booth, keeping them at the bar top buying drinks instead.</span></li>
+                  <li><strong>Intelligent Search Aliases:</strong><span>Built to handle real-world user error&mdash;whether someone searches for &ldquo;P!nk&rdquo; or &ldquo;Pink,&rdquo; the system finds it instantly.</span></li>
+                  <li><strong>Custom Theme Night Configurations:</strong><span>Dedicated filters and quick-lists instantly adapt the catalog for specialized theme nights.</span></li>
+                  <li><strong>Line Speed Optimizer:</strong><span>Drastically cuts down the time customers spend crowding the KJ booth, keeping them at the bar top buying drinks instead.</span></li>
                 </ul>
               </div>
             </div>
@@ -3018,42 +2961,16 @@
               <div class="tvtt-proof-content">
                 <p>Where all that organic TikTok attention lands to turn into physical sales. We built a streamlined, mobile-first front door and menu layout designed to get customers off the couch, into a booth, and ordering drinks in under 3 seconds.</p>
                 <ul class="tvtt-proof-features">
-                  <li><strong>Zero-Friction Details</strong><span>Puts live hours, locations, and tonight&rsquo;s specific vibe front and center on phone screens.</span></li>
-                  <li><strong>Frictionless QR System</strong><span>No clunky, outdated PDF files that force people to pinch-to-zoom at a dark table. Paired with custom on-site QR inserts so customers can instantly pull up current drafts, food, and drink specials right from their barstools.</span></li>
+                  <li><strong>Zero-Friction Details:</strong><span>Puts live hours, locations, and tonight&rsquo;s specific vibe front and center on phone screens.</span></li>
+                  <li><strong>Frictionless QR System:</strong><span>No clunky, outdated PDF files that force people to pinch-to-zoom at a dark table. Paired with custom on-site QR inserts so customers can instantly pull up current drafts, food, and drink specials right from their barstools.</span></li>
                 </ul>
               </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="tvtt-section" id="all-hands" aria-labelledby="all-hands-receipts-title">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-proof-intro">
-          <h2 class="tvtt-section-title" id="all-hands-receipts-title">All Hands</h2>
-          <p>For Overland Bar, ongoing support also means capturing the room as it actually feels and turning those moments into usable social content. Short clips, karaoke moments, bartender energy, packed-room proof, and posts that show there is a real place behind the name.</p>
-        </div>
-
-        <div class="tvtt-clip-grid" aria-label="Overland Bar social clips">
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625908691325242638?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Just another karaoke night at Overland Bar in Boise." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625384010683796749?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Turns out everyone knows the words." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607572876845272333?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Kurtis across the bar, running drinks, resetting the room, and still singing." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625384816782871821?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Megan on the mic while making your drink." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607530893292489998?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="The Only Exception turned the whole room into phone lights." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7616436367202979086?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Karaoke nights at Overland Bar always turn into a group effort." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625381570639088910?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Two in the morning on the Boise Bench just hits different." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7616436666709970189?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Bartending and karaoke at the same time." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7615435175136185613?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="That moment when the work day ends and someone says meet me at the bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607573848149560590?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Doug behind the bar all night and suddenly it is a full singalong." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607571404476665101?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Weekend at Overland means a packed room and full-send energy." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607574669620677901?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Ty behind the bar all night and then A Bar Song takes over the room." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
-        </div>
-
-        <div class="tvtt-view-more-wrap">
-          <button class="tvtt-view-more" type="button" data-view-more data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - View more All Hands clips">
-            <span>View More</span>
-          </button>
+          <div class="tvtt-proof-closeout">
+            <h3>Ongoing Backup</h3>
+            <p>For Overland Bar, keeping this entire digital loop active, current, and capturing the floor as it actually feels is what our All Hands support looks like every single week.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -3220,21 +3137,6 @@
           return;
         }
 
-        const viewMore = event.target.closest("[data-view-more]");
-
-        if (!viewMore) {
-          return;
-        }
-
-        const hidden = document.querySelectorAll("[data-extra-clip]");
-        const isExpanded = viewMore.dataset.expanded === "true";
-
-        hidden.forEach(function (card) {
-          card.classList.toggle("tvtt-hidden", isExpanded);
-        });
-
-        viewMore.dataset.expanded = isExpanded ? "false" : "true";
-        viewMore.querySelector("span").textContent = isExpanded ? "View More" : "View Less";
       });
 
       document.addEventListener("keydown", function (event) {
