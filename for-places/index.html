@@ -825,6 +825,70 @@
       display: none;
     }
 
+    .tvtt-clip-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin: 32px auto 0;
+      max-width: 1080px;
+    }
+
+    .tvtt-clip-card {
+      overflow: hidden;
+    }
+
+    .tvtt-clip-card iframe {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      background: #000;
+    }
+
+    .tvtt-view-more-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 26px;
+    }
+
+    .tvtt-view-more {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      width: min(100%, 280px);
+      padding: 0 24px;
+      border: 1px solid var(--tvtt-cyan);
+      border-radius: 8px;
+      color: #001214;
+      background: var(--tvtt-cyan);
+      box-shadow: 0 0 22px rgba(99, 224, 229, 0.2);
+      font-family: "Cute Font", Arial, sans-serif;
+      font-size: clamp(1.75rem, 6vw, 2rem);
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .tvtt-view-more:hover,
+    .tvtt-view-more:focus-visible {
+      color: var(--tvtt-cyan);
+      background: rgba(0, 0, 0, 0.36);
+    }
+
+    @media (max-width: 920px) {
+      .tvtt-clip-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tvtt-clip-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .tvtt-image-modal {
       position: fixed;
       inset: 0;
@@ -2910,12 +2974,12 @@
                   <p><strong>1,700+</strong><span>Direct profile clicks</span></p>
                   <p><strong>635</strong><span>Brand-new local followers</span></p>
                 </div>
-                <h4>Totals as of 6/22/2026 <span>(The Momentum)</span></h4>
+                <h4>Momentum <span>(publicly checked 6/25/2026)</span></h4>
                 <div class="tvtt-proof-stats">
-                  <p><strong>350,800+</strong><span>Total TikTok video plays &mdash; over a third of a million times local screens have looped and watched the energy inside the bar.</span></p>
-                  <p><strong>233,100+</strong><span>Unique video views &mdash; massive, sustained local awareness keeping Overland top-of-mind across the Treasure Valley.</span></p>
-                  <p><strong>4,860+</strong><span>Total profile visits &mdash; nearly 5,000 times someone stopped scrolling to actively check out the bar&rsquo;s location, hours, links, or menu.</span></p>
-                  <p><strong>1,250+</strong><span>Digital regulars &mdash; a dedicated TikTok community that gives the bar a direct, organic line to local patrons every weekend.</span></p>
+                  <p><strong>350,800+</strong><span>Total TikTok video plays &mdash; campaign analytics benchmark showing over a third of a million times local screens looped and watched the energy inside the bar.</span></p>
+                  <p><strong>233,100+</strong><span>Unique video views &mdash; campaign analytics benchmark showing massive, sustained local awareness across the Treasure Valley.</span></p>
+                  <p><strong>9,332</strong><span>Total TikTok likes &mdash; current public channel engagement across Overland Bar&rsquo;s TikTok presence.</span></p>
+                  <p><strong>1,495</strong><span>Digital regulars &mdash; current public TikTok followers giving the bar a direct, organic line to local patrons every weekend.</span></p>
                 </div>
               </div>
             </div>
@@ -2971,6 +3035,42 @@
             <h3>Ongoing Backup</h3>
             <p>For Overland Bar, keeping this entire digital loop active, current, and capturing the floor as it actually feels is what our All Hands support looks like every single week.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tvtt-section" id="overland-tiktok" aria-labelledby="overland-tiktok-title">
+      <div class="tvtt-section-inner">
+        <div class="tvtt-proof-intro">
+          <h2 class="tvtt-section-title" id="overland-tiktok-title">Overland Bar TikTok</h2>
+        </div>
+
+        <div class="tvtt-clip-grid" aria-label="Overland Bar TikTok clips">
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7639071623294782733?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="I Prevail version of Blank Space at Overland Bar karaoke." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607527234907163917?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Three mics singing Friends in Low Places at Overland Bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7639071080006601997?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Tuesday karaoke at Overland Bar with bartender energy." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7639068847818968334?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Piano Man turns into a full Overland Bar production." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607527720947420429?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Saturday night karaoke on the Boise Bench at Overland Bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7625381570639088910?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Two in the morning on the Boise Bench just hits different." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607521895373606158?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Doug sings Pink Pony Club Bob Dylan style at Overland Bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607574669620677901?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Ty behind the bar all night and then A Bar Song takes over the room." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card"><iframe src="https://www.tiktok.com/player/v1/7607522725434789134?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Ty sings behind the bar early in the night at Overland Bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625908691325242638?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Just another karaoke night at Overland Bar in Boise." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625384010683796749?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Turns out everyone knows the words." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607572876845272333?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Kurtis across the bar, running drinks, resetting the room, and still singing." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7625384816782871821?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Megan on the mic while making your drink." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607530893292489998?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="The Only Exception turned the whole room into phone lights." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7616436367202979086?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Karaoke nights at Overland Bar always turn into a group effort." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7616436666709970189?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Bartending and karaoke at the same time." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7615435175136185613?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="That moment when the work day ends and someone says meet me at the bar." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607573848149560590?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Doug behind the bar all night and suddenly it is a full singalong." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+          <article class="tvtt-card tvtt-clip-card tvtt-hidden" data-extra-clip><iframe src="https://www.tiktok.com/player/v1/7607571404476665101?autoplay=0&amp;loop=0&amp;controls=1&amp;progress_bar=1&amp;timestamp=0" title="Weekend at Overland means a packed room and full-send energy." loading="lazy" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+        </div>
+
+        <div class="tvtt-view-more-wrap">
+          <button class="tvtt-view-more" type="button" data-view-more data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Places page - View more Overland Bar TikTok clips">
+            <span>View More</span>
+          </button>
         </div>
       </div>
     </section>
@@ -3137,6 +3237,21 @@
           return;
         }
 
+        const viewMore = event.target.closest("[data-view-more]");
+
+        if (!viewMore) {
+          return;
+        }
+
+        const hidden = document.querySelectorAll("[data-extra-clip]");
+        const isExpanded = viewMore.dataset.expanded === "true";
+
+        hidden.forEach(function (card) {
+          card.classList.toggle("tvtt-hidden", isExpanded);
+        });
+
+        viewMore.dataset.expanded = isExpanded ? "false" : "true";
+        viewMore.querySelector("span").textContent = isExpanded ? "View More" : "View Less";
       });
 
       document.addEventListener("keydown", function (event) {
