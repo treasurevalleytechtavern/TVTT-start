@@ -27,7 +27,6 @@
   <style>
     :root {
       color-scheme: dark;
-      --tvtt-notice-height: 96px;
       --tvtt-header-height: 156px;
       --tvtt-bg: #000;
       --tvtt-panel: rgba(7, 7, 7, 0.82);
@@ -91,7 +90,7 @@
 
     .tvtt-site-header {
       position: fixed;
-      top: var(--tvtt-notice-height);
+      top: 0;
       right: 0;
       left: 0;
       z-index: 50;
@@ -311,15 +310,6 @@
       margin-top: 0;
     }
 
-    .tvtt-hero-microcopy {
-      max-width: 660px;
-      margin: 16px auto 0;
-      color: var(--tvtt-soft);
-      font-size: clamp(0.98rem, 2vw, 1.15rem);
-      font-weight: 700;
-      line-height: 1.42;
-    }
-
     .tvtt-browse-block {
       margin-top: 28px;
     }
@@ -480,6 +470,62 @@
 
     .tvtt-copy-block p + p {
       margin-top: 14px;
+    }
+
+    .tvtt-reality-check {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .tvtt-reality-check .tvtt-copy-block {
+      max-width: 780px;
+      padding: clamp(18px, 3vw, 28px) clamp(16px, 4vw, 36px);
+      border-top: 1px solid rgba(99, 224, 229, 0.14);
+      border-bottom: 1px solid rgba(99, 224, 229, 0.14);
+      background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.76) 10%, rgba(0, 0, 0, 0.76) 90%, transparent);
+      text-shadow: 0 2px 8px #000, 0 0 18px rgba(0, 0, 0, 0.82);
+    }
+
+    .tvtt-reality-check .tvtt-copy-block p.tvtt-section-kicker {
+      color: #fff;
+      font-size: clamp(2.8rem, 8vw, 4.4rem);
+      line-height: 0.95;
+    }
+
+    .tvtt-reality-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 26px auto;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tvtt-reality-list li {
+      position: relative;
+      min-width: 0;
+      padding: 20px;
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.08), transparent 140px),
+        var(--tvtt-panel);
+    }
+
+    .tvtt-reality-list h3 {
+      margin: 0 0 12px;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-reality-list p {
+      margin: 0;
+      color: var(--tvtt-muted);
+      font-size: clamp(0.98rem, 1.7vw, 1.08rem);
+      font-weight: 700;
+      line-height: 1.48;
     }
 
     .tvtt-next-step {
@@ -946,7 +992,7 @@
     }
 
     .tvtt-count-section .tvtt-section-inner {
-      max-width: 1320px;
+      max-width: 1680px;
     }
 
     .tvtt-count-image-grid {
@@ -954,7 +1000,7 @@
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: clamp(10px, 1.6vw, 18px);
       margin: 28px auto 0;
-      padding: 0 clamp(12px, 3vw, 24px);
+      padding: 0 clamp(12px, 2vw, 28px);
     }
 
     .tvtt-count-image {
@@ -990,7 +1036,8 @@
 
     @media (max-width: 760px) {
       .tvtt-count-image-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
+        max-width: 430px;
       }
     }
 
@@ -1292,6 +1339,111 @@
       margin-top: 18px;
     }
 
+    .tvtt-tier-list {
+      display: grid;
+      gap: clamp(24px, 5vw, 46px);
+      max-width: 1020px;
+      margin: 34px auto 0;
+    }
+
+    .tvtt-tier-card {
+      overflow: hidden;
+      padding: clamp(18px, 4vw, 32px);
+      background:
+        linear-gradient(180deg, rgba(99, 224, 229, 0.08), transparent 220px),
+        rgba(5, 5, 5, 0.95);
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.42), 0 0 24px rgba(99, 224, 229, 0.1);
+    }
+
+    .tvtt-tier-card > .tvtt-tier-title {
+      margin: 0 0 16px;
+      color: #fff;
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.7rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .tvtt-tier-banner {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      border: 1px solid rgba(99, 224, 229, 0.28);
+      border-radius: 8px;
+      background: #030303;
+      aspect-ratio: 3 / 1;
+      object-fit: cover;
+    }
+
+    .tvtt-tier-body {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.25fr);
+      gap: clamp(22px, 4vw, 38px);
+      align-items: start;
+      padding-top: clamp(18px, 3vw, 28px);
+    }
+
+    .tvtt-tier-art {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tvtt-tier-art-badges {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .tvtt-tier-art img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(99, 224, 229, 0.28);
+      border-radius: 8px;
+      background: #030303;
+      object-fit: contain;
+      box-shadow: 0 0 18px rgba(99, 224, 229, 0.1);
+    }
+
+    .tvtt-tier-copy h4 {
+      margin: 0 0 10px;
+      color: var(--tvtt-cyan);
+      font-family: "Jersey 15", Arial, sans-serif;
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .tvtt-tier-copy p {
+      margin: 0 0 12px;
+      color: var(--tvtt-muted);
+      font-size: clamp(1rem, 1.75vw, 1.16rem);
+      line-height: 1.5;
+    }
+
+    .tvtt-tier-copy .tvtt-package-lead {
+      color: #fff;
+    }
+
+    .tvtt-tier-copy ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding-left: 18px;
+      color: var(--tvtt-muted);
+    }
+
+    .tvtt-tier-copy li {
+      color: var(--tvtt-muted);
+      font-size: clamp(0.98rem, 1.65vw, 1.1rem);
+      line-height: 1.48;
+    }
+
+    .tvtt-tier-copy .tvtt-button {
+      margin-top: 18px;
+    }
+
     .tvtt-seo-footer {
       max-width: 900px;
       margin: 0 auto;
@@ -1383,7 +1535,7 @@
       font-family: "Jersey 15", Arial, sans-serif;
       font-size: 2rem;
       line-height: 1;
-      content: counter(tvtt-step);
+      content: counter(tvtt-step, decimal-leading-zero);
     }
 
     .tvtt-receipts {
@@ -1465,6 +1617,27 @@
 
     .tvtt-receipt-copy p + p {
       margin-top: 12px;
+    }
+
+    .tvtt-receipt-copy ul,
+    .tvtt-tour-cta ul {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding-left: 20px;
+      color: var(--tvtt-muted);
+    }
+
+    .tvtt-receipt-copy li,
+    .tvtt-tour-cta li {
+      color: var(--tvtt-muted);
+      font-size: clamp(0.98rem, 1.65vw, 1.1rem);
+      line-height: 1.48;
+      text-align: left;
+    }
+
+    .tvtt-receipt-copy li strong {
+      color: #fff;
     }
 
     .tvtt-receipt-stat {
@@ -1933,6 +2106,10 @@
       text-align: center;
     }
 
+    .tvtt-tour-cta .tvtt-button {
+      margin-top: 20px;
+    }
+
     .tvtt-image-modal {
       position: fixed;
       inset: 0;
@@ -2267,114 +2444,6 @@
       }
     }
   
-    body {
-      padding-top: var(--tvtt-notice-height);
-    }
-
-    .tvtt-notice-banner {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 60;
-      height: var(--tvtt-notice-height);
-      color: #020809;
-      background:
-        linear-gradient(90deg, rgba(99, 224, 229, 0.96), rgba(159, 247, 255, 0.98) 48%, rgba(99, 224, 229, 0.96));
-      border-bottom: 1px solid rgba(0, 0, 0, 0.34);
-      box-shadow: 0 0 30px rgba(99, 224, 229, 0.72), inset 0 -1px 0 rgba(255, 255, 255, 0.34);
-      font-family: "Cute Font", Arial, sans-serif;
-    }
-
-    .tvtt-notice-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      width: min(100%, 1180px);
-      height: 100%;
-      margin: 0 auto;
-      padding: 10px 20px;
-    }
-
-    .tvtt-notice-copy {
-      margin: 0;
-      font-size: clamp(1.25rem, 2.3vw, 1.72rem);
-      font-family: "Jersey 15", Arial, sans-serif;
-      font-weight: 400;
-      line-height: 1.04;
-      text-align: center;
-    }
-
-
-    .tvtt-notice-copy span {
-      display: block;
-    }
-
-    .tvtt-notice-main {
-      text-transform: uppercase;
-    }
-
-    .tvtt-notice-small {
-      margin-top: 4px;
-      font-size: 0.78em;
-      text-transform: none;
-    }
-    .tvtt-notice-button {
-      display: inline-flex;
-      flex: 0 0 auto;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 18px;
-      border: 2px solid #020809;
-      border-radius: 8px;
-      color: #020809;
-      background: rgba(255, 255, 255, 0.16);
-      box-shadow: 0 0 18px rgba(255, 255, 255, 0.34);
-      font-family: "Cute Font", Arial, sans-serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      line-height: 1;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .tvtt-notice-button:hover,
-    .tvtt-notice-button:focus-visible {
-      background: #020809;
-      color: var(--tvtt-cyan, var(--cyan, #63e0e5));
-    }
-
-    .tvtt-site-header {
-      top: var(--tvtt-notice-height) !important;
-    }
-
-    .tvtt-venue-help-media {
-      top: calc(var(--tvtt-notice-height) + var(--tvtt-header-height)) !important;
-      height: calc(100vh - var(--tvtt-notice-height) - var(--tvtt-header-height)) !important;
-    }
-
-    @media (max-width: 720px) {
-      :root {
-        --tvtt-notice-height: 0px;
-      }
-
-      .tvtt-notice-inner {
-        flex-direction: column;
-        gap: 8px;
-        padding: 12px 16px;
-      }
-
-      .tvtt-notice-copy {
-        font-size: 1.55rem;
-      }
-
-      .tvtt-notice-button {
-        width: min(100%, 260px);
-      }
-    }
-
     /* Secondary line beneath the main navigation. */
     .bar,
     .tvtt-site-header-bar,
@@ -2389,10 +2458,6 @@
         max-width: 100%;
         padding-top: 0;
         overflow-x: hidden;
-      }
-
-      .tvtt-notice-banner {
-        display: none;
       }
 
       html {
@@ -2484,6 +2549,7 @@
 
       .tvtt-hero {
         padding: 34px 32px 30px 16px;
+        background-image: none;
       }
 
       .tvtt-hero-inner,
@@ -2497,10 +2563,21 @@
       }
 
       .tvtt-hero h1 {
-        max-width: 100%;
+        width: 100vw;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 50%;
+        padding: 34px 16px 30px;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.74)),
+          image-set(
+            url("assets/the-usual-problem-for-bands.webp") type("image/webp"),
+            url("assets/the-usual-problem-for-bands.png") type("image/png")
+          ) center / contain no-repeat;
         font-size: clamp(2.75rem, 13vw, 3.75rem);
         line-height: 0.92;
         overflow-wrap: break-word;
+        transform: translateX(-50%);
       }
 
       .tvtt-hero h1 > span {
@@ -2535,13 +2612,6 @@
         gap: 10px;
         width: min(100%, 330px);
         margin: 22px auto 0;
-      }
-
-      .tvtt-hero-microcopy {
-        max-width: 330px;
-        margin-top: 14px;
-        font-size: 0.96rem;
-        line-height: 1.45;
       }
 
       .tvtt-browse-block {
@@ -2810,6 +2880,42 @@
         order: initial;
       }
 
+      .tvtt-tier-body {
+        grid-template-columns: 1fr;
+        padding: 16px;
+      }
+
+      .tvtt-tier-art {
+        order: 1;
+        width: min(100%, 320px);
+        margin: 0 auto;
+      }
+
+      .tvtt-tier-copy {
+        order: 2;
+      }
+
+      .tvtt-tier-card > .tvtt-tier-title {
+        font-size: 2.35rem;
+      }
+
+      .tvtt-reality-list {
+        grid-template-columns: 1fr;
+      }
+
+      .tvtt-reality-check .tvtt-copy-block {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+
+      .tvtt-tier-art-badges {
+        grid-template-columns: 1fr;
+      }
+
+      .tvtt-tier-art-badges img:nth-child(n + 2) {
+        display: none;
+      }
+
       .tvtt-optional-art {
         margin: 0 0 14px;
         height: 220px;
@@ -2968,12 +3074,6 @@
 </style>
 </head>
 <body>
-  <aside class="tvtt-notice-banner" aria-label="Website visibility notice">
-    <div class="tvtt-notice-inner">
-      <p class="tvtt-notice-copy"><span class="tvtt-notice-main">If someone hears your band tonight, can they find what's next tomorrow?</span><span class="tvtt-notice-small">Want me to take a quick look?</span></p>
-      <a class="tvtt-notice-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
-    </div>
-  </aside>
   <main class="tvtt-start-page">
     <header class="tvtt-site-header">
       <div class="tvtt-site-header-inner">
@@ -2994,20 +3094,10 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
-          <p class="tvtt-hero-subtitle">Helping bands keep their shows, links, releases, clips, and online home base clear, current, and still true to the band people meet in the room.</p>
+          <p class="tvtt-hero-subtitle">Your online presence should be an engine for booking better bills and packing rooms. We turn scattered links and ghost-town pages into a clear digital home base that sounds as dangerous as your live set.</p>
           <div class="tvtt-hero-actions" aria-label="Start here">
-            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Hero setup review">Get a Free Setup Review</a>
+            <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Hero setup review">Free Setup Review</a>
             <a class="tvtt-button tvtt-button-secondary" href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Hero compare packages">Compare Packages</a>
-          </div>
-          <p class="tvtt-hero-microcopy">Not sure what's broken? Send your band name. We'll look at what fans, venues, and bookers actually find.</p>
-          <div class="tvtt-browse-block">
-            <p class="tvtt-browse-label">Browse</p>
-            <nav class="tvtt-hero-nav tvtt-browse-nav" aria-label="Browse this page">
-              <a href="#what-we-do" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - What We Do">What We Do</a>
-              <a href="#start-here" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Find Your Fit">Find Your Fit</a>
-              <a href="#what-you-can-count-on" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - The House Rules">The House Rules</a>
-              <a href="#receipts" data-analytics-event="cta_click" data-analytics-category="navigation" data-analytics-label="For Bands page - Receipts">Receipts</a>
-            </nav>
           </div>
         </div>
       </div>
@@ -3015,183 +3105,218 @@
     
     <section class="tvtt-section tvtt-section-tight" aria-labelledby="problem-title">
       <div class="tvtt-section-inner">
-        <div class="tvtt-copy-block">
-          <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
-          <p>Being in a band already comes with enough moving parts.</p>
-          <p>Writing songs. Rehearsing. Booking shows. Making flyers. Loading gear. Planning releases. Answering messages. Keeping the next thing moving while everyone has jobs, lives, and different levels of group-chat awareness.</p>
-          <p>Then the internet asks for more.</p>
-          <p>Show dates need to stay current. Links need to point to the right place. Updates need to get posted. Clips need to be shared before they disappear into someone's camera roll. Booking info needs to be easy to find. Release pages need to make sense.</p>
-          <p>And whatever you build online still needs to feel like your band, not a generic template wearing your logo.</p>
-        </div>
-        <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tvtt-proof-banner" aria-label="Live tour page proof of concept">
-      <a class="tvtt-proof-banner-inner" href="../assets/oathbound-proof-of-concept.mp4" target="_blank" rel="noopener" aria-label="Open the full-size Oathbound proof of concept video" data-analytics-event="cta_click" data-analytics-category="engagement" data-analytics-label="For Bands page - Open Oathbound proof video">
-        <video class="tvtt-proof-video" autoplay muted loop playsinline preload="metadata" poster="../assets/oathbound-proof-of-concept-banner-poster.jpg">
-          <source src="../assets/oathbound-proof-of-concept-banner.webm" type="video/webm">
-          <source src="../assets/oathbound-proof-of-concept-banner.mp4" type="video/mp4">
-        </video>
-      </a>
-    </section>
-
-    <section class="tvtt-section" id="what-gets-in-the-way" aria-labelledby="friction-title">
-      <div class="tvtt-section-inner">
-        <h2 class="tvtt-section-title" id="friction-title">STUFF THAT GETS IN THE WAY</h2>
-        <div class="tvtt-copy-block">
-          <p>Doing band shit is already enough without also becoming your own internet department.</p>
-        </div>
-        <ul class="tvtt-friction-list">
-          <li class="tvtt-card"><p>Your next show is buried across posts, flyers, venue pages, and group chats.</p></li>
-          <li class="tvtt-card"><p>Your links do not all match, and no one is totally sure which one is current.</p></li>
-          <li class="tvtt-card"><p>Your best clips exist, but they are scattered across random phones.</p></li>
-          <li class="tvtt-card"><p>People hear about you, look you up, and still do not know when to show up, where to go, or what to click.</p></li>
-        </ul>
-        <div class="tvtt-next-step" id="what-we-do" data-next-step>
-          <h3 class="tvtt-next-step-title">We help make the next step obvious.</h3>
-          <div class="tvtt-next-step-tabs" role="tablist" aria-label="Fan next steps">
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-listen" id="next-step-listen-tab" data-next-step-tab="listen">Listen</button>
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-follow" id="next-step-follow-tab" data-next-step-tab="follow">Follow</button>
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-tickets" id="next-step-tickets-tab" data-next-step-tab="tickets">Buy tickets</button>
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-book" id="next-step-book-tab" data-next-step-tab="book">Book the band</button>
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-watch" id="next-step-watch-tab" data-next-step-tab="watch">Watch the clip</button>
-            <button class="tvtt-next-step-tab" type="button" role="tab" aria-selected="false" aria-controls="next-step-show" id="next-step-show-tab" data-next-step-tab="show">Show up</button>
+        <div class="tvtt-reality-check">
+          <div class="tvtt-copy-block">
+            <p class="tvtt-section-kicker" id="problem-title">THE USUAL PROBLEM</p>
+            <p>Doing band shit is already a full-time job. Between rehearsal schedules, writing riffs, loading heavy gear, and managing everyone's different levels of group-chat awareness, you do not have time to act as your own digital marketing department.</p>
+            <p>When your online setup gets scattered, local bookers, venues, and potential fans hit an immediate wall of friction:</p>
           </div>
-          <div class="tvtt-next-step-panels">
-            <article class="tvtt-next-step-panel" id="next-step-listen" role="tabpanel" aria-labelledby="next-step-listen-tab" data-next-step-panel="listen" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Make the music easy to find.</h3>
-                <p>Your songs should not be buried under old posts, broken links, or a bio that sends people in circles. We help organize your streaming links, latest release, featured tracks, and embedded players so new fans can hit play immediately.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Streaming links · Featured songs · Release pages · Link hubs · Embedded players</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/listen.png" alt="Organized music links and embedded player setup">
-              </figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-follow" role="tabpanel" aria-labelledby="next-step-follow-tab" data-next-step-panel="follow" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Turn the first spark into an actual connection.</h3>
-                <p>A follow is how casual listeners become people who know when you drop a song, announce a show, or need a room full of bodies. We help make your socials, mailing list, and bio links clear, consistent, and easy to find.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Social links · Bio links · Mailing list placement · Platform cleanup · Consistent handles</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/follow.png" alt="Social follow buttons and band bio link setup">
-              </figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-tickets" role="tabpanel" aria-labelledby="next-step-tickets-tab" data-next-step-panel="tickets" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Remove the friction between “I’m interested” and “I’m going.”</h3>
-                <p>When the ticket link is missing, buried, or confusing, people hesitate. We help keep show pages updated with ticket links, price info, age restrictions, venue details, and clear calls to action.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Ticket buttons · Show pages · Event links · Door prices · Age restrictions · Free show labeling</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/buy-tickets.png" alt="Ticket links and show details setup">
-              </figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-book" role="tabpanel" aria-labelledby="next-step-book-tab" data-next-step-panel="book" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Make it easy for venues, promoters, and other bands to understand what you bring.</h3>
-                <p>Booking should not require someone to piece together your genre, location, live energy, contact info, and current lineup from five platforms. We help build a clean booking path that gives people what they need to say yes.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Booking pages · Contact sections · EPK-style info · Live clips · Band photos · Genre/location clarity</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/book-the-band.png" alt="Booking page with band information and contact details">
-              </figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-watch" role="tabpanel" aria-labelledby="next-step-watch-tab" data-next-step-panel="watch" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Show the room before they enter it.</h3>
-                <p>A strong clip can do what a paragraph cannot. We help place live videos, reels, music videos, and short-form proof where fans and bookers will actually see them.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Featured videos · Live clips · Reel placement · Media sections · YouTube embeds</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/watch-the-clips.png" alt="Featured live clips and video links setup">
-              </figure>
-            </article>
-            <article class="tvtt-next-step-panel" id="next-step-show" role="tabpanel" aria-labelledby="next-step-show-tab" data-next-step-panel="show" hidden>
-              <div class="tvtt-next-step-copy">
-                <h3>Make the plan obvious enough to act on.</h3>
-                <p>Fans need the basics fast: date, venue, city, doors, lineup, tickets, age limits, and where to go. We help organize show info so people can stop decoding flyers and start making plans.</p>
-                <p class="tvtt-next-step-help">We help with:</p>
-                <p class="tvtt-next-step-tags">Tour dates · Venue info · Addresses · Doors/show times · Lineups · Parking/accessibility notes</p>
-              </div>
-              <figure class="tvtt-next-step-image">
-                <img loading="lazy" src="assets/next-step/show-up.png" alt="Show details and upcoming tour date setup">
-              </figure>
-            </article>
+          <ul class="tvtt-reality-list">
+            <li class="tvtt-card"><h3>The Buried Show Trailer</h3><p>Your next big date or flyer is trapped across random posts, text threads, and dead grids instead of sitting front and center.</p></li>
+            <li class="tvtt-card"><h3>The Broken Link Penalty</h3><p>A booking agent clicks your info link to check out your music, hits an unverified or dead page, and instantly moves to the next band.</p></li>
+            <li class="tvtt-card"><h3>The Lost Camera Roll Clips</h3><p>The highest-energy video footage from your last packed house sits forgotten on a phone screen instead of proving you can draw a room.</p></li>
+            <li class="tvtt-card"><h3>The Blind Search Friction</h3><p>People hear your name, look you up on their phones, and still cannot figure out where to listen, when to show up, or how to buy merch.</p></li>
+          </ul>
+          <div class="tvtt-copy-block">
+            <p>If your online footprint looks like an afterthought, venues and booking agents will treat you like one.</p>
           </div>
         </div>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free setup review">Free Setup Review</a>
         </div>
       </div>
     </section>
 
-    <section class="tvtt-section" aria-labelledby="services-title">
+    <section class="tvtt-section" id="start-here" aria-labelledby="path-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="services-title">WHAT WE DO</h2>
+          <h2 class="tvtt-section-title" id="path-title">Pick Your Backup</h2>
+          <p>Choose the tier your project needs right now. We do the heavy lifting so you can focus on the music.</p>
         </div>
+        <div class="tvtt-tier-list">
+          <article class="tvtt-card tvtt-tier-card" id="tier-load-in">
+            <h3 class="tvtt-tier-title">Load-in</h3>
+            <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/load-in.webp" alt="Load-in package">
+            <div class="tvtt-tier-body">
+              <div class="tvtt-tier-art tvtt-tier-art-badges">
+                <img loading="lazy" src="assets/what-we-do/websites-and-link-pages.png" alt="Websites and link pages">
+                <img loading="lazy" src="assets/next-step/listen.png" alt="Listen">
+              </div>
+              <div class="tvtt-tier-copy">
+                <p class="tvtt-package-lead">Get your online setup cleaned up so people can actually find you.</p>
+                <p>We audit your current digital footprint, fix the obvious friction points, and build a cohesive home base that makes it easy for bookers to check you out.</p>
+                <h4>What you get</h4>
+                <ul>
+                  <li>Complete audit of your current website, socials, and public-facing bios</li>
+                  <li>Repair of broken, outdated, or dead link redirects</li>
+                  <li>Structural polish for bio messaging and profile clarity</li>
+                  <li>Centralized organization for your link hubs and pinned content</li>
+                  <li>A clear roadmap of recommendations on what to optimize next</li>
+                </ul>
+                <h4>Best for</h4>
+                <p>Bands that feel scattered online, are tough to search, or are completely unsure if their current setup works.</p>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-load-in" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Load-in package">Fix My Setup</a>
+              </div>
+            </div>
+          </article>
 
-        <div class="tvtt-service-grid">
-          <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
-            <span class="tvtt-card-mark" aria-hidden="true"></span>
-            <h3>Websites +<br>Link pages</h3>
-            <span class="tvtt-service-popout">
-              <span class="tvtt-service-description">A clear online home base for your music, shows, videos, photos, booking info, merch, socials, and whatever people need next. This can be a full website, a simple landing page, a tour page, or a link hub that actually feels like your band.</span>
-              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/websites-and-link-pages.png" alt="Website and link page service artwork"></span>
-            </span>
-          </button>
-          <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
-            <span class="tvtt-card-mark" aria-hidden="true"></span>
-            <h3>Shows +<br>Tour support</h3>
-            <span class="tvtt-service-popout">
-              <span class="tvtt-service-description">Show dates, ticket links, venue details, age restrictions, lineups, flyer info, and tour pages that stay easier to follow. We can also build smart show pages where upcoming dates stay current and past shows archive automatically after the date passes.</span>
-              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/shows-and-tour-support.png" alt="Shows and tour support service artwork"></span>
-            </span>
-          </button>
-          <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
-            <span class="tvtt-card-mark" aria-hidden="true"></span>
-            <h3>Social setup +<br>Posting help</h3>
-            <span class="tvtt-service-popout">
-              <span class="tvtt-service-description">Help turning the content you already have into posts that feel like you. Not fake influencer mode. Not "post three times a day forever." Just useful clips, reminders, updates, and release/show content that help people keep up with the band.</span>
-              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/social-setup-and-posting-help.png" alt="Social setup and posting help service artwork"></span>
-            </span>
-          </button>
-          <button class="tvtt-card tvtt-service-card" type="button" aria-expanded="false">
-            <span class="tvtt-card-mark" aria-hidden="true"></span>
-            <h3>Live content<br>Capture</h3>
-            <span class="tvtt-service-popout">
-              <span class="tvtt-service-description">Clips from shows, rehearsals, crowd moments, stage energy, behind-the-scenes bits, and the little proof-of-life moments that show people what it feels like to be in the room. We help capture it, organize it, and make it usable.</span>
-              <span class="tvtt-service-art"><img loading="lazy" src="assets/what-we-do/content-capture.png" alt="Live content capture service artwork"></span>
-            </span>
-          </button>
+          <article class="tvtt-card tvtt-tier-card" id="tier-backline">
+            <h3 class="tvtt-tier-title">Backline</h3>
+            <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/backline.webp" alt="Backline package">
+            <div class="tvtt-tier-body">
+              <div class="tvtt-tier-art tvtt-tier-art-badges">
+                <img loading="lazy" src="assets/what-we-do/social-setup-and-posting-help.png" alt="Social setup and posting help">
+                <img loading="lazy" src="assets/next-step/follow.png" alt="Follow">
+              </div>
+              <div class="tvtt-tier-copy">
+                <p class="tvtt-package-lead">Keep your socials moving without turning the band into a full-time posting machine.</p>
+                <p>You provide the raw assets. We handle the formatting, copy, and routine calendar logistics to keep your public pages looking active and professional.</p>
+                <h4>What you get</h4>
+                <ul>
+                  <li>Routine deployment of 2 to 4 optimized posts per week</li>
+                  <li>Professional caption drafting, tagging, and asset formatting</li>
+                  <li>Strategic scheduling across all active band channels</li>
+                  <li>Light repurposing of your existing photo and video assets</li>
+                  <li>Targeted story posts built around active shows, releases, and updates</li>
+                  <li>Print-ready QR codes or merch table media pieces when needed</li>
+                </ul>
+                <h4>Best for</h4>
+                <p>Projects that have great content and announcements, but struggle to maintain a consistent posting schedule.</p>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-backline" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Backline package">Keep Me Posting</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="tvtt-card tvtt-tier-card" id="tier-camera-op">
+            <h3 class="tvtt-tier-title">Camera Op</h3>
+            <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/camera-ops.webp" alt="Camera Op package">
+            <div class="tvtt-tier-body">
+              <div class="tvtt-tier-art tvtt-tier-art-badges">
+                <img loading="lazy" src="assets/what-we-do/content-capture.png" alt="Content capture">
+                <img loading="lazy" src="assets/next-step/watch-the-clips.png" alt="Watch the clips">
+              </div>
+              <div class="tvtt-tier-copy">
+                <p class="tvtt-package-lead">Capture exactly what your project feels like in a room full of people.</p>
+                <p>We show up to your space with real cameras to capture authentic moments from live sets, rehearsals, backstage, or load-in.</p>
+                <h4>What you get</h4>
+                <ul>
+                  <li>High-energy multi-angle live performance footage</li>
+                  <li>Authentic behind-the-scenes glimpses and rehearsal room clips</li>
+                  <li>Short-form vertical video clips optimized for quick editing</li>
+                  <li>Focused crowd tracking, stage styling, and atmospheric shots</li>
+                  <li>Clean, organized raw file delivery ready for your immediate use</li>
+                </ul>
+                <h4>Best for</h4>
+                <p>Lineups that need high-quality visual content, but do not want the distraction of running cameras while trying to play a show.</p>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-camera-op" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Camera Op package">Come Film Us</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="tvtt-card tvtt-tier-card" id="tier-road-crew">
+            <h3 class="tvtt-tier-title">Road Crew</h3>
+            <img class="tvtt-tier-banner" loading="lazy" src="assets/packages/road-crew.webp" alt="Road Crew package">
+            <div class="tvtt-tier-body">
+              <div class="tvtt-tier-art tvtt-tier-art-badges">
+                <img loading="lazy" src="assets/what-we-do/shows-and-tour-support.png" alt="Shows and tour support">
+                <img loading="lazy" src="assets/next-step/buy-tickets.png" alt="Buy tickets">
+              </div>
+              <div class="tvtt-tier-copy">
+                <p class="tvtt-package-lead">Full-service digital management covering content creation and online organization.</p>
+                <p>Our complete support plan combines the assets of our capture tier with the routine consistency of our management package to give your project a professional footprint.</p>
+                <h4>What you get</h4>
+                <ul>
+                  <li>Complete integration of all features from both Camera Op and Backline tiers</li>
+                  <li>Regular content capture sessions at live dates, soundchecks, or studio days</li>
+                  <li>End-to-end post creation, layout scheduling, and digital asset tracking</li>
+                  <li>Show dates, ticket landing pages, and announcements kept accurate</li>
+                  <li>Cross-promotional featured placement across our channels to expand your reach</li>
+                  <li>Custom layout QR flyers, digital asset designs, and physical merch table cards</li>
+                </ul>
+                <h4>Best for</h4>
+                <p>Bands ready to delegate their entire digital checklist to professional support so they can focus strictly on writing and booking.</p>
+                <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-road-crew" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Road Crew package">Handle Everything</a>
+              </div>
+            </div>
+          </article>
         </div>
-        <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Free Online Setup Review">Free Online Setup Review &rarr;</a>
-        </div>
+        <aside class="tvtt-card tvtt-not-sure">
+          <h3>NOT SURE WHAT FITS YET?</h3>
+          <p>Start with the general contact form and we'll help you figure out the right next step.</p>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="contact_click" data-analytics-category="lead" data-analytics-label="For Bands page - Just contact us">Just contact us</a>
+        </aside>
       </div>
     </section>
+
+<section class="tvtt-section" aria-labelledby="optional-title">
+  <div class="tvtt-section-inner">
+    <div class="tvtt-copy-block">
+      <h2 class="tvtt-section-title" id="optional-title">The Add-Ons</h2>
+      <p>Need extra support for a specific release or a heavy touring schedule? You can attach these specialized modules to any baseline package.</p>
+    </div>
+
+    <div class="tvtt-optional-grid">
+      <article class="tvtt-card tvtt-optional-card">
+        <figure class="tvtt-optional-art">
+          <picture>
+            <source srcset="assets/addon-distribution-help.webp" type="image/webp">
+            <img loading="lazy" src="assets/addon-distribution-help.png" alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center">
+          </picture>
+        </figure>
+        <div class="tvtt-optional-copy">
+          <h3>Optional: Digital Setup and Distribution</h3>
+          <p class="tvtt-package-lead">Make sure your infrastructure connects cleanly behind the scenes.</p>
+          <p>This covers the hidden digital plumbing most bands ignore until a link breaks, lyrics go missing, or a show date fails to sync. We keep your distribution pipeline clean so you get paid and discovered without the technical headache.</p>
+
+          <ul>
+            <li><strong>Show Syncing:</strong> Configuration of your Bandsintown profile to automatically push accurate tour dates across your website and socials.</li>
+            <li><strong>Distribution Support:</strong> Clean alignment and metadata setup for incoming releases through platforms like DistroKid or TuneCore.</li>
+            <li><strong>Discovery Alignment:</strong> Metadata optimization across Spotify, YouTube, Apple Music, and Musixmatch to ensure your lyrics and bios match across the web.</li>
+            <li><strong>Hub Optimization:</strong> Complete structure cleanup for your central Carrd or Linktree landing pages.</li>
+          </ul>
+
+          <p><em>Available with any tier. Often bundled directly into our Road Crew package.</em></p>
+        </div>
+      </article>
+
+      <article class="tvtt-card tvtt-optional-card">
+        <figure class="tvtt-optional-art">
+          <picture>
+            <source srcset="assets/addon-print-and-qr-code.webp" type="image/webp">
+            <img loading="lazy" src="assets/addon-print-and-qr-code.png" alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map">
+          </picture>
+        </figure>
+        <div class="tvtt-optional-copy">
+          <h3>Optional: Print and QR Coordination</h3>
+          <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
+          <p>Online footprints only work if people can find them. We build high-utility physical media pieces designed to turn room energy into immediate digital followers, merch sales, and tips before the crowd leaves the venue.</p>
+
+          <ul>
+            <li><strong>Merch Table Displays:</strong> Clean cards and physical signage built to guide fans directly to your music, streaming pages, or tipping links.</li>
+            <li><strong>Show Day Assets:</strong> Targeted QR flyers and small handouts tailored for high-visibility release nights, tours, or pop-up events.</li>
+            <li><strong>Print-Ready Preparation:</strong> Complete file formatting and resolution prepped perfectly for posters, banners, stickers, or bulk print house orders.</li>
+            <li><strong>Scan Verification:</strong> Absolute link and routing checks so your QR codes actually send fans exactly where they are supposed to land.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <section class="tvtt-section" id="how-this-works" aria-labelledby="plan-title">
       <div class="tvtt-section-inner">
         <h2 class="tvtt-section-title" id="plan-title">How this works</h2>
+        <div class="tvtt-copy-block">
+          <p>No complex onboarding, no endless strategy meetings, and zero judgment. Getting digital backup is completely painless.</p>
+        </div>
         <ol class="tvtt-steps">
-          <li class="tvtt-step"><div><h3>Choose where you need backup</h3><p>Pick the option that sounds closest: cleanup, a better home base, show support, content help, or ongoing digital support. You do not need to know the perfect package. The form just helps us start in the right place.</p></div></li>
-          <li class="tvtt-step"><div><h3>Send what you have</h3><p>Share your band name and what you are interested in. Messy is fine. Half-updated is fine. "We meant to fix this months ago" is extremely normal.</p></div></li>
-          <li class="tvtt-step"><div><h3>We look at what people find</h3><p>We check your website or link page, socials, show dates, ticket links, streaming links, videos, booking info, and anything else that helps someone decide to listen, follow, book, or show up.</p></div></li>
-          <li class="tvtt-step"><div><h3>We build what actually helps</h3><p>You get practical recommendations and options that fit your actual band, not a generic template. Maybe that is a simple link page, auto-archiving show dates, social help, live clips, release support, or a weird little themed page for one specific run.</p></div></li>
+          <li class="tvtt-step"><div><h3>Choose Your Backup</h3><p>Pick the option or pain point that feels closest to your band: setup cleanup, an organized home base, content capture, or ongoing support. There is no need to pick a flawless package right now. The form simply starts the conversation in the right lane.</p></div></li>
+          <li class="tvtt-step"><div><h3>Send What You Have</h3><p>Drop your band name and select what you are looking for. Messy profiles are fine. Half-updated links are completely fine. Thinking "we meant to fix this months ago" is entirely normal in the local scene.</p></div></li>
+          <li class="tvtt-step"><div><h3>Spot the Friction</h3><p>Your public digital trail gets a complete check. Link pages, socials, streaming profiles, and show dates are reviewed to find exactly where promoters or potential fans face immediate barriers when trying to find you online.</p></div></li>
+          <li class="tvtt-step"><div><h3>Get Real Solutions</h3><p>Receive clear, actionable recommendations built directly for your live project, not a generic marketing template. Whether that means a streamlined Linktree setup, auto-archiving show calendars, social layout help, or custom print cards for your next tour run, you get tools that actually move the needle.</p></div></li>
         </ol>
         <div class="tvtt-section-cta">
-          <a class="tvtt-button" href="#start-here" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Look at my band's setup">Look at my band's setup</a>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Check my setup">Check My Setup</a>
         </div>
       </div>
     </section>
@@ -3261,218 +3386,6 @@
       </div>
     </section>
 
-
-    <section class="tvtt-section" id="start-here" aria-labelledby="path-title">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="path-title">Where should we start?</h2>
-          <p>Pick the kind of backup your band needs. It does not have to be perfect.</p>
-        </div>
-        <div class="tvtt-package-grid">
-          <article class="tvtt-card tvtt-package-card" data-package-section="load-in">
-            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Load-in package details">&times;</button>
-            <div class="tvtt-package-section tvtt-package-intro">
-              <h3>Load-in</h3>
-              <p class="tvtt-package-lead">Get your online setup cleaned up so people can actually find you.</p>
-              <p>We take a look at what you already have, clean up the obvious problems, and give you a clearer path forward.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-art-section">
-              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Load-in package details">
-                <picture>
-                  <source srcset="assets/packages/load-in.webp" type="image/webp">
-                  <img loading="lazy" src="assets/packages/load-in.png" alt="Band members carrying gear from a van into a venue at sunset">
-                </picture>
-              </button>
-            </div>
-            <div class="tvtt-package-section tvtt-package-includes">
-              <h4>Includes</h4>
-              <ul>
-                <li>Review of your website, socials, links, bios, and public-facing pages</li>
-                <li>Fixing broken, outdated, or missing links</li>
-                <li>Bio and profile clarity</li>
-                <li>Basic organization, like a link hub, pinned content, or cleaner navigation</li>
-                <li>Clear recommendations on what to fix next</li>
-              </ul>
-            </div>
-            <div class="tvtt-package-section tvtt-package-best">
-              <h4>Best for</h4>
-              <p>Bands that feel scattered, hard to find, outdated, or unsure what is working.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-load-in" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Load-in package">Fix My Setup</a>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-package-card" data-package-section="backline">
-            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Backline package details">&times;</button>
-            <div class="tvtt-package-section tvtt-package-intro">
-              <h3>Backline</h3>
-              <p class="tvtt-package-lead">Keep your socials moving without turning the band into a posting machine.</p>
-              <p>You already have content. We help shape it, schedule it, and keep your pages active so people know what is happening.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-art-section">
-              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Backline package details">
-                <picture>
-                  <source srcset="assets/packages/backline.webp" type="image/webp">
-                  <img loading="lazy" src="assets/packages/backline.png" alt="Stage backline with drums, guitars, amplifiers, cases, and microphones under teal and red lights">
-                </picture>
-              </button>
-            </div>
-            <div class="tvtt-package-section tvtt-package-includes">
-              <h4>Includes</h4>
-              <ul>
-                <li>Posting 2 to 4 times per week</li>
-                <li>Captions, tagging, and formatting</li>
-                <li>Scheduling across platforms</li>
-                <li>Light repurposing of existing content</li>
-                <li>Story posts around shows, releases, and announcements</li>
-                <li>Monthly support can also include simple QR or print pieces when useful</li>
-              </ul>
-            </div>
-            <div class="tvtt-package-section tvtt-package-best">
-              <h4>Best for</h4>
-              <p>Bands who have content, show updates, or announcements, but do not post consistently.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-backline" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Backline package">Keep Me Posting</a>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-package-card" data-package-section="camera-op">
-            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Camera Op package details">&times;</button>
-            <div class="tvtt-package-section tvtt-package-intro">
-              <h3>Camera Op</h3>
-              <p class="tvtt-package-lead">Capture what your band actually feels like in the room.</p>
-              <p>We show up and film real moments from shows, practice, load-in, backstage, or wherever the useful stuff is happening.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-art-section">
-              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Camera Op package details">
-                <picture>
-                  <source srcset="assets/packages/camera-ops.webp" type="image/webp">
-                  <img loading="lazy" src="assets/packages/camera-ops.png" alt="A live band being filmed on a phone from the crowd under bright concert lights">
-                </picture>
-              </button>
-            </div>
-            <div class="tvtt-package-section tvtt-package-includes">
-              <h4>Includes</h4>
-              <ul>
-                <li>Live show footage</li>
-                <li>Practice and behind-the-scenes clips</li>
-                <li>Short-form ready video clips</li>
-                <li>Crowd, stage, and atmosphere moments</li>
-                <li>Organized delivery so you can post it yourself</li>
-              </ul>
-            </div>
-            <div class="tvtt-package-section tvtt-package-best">
-              <h4>Best for</h4>
-              <p>Bands who need more usable content or do not want to deal with filming while they are trying to play.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-camera-op" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Camera Op package">Come Film Us</a>
-            </div>
-          </article>
-          <article class="tvtt-card tvtt-package-card" data-package-section="road-crew">
-            <button class="tvtt-package-close" type="button" data-package-close aria-label="Close Road Crew package details">&times;</button>
-            <div class="tvtt-package-section tvtt-package-intro">
-              <h3>Road Crew</h3>
-              <p class="tvtt-package-lead">We help capture, post, organize, and keep the band visible.</p>
-              <p>This is the bigger support plan. We help with both sides: creating content and keeping the online trail current.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-art-section">
-              <button class="tvtt-package-art-toggle" type="button" data-package-expand aria-expanded="false" aria-label="Expand Road Crew package details">
-                <picture>
-                  <source srcset="assets/packages/road-crew.webp" type="image/webp">
-                  <img loading="lazy" src="assets/packages/road-crew.png" alt="Crew unloading gear from a van outside a downtown venue at sunset">
-                </picture>
-              </button>
-            </div>
-            <div class="tvtt-package-section tvtt-package-includes">
-              <h4>Includes</h4>
-              <ul>
-                <li>Everything from Camera Op and Backline</li>
-                <li>Content captured at shows, practice, or band moments</li>
-                <li>Posts created, scheduled, and formatted consistently</li>
-                <li>Show updates, links, and announcements kept easier to follow</li>
-                <li>Featured posts on our page to help promote the band</li>
-                <li>Simple QR flyers, merch table cards, or print pieces when useful</li>
-              </ul>
-            </div>
-            <div class="tvtt-package-section tvtt-package-best">
-              <h4>Best for</h4>
-              <p>Bands who want to focus on writing, rehearsing, booking, and playing without also handling every internet loose end.</p>
-            </div>
-            <div class="tvtt-package-section tvtt-package-action">
-              <a class="tvtt-button" href="https://treasurevalleytechtavern.com/for-bands-road-crew" data-analytics-event="package_click" data-analytics-category="lead" data-analytics-label="For Bands page - Road Crew package">Handle Everything</a>
-            </div>
-          </article>
-        </div>
-        <aside class="tvtt-card tvtt-not-sure">
-          <h3>Not sure what fits yet?</h3>
-          <p>Start with the general contact form and we'll help you figure out the right next step.</p>
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="contact_click" data-analytics-category="lead" data-analytics-label="For Bands page - Just contact us">Just contact us</a>
-        </aside>
-      </div>
-    </section>
-
-<section class="tvtt-section" aria-labelledby="optional-title">
-  <div class="tvtt-section-inner">
-    <div class="tvtt-copy-block">
-      <h2 class="tvtt-section-title" id="optional-title">Add-Ons</h2>
-    </div>
-
-    <div class="tvtt-optional-grid">
-      <article class="tvtt-card tvtt-optional-card">
-        <figure class="tvtt-optional-art">
-          <picture>
-            <source srcset="assets/addon-distribution-help.webp" type="image/webp">
-            <img loading="lazy" src="assets/addon-distribution-help.png" alt="Digital setup and distribution workflow showing show sync, release distribution, lyric sync, platform alignment, and a control center">
-          </picture>
-        </figure>
-        <div class="tvtt-optional-copy">
-          <h3>Optional: Digital setup and distribution</h3>
-          <p class="tvtt-package-lead">Make sure everything connects behind the scenes.</p>
-          <p>This is the stuff most bands don't think about until something breaks.</p>
-
-          <h4>We can help with</h4>
-          <ul>
-            <li>Bandsintown setup and show syncing</li>
-            <li>Music release support through TuneCore, DistroKid, and more</li>
-            <li>Musixmatch lyric setup</li>
-            <li>Linktree or Carrd organization</li>
-            <li>Platform alignment across Spotify, YouTube, and more</li>
-          </ul>
-
-          <p>Available with any package. Often bundled into Road Crew when needed.</p>
-        </div>
-      </article>
-
-      <article class="tvtt-card tvtt-optional-card">
-        <figure class="tvtt-optional-art">
-          <picture>
-            <source srcset="assets/addon-print-and-qr-code.webp" type="image/webp">
-            <img loading="lazy" src="assets/addon-print-and-qr-code.png" alt="Print and QR coordination setup with concert flyers, QR cards, destination checklists, merch table signs, stickers, and a QR destination map">
-          </picture>
-        </figure>
-        <div class="tvtt-optional-copy">
-          <h3>Optional: Print + QR coordination</h3>
-          <p class="tvtt-package-lead">Because sometimes the internet starts on a piece of paper by the merch table.</p>
-          <p>This is the offline stuff that helps fans get to the right online place.</p>
-
-          <h4>We can help with</h4>
-          <ul>
-            <li>QR flyers for shows, releases, merch, tip jars, or mailing lists</li>
-            <li>Merch table cards that point people to music, socials, videos, and upcoming dates</li>
-            <li>Small handouts for shows, tours, release nights, or special events</li>
-            <li>Simple printed signs for merch tables, venues, or promo moments</li>
-            <li>Basic design cleanup so the print piece matches the page it sends people to</li>
-            <li>QR code checks so fans land where they are supposed to land</li>
-            <li>Print-ready files for posters, banners, stickers, or bulk orders</li>
-            <li>Coordination with a print shop when the project needs more than small-run support</li>
-          </ul>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
     <section class="tvtt-section tvtt-count-section" id="what-you-can-count-on" aria-labelledby="count-title">
       <div class="tvtt-section-inner">
         <h2 class="tvtt-section-title" id="count-title">WHAT YOU CAN COUNT ON</h2>
@@ -3515,17 +3428,21 @@
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
           <h2 class="tvtt-section-title" id="receipts-title">Receipts from the road</h2>
-          <p>Real band support, not theory. Here are a few setups we helped make easier to find, update, and follow.</p>
+          <p>Real band backup, not marketing theory. See how digital infrastructure keeps local projects moving.</p>
         </div>
 
         <div class="tvtt-receipts-grid">
           <article class="tvtt-card tvtt-receipt-card">
             <div class="tvtt-receipt-copy">
-              <h3>OATHBOUND</h3>
-              <p>Tour pages, ticket links, and show details kept current so fans can find the right info before the doors open.</p>
-              <p>For their MySpace-themed tour run, we built a temporary tour page that matched the moment instead of forcing the band into a generic template.</p>
-              <p>The page includes upcoming show details, ticket links, venue info, and built-in logic so shows automatically move into past shows once the date has passed.</p>
-              <p class="tvtt-receipt-stat">A reliable online home base while the band is moving.</p>
+              <h3>Case Study: Oathbound (The MySpace Era Tour)</h3>
+              <p class="tvtt-package-lead">A customized digital home base built to automate a high-visibility tour run.</p>
+              <p>When Pacific Northwest heavy music outfit Oathbound launched their MySpace-themed tour, a generic link list would have completely killed the aesthetic momentum. They needed an online landing zone that matched the nostalgic world of the tour while handling real-time logistical infrastructure.</p>
+              <ul>
+                <li><strong>Aesthetic Integration:</strong> A temporary, custom-coded tour portal styled to match the specific era and branding of the run.</li>
+                <li><strong>Automated Calendar Logic:</strong> System programming that automatically shifts upcoming dates, venue details, and age restrictions into a past-show archive the minute the doors close, meaning zero website maintenance while the band is on the highway.</li>
+                <li><strong>Frictionless Routing:</strong> Centralized ticket and venue landing gates mapped perfectly for immediate mobile checkout.</li>
+              </ul>
+              <p class="tvtt-receipt-stat">The result: a reliable, zero-maintenance home base that handles the administrative work while the lineup handles the floor.</p>
             </div>
             <div class="tvtt-receipt-proof-grid" aria-label="Oathbound proof clips">
               <a class="tvtt-receipt-proof" href="assets/oathbound-proof-home.mp4" target="_blank" rel="noopener" aria-label="Open full-size Oathbound home page proof video">
@@ -3567,11 +3484,10 @@
     <section class="tvtt-section tvtt-tour-pages" id="tour-pages" aria-labelledby="tour-pages-title">
       <div class="tvtt-section-inner">
         <div class="tvtt-copy-block">
-          <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages</h2>
-          <p>Make your shows easier to find, share, and keep current.</p>
-          <p>Tour pages give you one clean place for upcoming dates, ticket links, venue details, age restrictions, lineups, and past show history.</p>
-          <p>They can stay simple and practical, or be built around the vibe of a specific tour, release, or era.</p>
-          <p>The point is not to make every band look the same. It is to help people find the next show and still feel like they are inside your world.</p>
+          <h2 class="tvtt-section-title" id="tour-pages-title">Tour Pages &amp; Show Calendars</h2>
+          <p><strong>Keep your next run easy to follow without flattening your band into a boring calendar grid.</strong></p>
+          <p>Your show info should answer the important stuff fast: where to go, when doors open, who else is playing, whether it is all ages, and where to buy tickets. We build tour pages, homepage show widgets, and custom campaign pages that keep the details clean while still feeling like your band.</p>
+          <p>Pick the kind of show setup you need:</p>
         </div>
         <div class="tvtt-tour-shell">
           <article>
@@ -3583,12 +3499,9 @@
               <figure class="tvtt-tour-detail-media">
                 <img loading="lazy" src="assets/Widget Tour Info.png" alt="Home page show widget screenshot">
               </figure>
-              <p>A small show widget can live on your main band website or landing page and show the next few upcoming dates without taking over the whole page.</p>
-              <p>It can show the next 3 shows, including date, city, venue, age restriction, and ticket or info links. A "View all shows" button takes fans to the full tour page.</p>
-              <div>
-                <h4>Best for</h4>
-                <p>Bands that already have a website but need their upcoming shows to be easier to find right away.</p>
-              </div>
+              <p class="tvtt-package-lead">Put your next dates where people already land.</p>
+              <p>A small show calendar for your homepage, link page, or main band hub. Fans can see the next show, venue, city, age restriction, and ticket link without digging through old posts or third-party event pages.</p>
+              <p><strong>Best for</strong> bands that need simple, current show info on an existing site or link hub.</p>
             </div>
           </article>
           <article>
@@ -3600,27 +3513,9 @@
               <figure class="tvtt-tour-detail-media">
                 <img loading="lazy" src="assets/Standard Tour Page.png" alt="Standard tour page screenshot">
               </figure>
-              <p>A full tour page gives your band one reliable place for show dates, ticket links, venue details, lineups, and past show history.</p>
-              <p>The design can still match your band's vibe. It might use live video footage in the background, band photos, release artwork, or colors and textures that fit the current era.</p>
-              <div>
-                <h4>Tabs</h4>
-                <p><strong>Active Tour:</strong> Shows only upcoming shows.</p>
-                <p><strong>Past Shows:</strong> Shows past dates automatically after they have passed. Past shows should be organized by year so the page becomes a living archive instead of a dead list.</p>
-              </div>
-              <div>
-                <h4>Best for</h4>
-                <p>Bands with multiple shows, regional runs, tour dates, or recurring bookings that need one clean place for fans, venues, and bookers to check.</p>
-              </div>
-              <div>
-                <h4>Features</h4>
-                <ul>
-                  <li>Upcoming shows only on the active tab</li>
-                  <li>Past shows archive automatically</li>
-                  <li>Past shows grouped by year</li>
-                  <li>Ticket and info links included</li>
-                  <li>Built around the band's visuals and tone</li>
-                </ul>
-              </div>
+              <p class="tvtt-package-lead">One clean page for the whole run.</p>
+              <p>A dedicated tour page with every date, city, venue, lineup note, age restriction, ticket link, and map-friendly venue info in one place. Easy to share in bios, flyers, stories, merch table QR codes, and booking emails.</p>
+              <p><strong>Best for</strong> regional runs, weekenders, release shows, and bands that need one reliable place to send people.</p>
             </div>
           </article>
           <article>
@@ -3632,58 +3527,17 @@
               <figure class="tvtt-tour-detail-media">
                 <img loading="lazy" src="assets/Custom Tour Page.png" alt="Custom MySpace-style Oathbound tour page screenshot">
               </figure>
-              <p>Some tours deserve their own little world.</p>
-              <p>A custom tour page can be built around a specific theme, joke, release, or visual era. For example, Oathbound's MySpace-themed tour page was designed to match the concept of the MySpace tour while still doing the practical work: showing upcoming shows, linking tickets, and moving past dates into the archive automatically.</p>
-              <div>
-                <h4>Best for</h4>
-                <p>Bands doing a themed run, release tour, special event series, anniversary show, or anything that deserves more personality than a standard show list.</p>
-              </div>
-              <div>
-                <h4>Features</h4>
-                <ul>
-                  <li>Custom visual concept</li>
-                  <li>Tour-specific design</li>
-                  <li>Upcoming and past show logic</li>
-                  <li>Ticket links and venue info</li>
-                  <li>Built to feel like the tour, not a generic template</li>
-                </ul>
-              </div>
+              <p class="tvtt-package-lead">A tour page that feels like part of the record, not a spreadsheet.</p>
+              <p>For bigger releases, themed runs, or bands with a strong visual world, we can build a custom tour page around the campaign: artwork, era, colors, jokes, lore, merch, flyers, and whatever weird little digital hallway fits the project.</p>
+              <p><strong>Best for</strong> bands that want the tour page itself to feel memorable, shareable, and fully tied into the campaign.</p>
             </div>
           </article>
         </div>
 
         <div class="tvtt-card tvtt-tour-cta">
-          <h3>Need a tour page that fits your band?</h3>
-          <p>Whether you need a simple show list, a homepage widget, or a themed tour page with its own weird little world, we can help build something that keeps your dates clear and your band's personality intact.</p>
-          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/tour-page-request" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Tour Page">Request a tour page estimate</a>
-        </div>
-        <div class="tvtt-scene-strip" aria-label="Live music content examples">
-          <figure class="tvtt-scene-tile tvtt-scene-tile-tall">
-            <img loading="lazy" src="assets/gallery/testament-crowd-room-view-2026-03-15.webp" alt="Wide crowd view at a live Testament show with green stage lights">
-            <figcaption>Testament - Treefort Music Hall</figcaption>
-          </figure>
-
-          <figure class="tvtt-scene-tile">
-            <img loading="lazy" src="assets/gallery/black-tooth-grin-front-row-lights-2025-03-22.webp" alt="Crowd-level view of Black Tooth Grin performing under bright stage lights">
-            <figcaption>Black Tooth Grin - The Shredder</figcaption>
-          </figure>
-
-          <figure class="tvtt-scene-tile">
-            <img loading="lazy" src="assets/gallery/bbno$-crowd-phones-lights-2025-03-15.webp" alt="Concert crowd holding phones up under pink and green stage lights">
-            <figcaption>bbno$ - Revolution Concert House</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="tvtt-section" aria-label="Outcome">
-      <div class="tvtt-section-inner">
-        <div class="tvtt-outcome">
-          <p>So when people hear your name, they do not hit a dead end.</p>
-          <p>They find your music.</p>
-          <p>They find your next show.</p>
-          <p>They follow the band.</p>
-          <p>And they know where to show up next.</p>
+          <h3>Need your tour dates easier to find?</h3>
+          <p>Whether you need a show widget, tour page, or custom campaign hub, we'll keep your dates, links, and venue details clear without making your band look generic.</p>
+          <a class="tvtt-button" href="https://treasurevalleytechtavern.com/tour-page-request" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Tour Page">Tour Page Quote</a>
         </div>
       </div>
     </section>
@@ -3691,7 +3545,7 @@
     <section class="tvtt-cta" aria-labelledby="cta-title">
       <div class="tvtt-cta-card">
         <h2 class="tvtt-cta-title" id="cta-title">WANT ME TO TAKE A LOOK AT YOUR BAND'S SETUP?</h2>
-        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Take a look at my band's setup">Take a look at my band's setup</a>
+        <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Check my setup">Check my setup</a>
         <p class="tvtt-quick-contact"><span class="tvtt-quick-contact-label">Not sure what kind of help fits yet? Call or text:</span> <a class="tvtt-phone-link" href="tel:12082472557" data-analytics-event="phone_click" data-analytics-category="lead" data-analytics-label="Phone link - For Bands page">208-247-2557</a></p>
       </div>
     </section>
