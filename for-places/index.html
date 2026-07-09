@@ -1454,6 +1454,7 @@
 
       .tvtt-hero {
         padding: 34px 32px 30px 16px;
+        background-image: none;
       }
 
       .tvtt-hero-inner,
@@ -1467,10 +1468,18 @@
       }
 
       .tvtt-hero h1 {
-        max-width: 100%;
+        width: 100vw;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 50%;
+        padding: 34px 16px 30px;
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.74)),
+          url("assets/for-places-background.png") center / contain no-repeat;
         font-size: clamp(2.75rem, 13vw, 3.75rem);
         line-height: 0.92;
         overflow-wrap: break-word;
+        transform: translateX(-50%);
       }
 
       .tvtt-hero h1 > span {
@@ -2379,34 +2388,13 @@
     }
 
     .tvtt-proof-media span {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
-      display: block;
-      padding: 7px 10px;
-      border: 1px solid rgba(255, 255, 255, 0.26);
-      border-radius: 999px;
-      color: rgba(255, 255, 255, 0.82);
-      background: rgba(0, 0, 0, 0.68);
-      backdrop-filter: blur(6px);
-      font-family: "Trebuchet MS", Arial, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      line-height: 1;
-      opacity: 0.72;
-      pointer-events: none;
+      display: none;
     }
 
     .tvtt-proof-media:hover,
     .tvtt-proof-media:focus-visible {
       border-color: var(--tvtt-cyan);
       box-shadow: 0 0 30px rgba(99, 224, 229, 0.25);
-    }
-
-    .tvtt-proof-media:hover span,
-    .tvtt-proof-media:focus-visible span {
-      color: #fff;
-      opacity: 1;
     }
 
     .tvtt-proof-copy {
@@ -2959,7 +2947,6 @@
                 <source src="assets/receipts/overlandbar/tik-tok-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/tik-tok-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>Pause preview</span>
             </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
@@ -2991,7 +2978,6 @@
                 <source src="assets/receipts/overlandbar/karaoke-songlist-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/karaoke-songlist-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>Pause preview</span>
             </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
@@ -3015,7 +3001,6 @@
                 <source src="assets/receipts/overlandbar/website-menu-mobile-preview.webm" type="video/webm">
                 <source src="assets/receipts/overlandbar/website-menu-mobile-preview.mp4" type="video/mp4">
               </video>
-              <span>Pause preview</span>
             </button>
             <div class="tvtt-proof-copy">
               <div class="tvtt-proof-heading">
@@ -3139,13 +3124,9 @@
       const proofVideoToggles = document.querySelectorAll("[data-video-toggle]");
 
       function setVideoToggleState(button, video) {
-        const label = button.querySelector("span");
         const isPaused = video.paused;
         button.setAttribute("aria-label", isPaused ? "Play the video preview" : "Pause the video preview");
         button.setAttribute("aria-pressed", String(!isPaused));
-        if (label) {
-          label.textContent = isPaused ? "Play preview" : "Pause preview";
-        }
       }
 
       proofVideoToggles.forEach((button) => {
