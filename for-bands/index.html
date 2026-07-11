@@ -261,6 +261,26 @@
       line-height: 1.38;
     }
 
+    .tvtt-card-subhead {
+      display: none;
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: #fff;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      font-weight: 900;
+      line-height: 1.14;
+      white-space: pre-line;
+      text-wrap: balance;
+    }
+
+    .tvtt-card-subhead.is-active {
+      display: block;
+    }
+
+    .tvtt-card-subhead + .tvtt-hero-subtitle {
+      margin-top: 26px;
+    }
+
     .tvtt-hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -3094,6 +3114,7 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
+          <p class="tvtt-card-subhead" id="card-supporting-headline"></p>
           <p class="tvtt-hero-subtitle">Your online presence should be an engine for booking better bills and packing rooms. We turn scattered links and ghost-town pages into a clear digital home base that sounds as dangerous as your live set.</p>
           <div class="tvtt-hero-actions" aria-label="Start here">
             <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-bands" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Bands page - Hero setup review">Free Setup Review</a>
@@ -3613,6 +3634,53 @@
         }
       ]
     }
+  </script>
+  <script>
+    (function () {
+      const cardVariants = {
+        momentum: {
+          text: "The set ends. The momentum doesn't have to.",
+          eventVariant: "set_momentum"
+        },
+        local: {
+          text: "Local music should be easy to find and hard to forget.",
+          eventVariant: "local_music_findable"
+        },
+        crowd: {
+          text: "The crowd found the show. Help them find the band.",
+          eventVariant: "crowd_find_band"
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const cardCode = params.get("c");
+      const variant = cardCode ? cardVariants[cardCode] : null;
+
+      if (!variant) {
+        return;
+      }
+
+      const supportingHeadline = document.getElementById("card-supporting-headline");
+      const hero = document.querySelector(".tvtt-hero");
+
+      if (supportingHeadline) {
+        supportingHeadline.textContent = variant.text;
+        supportingHeadline.classList.add("is-active");
+      }
+
+      if (hero) {
+        hero.dataset.cardVariant = cardCode;
+      }
+
+      if (!window.__tvttBandsCardEventFired && typeof gtag === "function") {
+        window.__tvttBandsCardEventFired = true;
+        gtag("event", "business_card_visit", {
+          card_audience: "bands",
+          card_variant: variant.eventVariant,
+          page_path: window.location.pathname
+        });
+      }
+    }());
   </script>
   <script>
     (function () {
