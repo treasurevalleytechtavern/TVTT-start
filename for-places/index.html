@@ -257,8 +257,24 @@
       line-height: 1.38;
     }
 
-    .tvtt-hero-subtitle + .tvtt-hero-subtitle {
-      margin-top: 12px;
+    .tvtt-card-subhead {
+      display: none;
+      max-width: 760px;
+      margin: 24px auto 0;
+      color: #fff;
+      font-size: clamp(1.45rem, 3vw, 2.15rem);
+      font-weight: 900;
+      line-height: 1.14;
+      white-space: pre-line;
+      text-wrap: balance;
+    }
+
+    .tvtt-card-subhead.is-active {
+      display: block;
+    }
+
+    .tvtt-card-subhead + .tvtt-hero-subtitle {
+      margin-top: 26px;
     }
 
     .tvtt-hero-actions {
@@ -2789,6 +2805,7 @@
       <div class="tvtt-hero-inner">
         <div class="tvtt-hero-copy">
           <h1 id="hero-title"><span>YOU MAKE THE <span class="tvtt-mobile-line">NOISE.</span></span><span>WE'LL HANDLE <span class="tvtt-mobile-line">THE INTERNET.</span></span></h1>
+          <p class="tvtt-card-subhead" id="card-supporting-headline"></p>
           <p class="tvtt-hero-subtitle">We help Treasure Valley bars and venues make their events, hours, links, and room energy easy to find, so more people go from &ldquo;what should we do tonight?&rdquo; to &ldquo;let&rsquo;s go there.&rdquo;</p>
           <div class="tvtt-hero-actions" aria-label="Start here">
             <a class="tvtt-button" href="https://treasurevalleytechtavern.com/contact-for-places" data-analytics-event="audit_request_click" data-analytics-category="lead" data-analytics-label="For Places page - Hero setup review">Free setup review</a>
@@ -3117,6 +3134,53 @@
         }
       ]
     }
+  </script>
+  <script>
+    (function () {
+      const cardVariants = {
+        vibe: {
+          text: "The room has a vibe.\nThe internet should show it.",
+          eventVariant: "room_vibe"
+        },
+        night: {
+          text: "Make the night easier to find.",
+          eventVariant: "make_night_easier"
+        },
+        find: {
+          text: "The people looking for a place should find yours.",
+          eventVariant: "people_should_find_yours"
+        }
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const cardCode = params.get("c");
+      const variant = cardCode ? cardVariants[cardCode.toLowerCase()] : null;
+
+      if (!variant) {
+        return;
+      }
+
+      const supportingHeadline = document.getElementById("card-supporting-headline");
+      const hero = document.querySelector(".tvtt-hero");
+
+      if (supportingHeadline) {
+        supportingHeadline.textContent = variant.text;
+        supportingHeadline.classList.add("is-active");
+      }
+
+      if (hero) {
+        hero.dataset.cardVariant = cardCode.toLowerCase();
+      }
+
+      if (!window.__tvttPlacesCardEventFired && typeof gtag === "function") {
+        window.__tvttPlacesCardEventFired = true;
+        gtag("event", "business_card_visit", {
+          card_audience: "places",
+          card_variant: variant.eventVariant,
+          page_path: window.location.pathname
+        });
+      }
+    }());
   </script>
   <script>
     (function () {
